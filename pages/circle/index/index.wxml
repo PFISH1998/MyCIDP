@@ -21,8 +21,8 @@
 
             <view class="like-comments" >
                 <view class="item" bindtap="bindItemTap" data-id="{{idx}}">
-                    <image class="like" src="../../icon/circle/hongxin.png" hidden="{{ !item.is_like }}"></image>
-                    <image class="like" src="../../icon/circle/kongxin.png" hidden="{{ item.is_like }}"></image>
+                    <image class="like" src="{{item.is_like ? '../../icon/circle/hongxin.png' : '../../icon/circle/kongxin.png'}}" ></image>
+                    <!-- <image class="like" src="../../icon/circle/kongxin.png" hidden="{{ item.is_like }}"></image> -->
                     <view class="num">
                     <a class="num">{{item.like_count}}</a>
                     </view>    
@@ -53,8 +53,8 @@
 
             <view class="like-comments" >
                 <view class="item" bindtap="bindItemTap" data-id="{{idx}}">
-                    <image class="like" src="../../icon/circle/hongxin.png" hidden="{{ !item.is_like }}"></image>
-                    <image class="like" src="../../icon/circle/kongxin.png" hidden="{{ item.is_like }}"></image>
+                    <image class="like" src="{{item.is_like ? '../../icon/circle/hongxin.png' : '../../icon/circle/kongxin.png'}}" ></image>
+                    <!-- <image class="like" src="../../icon/circle/kongxin.png" hidden="{{ item.is_like }}"></image> -->
                     <view class="num">
                     <a class="num">{{item.like_count}}</a>
                     </view>    
