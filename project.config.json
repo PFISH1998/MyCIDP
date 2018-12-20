@@ -34,7 +34,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 15,
 			"list": [
 				{
 					"id": -1,
@@ -144,7 +144,7 @@
 					"name": "圈子",
 					"pathName": "pages/circle/index/index",
 					"query": "",
-					"scene": "1008"
+					"scene": 1008
 				},
 				{
 					"id": 16,
