@@ -109,9 +109,6 @@ Page({
     var index_api = '';
     util.getData(index_api)
       .then(function (data) {
-        //this.setData({
-        //
-        //});
         console.log(data);
       });
   },
@@ -132,6 +129,7 @@ Page({
     util.getData(req_data).then((circle) => {
       // console.log(circle)
       var circle_data = circle;
+    //   console.log(circle)
       this.setData({
         circle: circle_data,
         lowhidden:true,
