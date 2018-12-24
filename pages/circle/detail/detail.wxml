@@ -23,9 +23,7 @@
 
                     <view class="like-comments" >
                         <view class="item" bindtap="bindItemTap" data-id="{{idx}}">
-                            <image class="like" src="../../icon/circle/hongxin.png" hidden="{{ !circle.is_like }}"></image>
-
-                            <image class="like" src="../../icon/circle/kongxin.png" hidden="{{ circle.is_like }}"></image>
+                            <image class="like" src="{{circle.is_like ? '../../icon/circle/hongxin.png' : '../../icon/circle/kongxin.png'}}"></image>
 
                             <view class="num">
                             <a class="num">{{circle.like_count}}</a>
@@ -42,23 +40,7 @@
               <view class="weui-loadmore__tips">正在加载评论...</view>
     </view>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            </view>
+     </view>
 
 
 <block wx:for='{{ comments }}' wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
