@@ -1,0 +1,43 @@
+<view class="top-tab flex-wrp flex-tab">
+  <view class="toptab flex-item {{currentNavtab==idx ? 'active' : ''}}" wx:for="{{navTab}}" wx:for-index="idx" wx:for-item="itemName" data-idx="{{idx}}" bindtap="switchTab">
+    {{itemName}}
+  </view>
+</view>
+        <view class="weui-panel weui-panel_access">
+        <view hidden='{{headhidden}}' class="weui-loadmore" bindchange='loadingChangge'>
+              <view class="weui-loading"></view>
+              <view class="weui-loadmore__tips">正在加载</view>
+          </view>
+          <!-- <view headhidden='{{hidden}}' class="weui-loadmore">
+              <view class="weui-loading"></view>
+              <view class="weui-loadmore__tips">正在加载</view>
+          </view> -->
+            <view class="weui-panel__hd_1">{{list_type}}</view>
+
+             <scroll-view scroll-top="{{scrollTop}}" style="height: {{windowHeight}}px; width: {{windowWidth}}px;" scroll-y="true" bindscrolltoupper="pullDownRefresh" bindscrolltolower="pullUpLoad" class="weui-panel weui-panel_access">
+
+
+
+            <view class="weui-panel__bd" wx:for="{{news_list}}">
+            <navigator url="../../../news/news?ul={{item.url}}&title={{list_type}}" hover-class="weui-cell_active">
+                <view class="weui-media-box weui-media-box_text">
+                    <view class="weui-media-box__title weui-media-box__title_in-text">{{item.title}}</view>
+                    <view class="weui-media-box__desc">{{item.page_content}}</view>
+                    <view class="weui-media-box__info">
+                        <view class="weui-media-box__info__meta">来源：www.cidp.edu.cn</view>
+                      
+                        <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{item.pub_time}}</view>
+                        <!-- <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">阅读 100</view> -->
+                    </view>
+                </view>
+              </navigator>
+              </view>
+              <view hidden='{{hidden}}' class="weui-loadmore" bindchange='loadingChangge'>
+              <view class="weui-loading"></view>
+              <view class="weui-loadmore__tips">正在加载</view>
+          </view>
+            </scroll-view>
+            
+        
+
+        </view>

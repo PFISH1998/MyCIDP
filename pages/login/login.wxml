@@ -1,0 +1,21 @@
+  <view class='page'>
+    <view class="page__hd">
+          <view class="page__title" >登录教务处</view>
+          <view class="page__desc">小程序不会保存您的查询结果，每次查询都将重新从教务处获取数据，这将需要一点时间</view>
+    </view >
+      <form bindsubmit="submitInfo" class="form-submit">
+      <import src='../templates/login.wxml'/>
+      <template is='login' data='{{user:userinfo}}' />
+
+
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_switch">
+            <view class="weui-cell__bd">记住密码</view>
+            <view class="weui-cell__ft">
+                <switch checked bindchange='checkboxchange' disabled="{{buthidden}}"/>
+            </view>
+        </view>
+      </view>
+      <button class="weui-btn" disabled="{{buthidden}}" type="primary" formType="submit">确定</button>
+      </form>
+  </view>

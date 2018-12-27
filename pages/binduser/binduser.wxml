@@ -1,0 +1,15 @@
+  <view class='page'>
+  <view class="page__hd">
+        <view class="page__title">绑定教务处</view>
+        <view class="page__desc">绑定教务处账号,更加方便的使用查询功能</view>
+        <view class="page__desc">此处不做账号密码验证，请注意它们的正确性</view>
+    </view>
+    <form bindsubmit="submitInfo" class="form-submit">
+
+    <import src='../templates/login.wxml'/>
+    <template is='login' data='{{user:userinfo}}' />
+
+    <button class="weui-btn" type="primary" formType="submit">确定</button>
+    <button bindtap='cancel' class="weui-btn" type="warn">取消绑定</button>
+    </form>
+  </view>

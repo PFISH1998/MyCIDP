@@ -1,0 +1,89 @@
+@import "../../weui.wxss";
+
+/* 1像素解决方案 */
+/*
+ * 清除1px
+ */
+/*
+ * 清除浮动
+ */
+/*
+ * mobile
+ */
+/*
+ * 1px
+ */
+/*
+ * text
+ */
+/* 垂直居中 */
+/* 水平居中 */
+/* 水平垂直居中 */
+/* 超出部分出省略号 */
+/* 多行文本超出部分省略号 */
+.grade {
+  justify-content: center;
+  align-items: center;
+  font-size: 9pt;
+  color: #C8C8CD;
+  width: 100%;
+}
+
+.table {
+  border: 0px solid C8C8CD;
+}
+.tr {
+  font-size: 9pt;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 3rem;
+  align-items: center;
+}
+.td {
+  width: 40%;
+  overflow: hidden;
+  justify-content: center;
+  text-align: center;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  word-wrap: break-word;
+  word-break: break-all;
+  -webkit-line-clamp: 2;
+}
+.bg-w {
+  background: rgb(190, 136, 136);
+}
+.bg-g {
+  background: #C8C8CD;
+}
+.th {
+  width: 40%;
+  justify-content: center;
+  background: #C8C8CD;
+  color: #fff;
+  display: flex;
+  height: 3rem;
+  align-items: center;
+}
+.th_1 {
+  width: 100%;
+  justify-content: center;
+  background: #586C94;
+  color: #fff;
+  display: flex;
+  height: 3rem;
+  align-items: center;
+}
+.weui-navbar__title_1 {
+  display: inline-block;
+  font-size: 13px;
+  max-width: 8em;
+  width: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}

@@ -1,0 +1,32 @@
+<view class="page">
+    <view class="page__hd">
+        <!-- <view class="page__title">你好！</view>
+        <view class="page__desc">MyCIDP 是一个信息查询小程序，你可以在此查看个人的教务信息，学校通知等，并且还将会有功能陆续更新</view> -->
+    </view>
+      <view class="page__bd page__bd_spacing">
+        <view class="kind-list">
+            <block wx:for="{{list}}" wx:key="id">
+                <view class="kind-list__item">
+                    <view id="{{item.id}}" class="weui-flex kind-list__item-hd {{item.open ? 'kind-list__item-hd_show' : ''}}" bindtap="kindToggle">
+                        <view class="weui-flex__item">{{item.name}}</view>
+                        <image class="kind-list__img" src="../icon/{{item.id}}.png"></image>
+                    </view>
+                    <view class="kind-list__item-bd {{item.open ? 'kind-list__item-bd_show' : ''}}">
+                        <view class="weui-cells {{item.open ? 'weui-cells_show' : ''}}">
+                            <block wx:for="{{item.pages}}" wx:for-item="page" wx:key="*this">
+                                <navigator url="{{page.url}}" class="weui-cell weui-cell_access">
+                                    <view class="weui-cell__bd">{{page.name}}</view>
+                                    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                                </navigator>
+                            </block>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+     </view>
+
+        <!-- <view class="weui-footer">
+            <view class="weui-footer__text">Copyright © 2018 PFISH</view>
+        </view> -->
+</view>

@@ -1,0 +1,6 @@
+.weui-panel__hd_1 {
+  padding: 14px 15px 1px;
+  color: #999999;
+  font-size: 13px;
+  /* position: relative; */
+}

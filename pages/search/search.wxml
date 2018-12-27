@@ -1,0 +1,27 @@
+<!--logs.wxml-->
+<view class="top-tab flex-wrp flex-tab">
+  <view class="toptab flex-item {{currentNavtab==idx ? 'active' : ''}}" wx:for="{{navTab}}" wx:for-index="idx" wx:for-item="itemName" data-idx="{{idx}}" bindtap="switchTab">
+    {{itemName}}
+  </view>
+</view>
+
+
+<scroll-view scroll-y="true" class="container notify withtab" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+
+<view class="page__hd_1"></view>
+  <view class="ctnt0" hidden="{{currentNavtab==0 ? '' : true}}">
+    <import src='../../templates/newslist.wxml'/>
+    <template is='newslist' data='{{news_list:news_list52}}' />
+
+  </view>
+  
+
+
+
+  <view class="ctnt1 placehold" hidden="{{currentNavtab==1 ? '' : true}}">
+    <text>赞与感谢</text>
+  </view>
+  <view class="ctnt2 placehold" hidden="{{currentNavtab==2 ? '' : true}}">
+    <text>关注</text>
+  </view>
+</scroll-view>

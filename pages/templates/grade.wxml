@@ -1,0 +1,74 @@
+<template name="grade">
+<view>
+  <view wx:if="{{year_data.List != 0}}">
+  <view class="table">
+  <view class="tr bg-w">
+    <view class="th">课程名</view>
+    <view class="th">属性</view>
+    <view class="th">学分</view>
+    <view class="th">成绩</view>
+    <view class="th">绩点</view>
+  </view>
+  <block wx:for="{{year_data.List}}">
+
+      <!-- 学年 -->
+      <view class="tr bg-w">
+      <!-- 学期 -->
+      <view class="th_1">{{item.STName}}</view> 
+      </view>
+
+        <view  wx:for="{{item.grade_list}}">
+
+        <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+        <view class="td">{{item.Name}}</view>
+        <view class="td">{{item.PropertyName}}</view>
+        <view class="td">{{item.Credit}}</view>
+        <view class="td">{{item.MarkValue}}</view>
+        <view class="td">{{item.CP}}</view>
+        </view>
+        
+        <view class="tr" wx:else>
+        <view class="td">{{item.Name}}</view>
+        <view class="td">{{item.PropertyName}}</view>
+        <view class="td">{{item.Credit}}</view>
+        <view class="td">{{item.MarkValue}}</view>
+        <view class="td">{{item.CP}}</view>
+        </view>
+
+        </view>
+
+  <!-- </view> -->
+  </block>
+
+
+
+    <!-- <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+      <view class="td">{{item.Name}}</view>
+      <view class="td">{{item.PropertyName}}</view>
+      <view class="td">{{item.Credit}}</view>
+      <view class="td">{{item.MarkValue}}</view>
+      <view class="td">{{item.CP}}</view>
+    </view>
+    <view class="tr" wx:else>
+      <view class="td">{{item.Name}}</view>
+      <view class="td">{{item.PropertyName}}</view>
+      <view class="td">{{item.Credit}}</view>
+      <view class="td">{{item.MarkValue}}</view>
+      <view class="td">{{item.CP}}</view>
+    </view> -->
+  
+  </view>
+  </view>
+
+    <!-- <view class="weui-flex">
+          <view class="weui-flex__item"> -->
+           
+          <!-- </view> -->
+    <!-- </view> -->
+
+  <view wx:else>
+   <view class="grade">暂无成绩</view>
+  </view>
+  </view>
+
+  </template>

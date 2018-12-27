@@ -1,0 +1,18 @@
+<view class="page">
+    <view class="page__hd">
+        <image class="userinfo-avatar" src="{{ userInfo.avatarUrl }}" mode="cover"></image>
+        <view class="page__title">{{ userInfo.nickName}}</view>
+        <view class="page__desc"></view>
+    </view>
+
+        <view wx:for="{{pageinfo}}">
+        <view class="weui-cells__title">{{ item.page }}</view>
+        <view class="weui-cells weui-cells_after-title" wx:for="{{item.list}}">
+            <navigator url="{{ item.url }}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">{{ item.name }}</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+        </view>
+        </view>
+        
+</view>

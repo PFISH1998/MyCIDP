@@ -1,0 +1,67 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/grade/grade",
+    "pages/table/table",
+    "pages/login/login",
+    "pages/calendar/calendar",
+    "pages/user/user",
+    "pages/binduser/binduser",
+    "pages/table/bindtable",
+    "pages/notes/notes",
+    "pages/recommend/news/news",
+    "pages/recommend/newslist/newslist",
+    "pages/share/share",
+    "pages/circle/index/index",
+    "pages/circle/detail/detail",
+    "pages/search/search",
+    "pages/circle/post/post",
+    "pages/recommend/page/index",
+    "pages/login/auth/auth"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#efefef",
+    "navigationBarBackgroundColor": "#1296db",
+    "navigationBarTitleText": "MyCIDP",
+    "navigationBarTextStyle": "white"
+  },
+  "networkTimeout": {
+    "request": 60000
+  },
+  "theme": {
+    "theme-color": "#39f"
+  },
+  "tabBar": {
+    "color": "#626567",
+    "selectedColor": "#2A8CE5",
+    "backgroundColor": "#FBFBFB",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/circle/index/index",
+        "text": "",
+        "iconPath": "images/guide.png",
+        "selectedIconPath": "images/guide_s.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "",
+        "iconPath": "images/component.png",
+        "selectedIconPath": "images/component_s.png"
+      },
+      {
+        "pagePath": "pages/recommend/page/index",
+        "text": "",
+        "iconPath": "images/page.png",
+        "selectedIconPath": "images/page_s.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "",
+        "iconPath": "images/g_my_on.png",
+        "selectedIconPath": "images/g_my_on_s.png"
+      }
+    ]
+  }
+}
