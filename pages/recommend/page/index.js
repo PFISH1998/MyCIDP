@@ -59,7 +59,7 @@ Page({
     })
     wx.request({
       // url: 'http://127.0.0.1:8000/news/list?page_num=' + num + '&type=' + page_type,
-      url: 'https://wx.tomwang.club/list?page_num=' + num + '&type=' + page_type,
+      url: 'https://wx.tomwang.club/news/list?page_num=' + num + '&type=' + page_type,
       method: 'GET',
       success: function (req) {
         console.log('backdata', req.data)

@@ -69,7 +69,7 @@ Page({
 
       console.log('userinfo', app.appData.userinfo)
       console.log('缓存', wx.getStorageSync('userinfo'))
-
+      
       if(true){
         wx.showToast({
           title: '绑定成功',
