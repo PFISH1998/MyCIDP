@@ -20,7 +20,6 @@ Page({
       })
   },
 
-
   //事件处理函数
   bindItemTap: function (e) {
     console.log('tap', e.currentTarget.dataset.id)
