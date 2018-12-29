@@ -20,8 +20,8 @@ module.exports = {
   formatTime: formatTime
 };
 
-var test_url = "http://127.0.0.1:8000/circle/"
-// var test_url = "https://wx.tomwang.club/circle/"
+// var test_url = "http://127.0.0.1:8000/circle/"
+var test_url = "https://wx.tomwang.club/circle/"
 
 var index = require('../data/index_data.js')
 var index_next = require('../data/data_index_next.js') 
