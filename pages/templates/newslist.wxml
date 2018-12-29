@@ -1,7 +1,7 @@
 <template name="newslist">
 
 <view class="weui-panel__bd" wx:for="{{news_list}}">
-            <navigator url="../news/news?url={{item.url}}" hover-class="weui-cell_active">
+            <navigator url="../news/news?url={{item.url}}&title={{item.title}}&pub_time={{item.pub_time}}" hover-class="weui-cell_active">
                 <view class="weui-media-box weui-media-box_text">
                     <view class="weui-media-box__title weui-media-box__title_in-text">{{item.title}}</view>
                     <view class="weui-media-box__desc">{{item.description}}</view>

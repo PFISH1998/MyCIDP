@@ -11,25 +11,19 @@
 
     
   <view class="ctnt0" hidden="{{currentNavtab==0 ? '' : true}}">
-      
       <import src='../../templates/newslist.wxml'/>
-      <template is='newslist' data='{{news_list:news_list52}}' />
-                
+      <template is='newslist' data='{{news_list:news_list52}}' />          
   </view>
 
 
   <view class="ctnt1 placehold" hidden="{{currentNavtab==1 ? '' : true}}">
-
       <import src='../../templates/newslist.wxml'/>
       <template is='newslist' data='{{news_list:news_list321}}' />
-
   </view>
   
   <view class="ctnt2 placehold" hidden="{{currentNavtab==2 ? '' : true}}">
-
     <import src='../../templates/newslist.wxml'/>
     <template is='newslist' data='{{news_list:news_list4662}}' />
-    
   </view>
 
 </scroll-view>

@@ -6,17 +6,17 @@ Page({
 
 
 
-    page_num: 1,
+    page_num: 0,
     list_type: '',
     hidden: true,
     headhidden: false,
 
     news_list52: [],
-    page52: 1,
+    page52: 0,
     news_list321: [],
-    page321: 1,
+    page321: 0,
     news_list4662: [],
-    page4662: 1,
+    page4662: 0,
     return_news: [],
 
     page_type: null,
@@ -26,7 +26,7 @@ Page({
   },
   onLoad: function (options) {
     var page_type = 'xwzx'
-    var name = "xinwne"
+    var name = "xinwen"
     var that = this;
     console.log(name, page_type)
     wx.getSystemInfo({
@@ -41,7 +41,7 @@ Page({
     });
 
     // 新闻功能
-    that.getNewsList(page_type, 1)
+    that.getNewsList(page_type, 0)
 
   },
 
@@ -58,8 +58,8 @@ Page({
       request_status: true
     })
     wx.request({
-      url: 'http://127.0.0.1:8000/list?page_num=' + num + '&type=' + page_type,
-      // url: 'https://wx.tomwang.club/list?page_num=' + num + '&type=' + page_type,
+      // url: 'http://127.0.0.1:8000/news/list?page_num=' + num + '&type=' + page_type,
+      url: 'https://wx.tomwang.club/list?page_num=' + num + '&type=' + page_type,
       method: 'GET',
       success: function (req) {
         console.log('backdata', req.data)
@@ -99,6 +99,7 @@ Page({
         else{
           return
         }
+
         
       },
 
@@ -170,13 +171,13 @@ Page({
     console.log(e)
     var id = e.target.dataset.id
     console.log('info',id)
-    if (id == 52){
+    if (id == 'xwzx'){
       var num = this.data.page52
     }
-    if (id == 321) {
+    if (id == 'tzgg') {
       var num = this.data.page321
     }
-    if (id == 4662) {
+    if (id == 'xshd') {
       var num = this.data.page4662
     }
 
@@ -185,7 +186,7 @@ Page({
       currentNavtab: e.currentTarget.dataset.idx
     });
 
-    if(num == 1){
+    if(num == 0){
       this.getNewsList(id, num)
     }
 

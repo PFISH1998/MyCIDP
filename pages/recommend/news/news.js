@@ -6,7 +6,10 @@ Page({
    */
   data: {
     news_content: '',
-    url:'' 
+    title:'',
+    pub_time:'',
+    url:'',
+    pic_list: ''
   },
 
   /**
@@ -14,25 +17,32 @@ Page({
    */
   onLoad: function (options) {
     var that = this
-    // console.log(options)
+    console.log("onload")
+    console.log(options)
+
     wx.setNavigationBarTitle({
       title: "详情"
     })
-    // wx.request({
-    //   // url: 'http://127.0.0.1:8000/news?content='+options.url,
-    //   url: 'https://wx.tomwang.club/news?content='+options.url,
-    //   method: 'get',
-    //   success: function(req) {
-    //     var news_data = req.data.news_content[0]
-    //     that.setData({
-    //       url:options.url,
-    //       news_content:news_data
-    //     })
-    //   },
-    //   fail: function (req) {
+    wx.request({
+      // url: 'http://127.0.0.1:8000/news/news?content=' + options.url,
+      url: 'https://wx.tomwang.club/news/news?content='+options.url,
+      method: 'get',
+      success: function(req) {
+        console.log("back",req)
+        var news_data = req.data.news_content
+        var pic_list = req.data.pic_list
+        that.setData({
+          url: options.url,
+          title: options.title,
+          pub_time: options.pub_time,
+          news_content: news_data,
+          pic_list: pic_list
+        })
+      },
+      fail: function (req) {
         
-    //   }
-    // })
+      }
+    })
     
   
   },
@@ -94,7 +104,7 @@ Page({
     
     var src = e.currentTarget.dataset.src
     console.log(src)
-    var urls = this.data.news_content.pic_list
+    var urls = this.data.pic_list
     wx.previewImage({
       current: src,
       urls:urls

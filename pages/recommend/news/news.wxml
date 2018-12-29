@@ -4,11 +4,11 @@
 
 
         <view class="weui-article">
-            <view class="weui-article__h1">{{news_content.title}}</view>
+            <view class="weui-article__h1">{{title}}</view>
             
              <view class="weui-media-box__info">
                         <view class="weui-media-box__info__meta">www.cidp.edu.cn</view>
-                        <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{news_content.pub_time}}</view>
+                        <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{pub_time}}</view>
                         <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">阅读</view>
                     </view>
                     
@@ -17,7 +17,7 @@
                 <view class="weui-article__title"> </view>
                 <view class="weui-article__section">
                     <view class="weui-article__h3"> </view>
-                    <view wx:for="{{ news_content.page_content }}">
+                    <view wx:for="{{ news_content }}">
                     <view class="weui-article__p" wx:if="{{item.content}}">
                          {{ item.content }}
                     </view>
