@@ -8,7 +8,8 @@
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"autoAudits": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.4.3",
@@ -33,7 +34,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 17,
 			"list": [
 				{
 					"id": -1,
@@ -143,6 +144,19 @@
 					"pathName": "pages/circle/index/index",
 					"query": "",
 					"scene": "1008"
+				},
+				{
+					"id": -1,
+					"name": "pub",
+					"pathName": "pages/user/public/myPublic",
+					"query": "",
+					"scene": "1007"
+				},
+				{
+					"id": 17,
+					"name": "index",
+					"pathName": "pages/index/index/index",
+					"query": ""
 				}
 			]
 		}

@@ -8,7 +8,9 @@ Page({
    */
   data: {
     circle: null,
-    detail:null
+    detail:null,
+    uid:'',
+    del:true
 
   },
 
@@ -31,7 +33,7 @@ Page({
 
     var e = {
       "method": "post",
-      "url": "like/" + like_circle.id + "/",
+      "url": "circle/like/" + like_circle.id + "/",
       "data": {
         "post": like_circle.id,
         "type": 1,
@@ -56,18 +58,55 @@ Page({
     //   url: '../detail/detail?circle_id=' + JSON.stringify(circle_detail[id])
     // })
   },
+  del:function(){
+    console.log(this.data.circle)
+    var circle = this.data.circle
+    var uid = app.appData.uid
+    console.log("uid", uid)
+    wx.showModal({
+      title: '确定删除？',
+      content: '',
+      cancelText:'取消',
+      success:function(){
+        var e = {
+          "method": "DELETE",
+          "url": "circle/posts/" + circle.id + "/",
+          "data": {
+            "uid": uid,
+          }
+        }
+        util.request(e).then((data)=>{
+          wx.showToast({
+            title: '删除成功',
+          })
+          wx.navigateBack({})
+        })
+        
+      }
+    })
+
+  },
+
 
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // console.log(JSON.parse(options.circle_id))
+    console.log("onload",JSON.parse(options.circle_id))
     // JSON.stringify(options)
     var id = JSON.parse(options.circle_id)
-
+    var uid = app.appData.uid
+    console.log(uid)
+    var userType = app.appData.userType
+    console.log(userType)
+    if(uid == id.uid || userType == 'admin'){
+      this.setData({
+        del:false
+      })
+    }
     this.setData({
-      circle: id
+      circle: id,
     })
 
   },

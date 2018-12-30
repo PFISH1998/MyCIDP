@@ -92,7 +92,7 @@ Page({
     }
     var uid = wx.getStorageSync('openid')
     var postData = {
-      "url": "post/",
+      "url": "circle/posts",
       "data":{
         "post_user": userInfo.nickName,
         "uid": uid,

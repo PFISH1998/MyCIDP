@@ -1,10 +1,9 @@
 <!--pages/circle/index/index.wxml-->
 <scroll-view scroll-top="{{scrollTop}}" style="height: {{windowHeight}}px; width: {{windowWidth}}px;" scroll-y="true" bindscrolltoupper="pullDownRefresh" bindscrolltolower="pullUpLoad"  class="container">
 
-  <view bindtap='postCircle' >
+  <!-- <view bindtap='postCircle' >
       <image class="add_icon" src="../../../images/yumaobi.png"></image>
-  </view>
-
+  </view> -->
 
 
     <block wx:for="{{circle}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">

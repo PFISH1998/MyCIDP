@@ -99,6 +99,15 @@
   color: #000000;
   font-size: 29rpx;
   line-height: 35rpx;
+
+}
+.chat-item .chat-content .detail-txt{
+  display: block;
+  color: #000000;
+  font-size: 29rpx;
+  line-height: 35rpx;
+  padding:20rpx 0 10rpx 30rpx;/*更改*/
+
 }
 
 .chat-item .chat-content .chat-source .head{

@@ -22,7 +22,7 @@ Page({
     var openid = wx.getStorageSync("openid")
     app.appData.userInfo = userInfo
     var req = {
-      "url":"user/",
+      "url":"circle/user/",
       "method":"POST",
       "data": {
         "uid": openid,

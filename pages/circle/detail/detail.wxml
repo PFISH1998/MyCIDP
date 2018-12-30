@@ -4,7 +4,7 @@
             <view class="chat-item flex-wrp">
             
 
-            <view class="chat-content flex-item"  bindtap="bindDetialTap" data-id="{{idx}}">
+            <view class="chat-content flex-item" data-id="{{idx}}">
              <view class="avatar flex-item">
                 
             </view>
@@ -14,9 +14,10 @@
                 
                 <text class="chatmate">{{ circle.post_user }}</text>
                 <text class="lasttime">{{ circle.pass_time }}</text>
+                <view class="delete" bindtap='del' hidden="{{del}}" >删除</view>
               </view>
 
-              <text class="chat-txt">{{ circle.content }}</text>
+              <text class="detail-txt">{{ circle.content }}</text>
              </view>
          </view>
 

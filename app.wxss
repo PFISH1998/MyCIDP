@@ -240,4 +240,12 @@ tem .feed-source .avatar image{
   float: right;
   vertical-align: text-bottom;
 }
-
+.delete{
+  color: #E64340;
+  /* font-size: 28rpx; */
+  padding: 4rpx 70rpx 8rpx 0;
+  flex: 1;
+  font-size: 22rpx;
+  float: right;
+  vertical-align: text-bottom;
+}

@@ -20,8 +20,8 @@ module.exports = {
   formatTime: formatTime
 };
 
-// var test_url = "http://127.0.0.1:8000/circle/"
-var test_url = "https://wx.tomwang.club/circle/"
+// var test_url = "http://127.0.0.1:8000/"
+var test_url = "https://wx.tomwang.club/"
 
 var index = require('../data/index_data.js')
 var index_next = require('../data/data_index_next.js') 
@@ -32,7 +32,7 @@ function getData(e) {
   var url = e.url
   var data = e.data
   var method = e.method
-  console.log("getdata_request", e)
+  console.log("request", e)
   return new Promise(function (resolve, reject) {
     wx.request({
       url: test_url+url,
@@ -59,7 +59,7 @@ function request(e){
   var url = test_url + e.url
   var data = e.data
   var method = e.method
-  wx.request({
+  return new Promise(function (resolve, reject) {wx.request({
     url: url,
     data: data,
     method: method,
@@ -67,12 +67,11 @@ function request(e){
       'Content-Type': 'application/json'
     },
     success: function(req){
-      console.log(req)
-      return req.data
+      console.log("back",req)
+      resolve(req.data)
     }
-
   })
-
+  })
 
 }
 

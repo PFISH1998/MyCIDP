@@ -40,7 +40,7 @@ Page({
 
     var e = {
       "method":"post",
-      "url": "like/" + like_circle[id].id +"/",
+      "url": "circle/like/" + like_circle[id].id +"/",
       "data":{
         "post": like_circle[id].id,
         "type": 1,
@@ -124,7 +124,7 @@ Page({
     console.log("loaddata");
     var uid = this.data.uid
     var req_data = {
-      "url":"post",
+      "url":"circle/posts",
       "method": "GET",
       "data":{
         "uid": uid
@@ -165,6 +165,8 @@ Page({
   pullDownRefresh:function(){
     wx.showNavigationBarLoading()
     console.log("pulldownR")
+    this.data.circle = []
+    this.refresh()
     
   },
 
@@ -173,11 +175,6 @@ Page({
     wx.hideNavigationBarLoading()
 
   }
-
-
-
-
-
 
 
 })

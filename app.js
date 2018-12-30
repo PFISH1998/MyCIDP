@@ -1,4 +1,4 @@
-
+var util = require('/utils/util.js')
 var app = getApp()
 var code = null
 App({
@@ -10,10 +10,10 @@ App({
     req_data: null,
     weeks: null,
     cicle_detail:null,
+    userType: null,
   },
   onLaunch: function onLaunch() {
-
-
+    var that = this
     // wx.getUpdateManager 在 1.9.90 才可用，请注意兼容
     const updateManager = wx.getUpdateManager()
 
@@ -36,57 +36,30 @@ App({
 
 
     // 登录
-    console.log("login")
+    console.log("wx.login")
     wx.login({
       success(res) {
         if (res.code) {
           code = res.code
-          console.log(res)
+          // console.log(res)
           //发起网络请求
-          wx.request({
-            url: 'https://wx.tomwang.club/circle/uid/',
-            // url: 'http://127.0.0.1:8000/circle/uid/',
-            method: 'POST',
-            data: {
+          var e = {
+            'url': 'circle/uid/',
+            'data': {
               code: res.code
             },
-            success: function(e){
-              console.log("login", e.data.code)
-              var status = e.data.code
-              if (status == 201){
-                wx.setStorageSync("openid", e.data.data)
-                
-              }
-
-              if (status == 202){
-                wx.setStorageSync("openid", e.data.data)
-                wx.setStorageSync("userInfo", " ")
-                wx.navigateTo({
-                  url: '/pages/login/auth/auth?code=' + code,
-                })
-              }
-              
-            }
+            'method': 'POST'
+          }
+          util.request(e).then(function(data){
+            that.back(data)
           })
-        } else {
+
+        }else {
           console.log('登录失败！' + res.errMsg)
           // wx.setStorageSync("userInfo", " ")
         }
       }
     })
-
-    var userinfo = wx.getStorageSync("userInfo")
-    console.log(userinfo)
-    // console.log(userinfo.nick_name)
-    if(userinfo == ''){
-      console.log(null)
-      wx.navigateTo({
-        url: '/pages/login/auth/auth?code='+ code,
-      })
-    }else{
-      this.appData.userInfo = userinfo
-    }
-    
 
     updateManager.onUpdateFailed(function () {
       // 新的版本下载失败
@@ -95,8 +68,34 @@ App({
     var start_time = new Date('2018/9/3').getTime()
     var date = new Date().getTime()
     this.appData.weeks =  parseInt(((date - start_time) / 1000 / 3600 / 24 / 7)+1)
-    this.appData.uid = wx.getStorageSync("openid")
+
   },
+  
   onShow: function onShow() {},
-  onHide: function onHide() {}
+  onHide: function onHide() {},
+
+  back:function(data){
+    var status = data.code
+    if (status == 201) {
+      wx.setStorageSync("openid", data.data.openid)
+      this.appData.userType = data.data.type
+    }
+    if (status == 202) {
+      wx.setStorageSync("openid", data.data.openid)
+      wx.setStorageSync("userInfo", " ")
+      wx.navigateTo({
+        url: '/pages/login/auth/auth?code=' + code,
+      })
+    }
+    var userinfo = wx.getStorageSync("userInfo")
+    if (userinfo == '' && null) {
+      console.log(null)
+      wx.navigateTo({
+        url: '/pages/login/auth/auth?code=' + code,
+      })
+    } else {
+      this.appData.uid = data.data.openid
+      this.appData.userInfo = userinfo
+    }
+  }
 });

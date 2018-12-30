@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/index/index",
+    "pages/index/index/index",
     "pages/grade/grade",
     "pages/table/table",
     "pages/login/login",
@@ -17,7 +17,9 @@
     "pages/search/search",
     "pages/circle/post/post",
     "pages/recommend/page/index",
-    "pages/login/auth/auth"
+    "pages/login/auth/auth",
+    "pages/user/public/myPublic"
+    
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -45,7 +47,7 @@
         "selectedIconPath": "images/guide_s.png"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/index/index/index",
         "text": "",
         "iconPath": "images/component.png",
         "selectedIconPath": "images/component_s.png"

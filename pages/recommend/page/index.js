@@ -106,9 +106,7 @@ Page({
 
       fail: function (req) {
         console.log(req)
-        that.setData({
-          fail: true
-        })
+        that.data.fail = true
       },
       complete: function () {
         that.setData({
@@ -180,9 +178,8 @@ Page({
     if (id == 'xshd') {
       var num = this.data.page4662
     }
-
+    this.data.page_type = id
     this.setData({
-      page_type: id,
       currentNavtab: e.currentTarget.dataset.idx
     });
 
