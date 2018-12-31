@@ -90,7 +90,8 @@ Page({
       })
       return
     }
-    var uid = wx.getStorageSync('openid')
+    var uid = app.appData.uid
+    console.log(uid)
     var postData = {
       "url": "circle/posts",
       "data":{

@@ -75,20 +75,23 @@ App({
   onHide: function onHide() {},
 
   back:function(data){
+    console.log(data)
+    console.log("data_uid", data.data)
     var status = data.code
+    var uid = data.data
     if (status == 201) {
       wx.setStorage({
         key: 'openid',
-        data: data.data.openid,
+        data: uid.openid,
       })
-      this.appData.uid = data.data.openid
+      this.appData.uid = uid.openid
       this.appData.userType = data.data.type
     }
     if (status == 202) {
-      this.appData.uid = data.data.openid
+      this.appData.uid = uid
       wx.setStorage({
         key: 'openid',
-        data: data.data.openid,
+        data: uid
       })
       wx.setStorageSync("userInfo", " ")
       wx.navigateTo({
@@ -102,7 +105,6 @@ App({
         url: '/pages/login/auth/auth?code=' + code,
       })
     } else {
-      this.appData.uid = data.data.openid
       this.appData.userInfo = userinfo
     }
   }

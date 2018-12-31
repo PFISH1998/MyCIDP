@@ -19,7 +19,8 @@ Page({
     // JSON.stringify(userInfo)
     console.log("e", userInfo)
     console.log("storage",wx.getStorageSync("userInfo"))
-    var openid = wx.getStorageSync("openid")
+    var openid = app.appData.uid
+    console.log(openid)
     app.appData.userInfo = userInfo
     var req = {
       "url":"circle/user/",
