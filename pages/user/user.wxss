@@ -1,8 +1,16 @@
 /* pages/user/userinfo.wxss */
+.user-hd {
+  padding: 40px;
+}
 
 .userinfo-avatar {
   width: 148rpx;
   height: 148rpx;
-  margin: 20rpx;
+  /* margin: 20rpx; */
   border-radius: 50%;
+}
+.userinfo-name {
+  margin: 1rpx 15rpx;
+  font-size: 17px;
+
 }

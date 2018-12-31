@@ -1,7 +1,7 @@
 <view class="page">
-    <view class="page__hd">
+    <view class="user-hd">
         <image class="userinfo-avatar" src="{{ userInfo.avatarUrl }}" mode="cover"></image>
-        <view class="page__title">{{ userInfo.nickName}}</view>
+        <view class="userinfo-name">{{ userInfo.nickName}}</view>
         <view class="page__desc"></view>
     </view>
 

@@ -77,11 +77,19 @@ App({
   back:function(data){
     var status = data.code
     if (status == 201) {
-      wx.setStorageSync("openid", data.data.openid)
+      wx.setStorage({
+        key: 'openid',
+        data: data.data.openid,
+      })
+      this.appData.uid = data.data.openid
       this.appData.userType = data.data.type
     }
     if (status == 202) {
-      wx.setStorageSync("openid", data.data.openid)
+      this.appData.uid = data.data.openid
+      wx.setStorage({
+        key: 'openid',
+        data: data.data.openid,
+      })
       wx.setStorageSync("userInfo", " ")
       wx.navigateTo({
         url: '/pages/login/auth/auth?code=' + code,

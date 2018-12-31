@@ -17,21 +17,23 @@
             <view><image class="jiantou" src="/pages/icon/jiantou3.png"/> </view>
             <block wx:for="{{list}}" wx:key="id">
                 <view class="kind-list__item">
-                    <view class="kind-list__item-bd {{item.open ? 'kind-list__item-bd_show' : ''}}">
-                        <view class="weui-cells {{item.open ? 'weui-cells_show' : ''}}">
-                            <block wx:for="{{item.pages}}" wx:for-item="page" wx:key="*this">
-                                <navigator url="{{page.url}}" class="weui-cell weui-cell_access">
-                                    <view class="weui-cell__bd">{{page.name}}</view>
-                                    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-                                </navigator>
-                            </block>
-                        </view>
-                    </view>
+                  <view class="weui-cells {{item.open ? 'weui-cells_show' : ''}}">
+                      <block wx:for="{{item.pages}}" wx:for-item="page" wx:key="*this">
+                          <navigator url="{{page.url}}" class="weui-cell weui-cell_access">
+                              <view class="weui-cell__bd">{{page.name}}</view>
+                              <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                          </navigator>
+                      </block>
+                  </view>
                 </view>
             </block>
         </view>
      </view>
-
+     <view class="foot">
+     <view>图文来自「ONE · 一个」</view>
+     <view>By PFSIH</view>
+     </view>
+    
       
 
 </view>

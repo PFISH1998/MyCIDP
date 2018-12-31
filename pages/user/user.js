@@ -16,9 +16,18 @@ Page({
       {
         "page": "cicle", "list": [
           { "name": "我发布的", "url": "public/myPublic" },
-          { "name": "circle设置", "url": "" },
-          { "name": "其他", "url": "" }
-        ]}],
+          // { "name": "circle设置", "url": "" },
+          // { "name": "其他", "url": "" }
+        ]
+      },
+      {
+        "page": "", "list": [
+          { "name": "关于", "url": "/pages/notes/notes" },
+          // { "name": "circle设置", "url": "" },
+          // { "name": "其他", "url": "" }
+        ]
+      },
+    ],
     userInfo:{}
   },
 

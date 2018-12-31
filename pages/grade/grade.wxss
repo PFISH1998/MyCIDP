@@ -25,7 +25,7 @@
   justify-content: center;
   align-items: center;
   font-size: 9pt;
-  color: #C8C8CD;
+  color: #D9D9D9;
   width: 100%;
 }
 
@@ -62,7 +62,7 @@
 .th {
   width: 40%;
   justify-content: center;
-  background: #C8C8CD;
+  background: #D9D9D9;
   color: #fff;
   display: flex;
   height: 3rem;
@@ -71,7 +71,8 @@
 .th_1 {
   width: 100%;
   justify-content: center;
-  background: #586C94;
+  /* background: #586C94; */
+  background:#98a6ad;
   color: #fff;
   display: flex;
   height: 3rem;

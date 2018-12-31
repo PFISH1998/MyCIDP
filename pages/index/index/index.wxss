@@ -209,3 +209,16 @@ display:inline-block;
 overflow:hidden;
 margin-top: 30rpx;
 }
+.foot {
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  color: #999999;
+  font-size: 13px;
+}
+.foot text {
+  width: 100%;
+  color: #999999;
+  font-size: 13px;
+
+}

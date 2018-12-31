@@ -8,16 +8,15 @@ Page({
     userInfo: {},
     uid: null,
     lowhidden:false,
-
+    page:1,
+    nomore:"没有啦_(:з)∠)_，发条新的吧！",
+    nomorehid:true
   },
 
   postCircle:function(){
       wx.navigateTo({
-        url: '../post/post',
-        success: function(res) {},
-        fail: function(res) {},
-        complete: function(res) {},
-      })
+        url: '../post/post'
+        })
   },
 
   //事件处理函数
@@ -68,11 +67,8 @@ Page({
   onLoad: function () {
     console.log('onLoad')
     var that = this
-    var uid = wx.getStorageSync("openid")
-    that.setData({
-      userInfo: app.appData.userInfo,
-      uid: uid
-    })
+    that.data.userInfo =  app.appData.userInfo
+    that.data.uid = app.appData.uid
 
     wx.getSystemInfo({
       success: function (res) {
@@ -84,12 +80,12 @@ Page({
     });
 
     //调用应用实例的方法获取全局数据
-    this.refresh();
+    this.refresh(1);
   },
 
 
   upper: function () {
-    wx.showNavigationBarLoading()
+    // wx.showNavigationBarLoading()
     this.refresh();
     console.log("upper");
     setTimeout(function () { wx.hideNavigationBarLoading(); wx.stopPullDownRefresh(); }, 2000);
@@ -120,25 +116,29 @@ Page({
   },
 
   //使用本地 fake 数据实现刷新效果
-  refresh: function () {
+  refresh: function (page) {
     console.log("loaddata");
     var uid = this.data.uid
     var req_data = {
       "url":"circle/posts",
       "method": "GET",
       "data":{
-        "uid": uid
+        "uid": uid,
+        "page":page
       }
       
     }
     util.getData(req_data).then((circle) => {
-      console.log(circle)
-
+      // console.log(circle)
       var circle_data = circle;
       this.setData({
         circle: circle_data,
-        circle_length: circle_data.length
-      });
+        circle_length: circle_data.length,
+        lowhidden:true,
+        nomorehid:true
+      })
+      this.data.page += 1
+      wx.hideNavigationBarLoading()
     })
     
     
@@ -146,14 +146,40 @@ Page({
 
   //使用本地 fake 数据实现继续加载效果
   nextLoad: function () {
-    // var next = util.getNext();
-    console.log("continueload");
-    // console.log(next)
-    // var next_data = next;
-    // this.setData({
-    //   circle: this.data.circle.concat(next_data),
-    //   circle_length: this.data.circle_length + next_data.length
-    // });
+    console.log("continueload")
+    var uid = this.data.uid
+    var page = this.data.page
+    console.log(page, uid)
+    var req_data = {
+      "url": "circle/posts",
+      "method": "GET",
+      "data": {
+        "uid": uid,
+        "page": page
+      }
+    }
+    util.getData(req_data).then((circle) => {
+      console.log("next",circle)
+      var stop = circle.detail
+      if (stop == "Invalid page."){
+        console.log("null")
+        this.setData({
+          lowhidden: true,
+          nomorehid: false
+        })
+      }
+      else{
+        var next_data = circle
+        this.setData({
+          circle: this.data.circle.concat(next_data),
+          circle_length: this.data.circle_length + next_data.length
+        })
+        this.data.page = page + 1
+      }
+      this.setData({
+        lowhidden: true
+      })
+    })
   },
 
   onPullDownRefresh: function () {
@@ -166,14 +192,20 @@ Page({
     wx.showNavigationBarLoading()
     console.log("pulldownR")
     this.data.circle = []
-    this.refresh()
-    
+    this.data.page = 1
+    this.refresh(1)
   },
 
   // 加载更多
-  pullUpLoad: function (){
-    wx.hideNavigationBarLoading()
-
+  pullUpLoad: function (e){
+    if (!this.data.nomorehid) {
+      return
+    }
+    console.log("pullup")
+    this.setData({
+      lowhidden: false
+    })
+    this.nextLoad()
   }
 
 

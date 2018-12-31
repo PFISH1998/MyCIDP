@@ -3,7 +3,13 @@
 page{
     background-color: #F8F8F8;
     font-size: 16px;
-    font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+    /* font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif; */
+      font-family: "PingFangSC-Light",
+                 sans-serif,
+                 "Source Sans Pro",
+                 "Helvetica Neue",
+                 Helvetica,
+                 Arial;
 }
 
 .page__hd {
@@ -55,6 +61,7 @@ page{
 .flex-wrp{
   display: flex;
 }
+
 .flex-tab{
   flex-flow: row nowrap;
   justify-content: space-around;
@@ -87,7 +94,7 @@ page{
   color: #000;
 }
 .container .feed-item{
-  width: 760rpx;
+  width: 100%;
   padding: 0rpx 0rpx 0rpx;
   margin: 7rpx 0 6rpx 0;
   background: #ffffff;
@@ -95,8 +102,21 @@ page{
   border-bottom: 1px solid #eee;
   box-shadow: 0 2px 5px #eeeeee;
 }
+
+/* 置顶样式 */
+.container .feed-item-top{
+  width: 100%;
+  padding: 0rpx 0rpx 0rpx;
+  margin: 7rpx 0 6rpx 0;
+  background: #c9c8c8;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 2px 5px #eeeeee;
+}
+
+
 .container .feed-item .feed-source{
-  width: 760rpx;
+  width: 100%;
   left: 0;
   height: 70rpx;
 
@@ -240,6 +260,17 @@ tem .feed-source .avatar image{
   float: right;
   vertical-align: text-bottom;
 }
+
+.lasttime-top{
+  color: #E64340;
+  /* font-size: 28rpx; */
+  padding: 4rpx 70rpx 8rpx 0;
+  flex: 1;
+  font-size: 24rpx;
+  float: right;
+  vertical-align: text-bottom;
+}
+
 .delete{
   color: #E64340;
   /* font-size: 28rpx; */

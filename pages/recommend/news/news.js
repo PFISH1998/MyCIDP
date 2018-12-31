@@ -95,9 +95,9 @@ Page({
   onShareAppMessage: function () {
     var that = this
     return {
-      title: 'MyCIDP ' + that.data.news_content.title,
-      path: "pages/recommend/news/news?url="+that.data.url
-    }
+      title: 'MyCIDP ' + that.data.title,
+      path: "pages/recommend/news/news?url="+that.data.url+"&title="+that.data.title
+          }
   },
 
   imgview: function(e) {
