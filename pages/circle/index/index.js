@@ -133,11 +133,11 @@ Page({
       var circle_data = circle;
       this.setData({
         circle: circle_data,
-        circle_length: circle_data.length,
         lowhidden:true,
         nomorehid:true
       })
       this.data.page += 1
+      this.data.circle_length = circle_data.length,
       wx.hideNavigationBarLoading()
     })
     
@@ -172,8 +172,8 @@ Page({
         var next_data = circle
         this.setData({
           circle: this.data.circle.concat(next_data),
-          circle_length: this.data.circle_length + next_data.length
         })
+        this.data.circle_length = this.data.circle_length + next_data.length
         this.data.page = page + 1
       }
       this.setData({

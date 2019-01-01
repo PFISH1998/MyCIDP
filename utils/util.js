@@ -120,7 +120,6 @@ function getTime(e){
   var data = e.data
   
   var now = new Date()
-
   var minute = 1000*60;
   var hour = minute*60;
   var day = hour*24;
@@ -129,7 +128,7 @@ function getTime(e){
 
   for (var i=0; i<data.length; i++){
     var result;
-    var pub_time = new Date(data[i].pub_time)
+    var pub_time = strToDate(data[i].pub_time) // 解决 iOS 时间兼容问题
     var diffValue = now - pub_time
     if(diffValue < 0){
       return
@@ -176,6 +175,12 @@ function getTime(e){
 
 
 
+}
+
+function strToDate(dateObj){
+  dateObj = dateObj.replace(/T/g, ' ').replace(/\.[\d]{3}Z/, '').replace(/(-)/g, '/')
+  dateObj = dateObj.slice(0, dateObj.indexOf("."))
+  return new Date(dateObj)
 }
 
 
