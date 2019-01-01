@@ -69,13 +69,15 @@ function request(e){
     success: function(req){
       console.log("back",req)
       resolve(req.data)
+    },
+    fail: function (res) {
+      reject(res)
+      console.log("failed")
     }
   })
   })
 
 }
-
-
 
 
 
@@ -90,7 +92,7 @@ var req_data = {
 }
 
 getData(req_data).then((data) =>{
-  console.log("data", data)
+  // console.log("data", data)
   if (data.statusCode == 500){
     return
   }
@@ -114,7 +116,7 @@ function discoveryNext() {
 
 
 function getTime(e){
-  console.log('gettime', e)
+  // console.log('gettime', e)
   var data = e.data
   
   var now = new Date()

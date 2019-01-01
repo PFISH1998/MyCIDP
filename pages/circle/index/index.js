@@ -149,7 +149,7 @@ Page({
     console.log("continueload")
     var uid = this.data.uid
     var page = this.data.page
-    console.log(page, uid)
+    // console.log(page, uid)
     var req_data = {
       "url": "circle/posts",
       "method": "GET",
@@ -159,7 +159,7 @@ Page({
       }
     }
     util.getData(req_data).then((circle) => {
-      console.log("next",circle)
+      // console.log("next",circle)
       var stop = circle.detail
       if (stop == "Invalid page."){
         console.log("null")

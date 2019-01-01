@@ -37,29 +37,23 @@ App({
 
     // 登录
     console.log("wx.login")
-    wx.login({
-      success(res) {
-        if (res.code) {
-          code = res.code
-          // console.log(res)
-          //发起网络请求
-          var e = {
-            'url': 'circle/uid/',
-            'data': {
-              code: res.code
-            },
-            'method': 'POST'
-          }
-          util.request(e).then(function(data){
-            that.back(data)
-          })
+    var uid = wx.getStorageSync("openid")
+    console.log('uid', uid)
+    if(uid == ''){
+      this.login()
+    }else{
+      this.appData.uid = uid
+    }
+    var userinfo = wx.getStorageSync("userInfo")
+    if (userinfo == '' && null) {
+      console.log(null)
+      wx.navigateTo({
+        url: '/pages/login/auth/auth?code=' + code,
+      })
+    } else {
+      this.appData.userInfo = userinfo
+    }
 
-        }else {
-          console.log('登录失败！' + res.errMsg)
-          // wx.setStorageSync("userInfo", " ")
-        }
-      }
-    })
 
     updateManager.onUpdateFailed(function () {
       // 新的版本下载失败
@@ -76,7 +70,7 @@ App({
 
   back:function(data){
     console.log(data)
-    console.log("data_uid", data.data)
+    console.log("data_uid", data.data.openid)
     var status = data.code
     var uid = data.data
     if (status == 201) {
@@ -107,5 +101,31 @@ App({
     } else {
       this.appData.userInfo = userinfo
     }
+  },
+
+  login: function () {
+  var that = this
+    wx.login({
+      success(res) {
+        if (res.code) {
+          code = res.code
+          // console.log(res)
+          //发起网络请求
+          var e = {
+            'url': 'circle/uid/',
+            'data': {
+              code: res.code
+            },
+            'method': 'POST'
+          }
+          util.request(e).then(function (data) {
+            that.back(data)
+          })
+        } else {
+          console.log('登录失败！' + res.errMsg)
+          // wx.setStorageSync("userInfo", " ")
+        }
+      }
+    })
   }
 });

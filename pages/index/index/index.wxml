@@ -6,7 +6,7 @@
   <view class="home-mask">
     <view class="home-content">
       <text class="padder block">{{daily.day}}</text>
-      <text class="padder block m-b-sm home-content-title">{{daily.num}} | {{daily.mon}}</text>
+      <text class="padder block m-b-sm home-content-title">{{daily.mon}}   {{daily.year}}</text>
       <text class="padder block m-b-lg home-content-title">{{daily.content}}</text>
     </view>
   </view>
@@ -30,7 +30,7 @@
         </view>
      </view>
      <view class="foot">
-     <view>图文来自「ONE · 一个」</view>
+     <view>图文来自 Bing Search</view>
      <view>By PFSIH</view>
      </view>
     

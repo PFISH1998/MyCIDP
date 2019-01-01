@@ -26,9 +26,16 @@ Page({
       'method':'get'
     }
     util.request(e).then((data)=>{
-      console.log(data)
+      console.log("index",data)
       this.setData({
         daily:data.data
+      })
+    }).catch((fail)=>{
+      this.setData({
+        daily:{
+          'pic_url': '/pages/icon/index.jpg',
+          'content': '网络有点问题...'
+        }
       })
     })
 
@@ -38,7 +45,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**
