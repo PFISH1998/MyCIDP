@@ -26,9 +26,9 @@ Page({
       'method':'get'
     }
     util.request(e).then((data)=>{
-      console.log("index",data)
+      // console.log("index",data)
       this.setData({
-        daily:data.data
+        daily:data.data.data
       })
     }).catch((fail)=>{
       this.setData({
@@ -87,6 +87,8 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      title: '用 MyCIDP 查询课表、成绩，你甚至可以交流学习！',
+    }
   }
 })

@@ -68,7 +68,7 @@ function request(e){
     },
     success: function(req){
       console.log("back",req)
-      resolve(req.data)
+      resolve(req)
     },
     fail: function (res) {
       reject(res)

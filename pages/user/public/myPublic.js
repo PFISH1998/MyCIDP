@@ -30,7 +30,7 @@ Page({
     util.request(e).then((data)=>{
         console.log("e",data)
         this.setData({
-          circle: data,
+          circle: data.data,
           lowhidden: true
         })
       })

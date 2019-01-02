@@ -38,7 +38,7 @@ App({
     // 登录
     console.log("wx.login")
     var uid = wx.getStorageSync("openid")
-    console.log('uid', uid)
+    // console.log('uid', uid)
     if(uid == ''){
       this.login()
     }else{
@@ -119,7 +119,7 @@ App({
             'method': 'POST'
           }
           util.request(e).then(function (data) {
-            that.back(data)
+            that.back(data.data)
           })
         } else {
           console.log('登录失败！' + res.errMsg)

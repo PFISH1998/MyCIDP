@@ -106,7 +106,7 @@ Page({
       title: '拼命传送中',
     })
     util.getData(postData).then((data) => {
-      console.log("data", data)
+      // console.log("data", data)
       wx.hideLoading()
       // console.log("status", status)
       if (true) {

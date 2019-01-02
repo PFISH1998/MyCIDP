@@ -555,6 +555,8 @@ icon {
 }
 .weui-btn {
   margin-top: 15px;
+  margin-right:25px;
+  margin-left:25px
 }
 .weui-btn:first-child {
   margin-top: 0;

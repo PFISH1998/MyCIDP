@@ -76,6 +76,15 @@ Page({
           }
         }
         util.request(e).then((data)=>{
+          console.log("del", data)
+          var status = data.statusCode
+          if (status != 202){
+            wx.showToast({
+              title: '删除失败',
+              icon: 'none'
+            })
+            return
+          }
           wx.showToast({
             title: '删除成功',
           })

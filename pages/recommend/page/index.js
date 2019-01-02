@@ -62,10 +62,10 @@ Page({
       url: 'https://wx.tomwang.club/news/list?page_num=' + num + '&type=' + page_type,
       method: 'GET',
       success: function (req) {
-        console.log('backdata', req.data)
+        // console.log('backdata', req.data)
         var next_page = req.data.news_list.next_page
         if(page_type == 'xwzx'){
-          console.log(page_type)
+          // console.log(page_type)
           var news = req.data.news_list.news_list
           var return_news = that.data.news_list52.concat(news)
           that.setData({
@@ -139,7 +139,7 @@ Page({
       hidden: false,
     })
     var page_type = that.data.page_type
-    console.log("page", page_type)
+    // console.log("page", page_type)
     if (page_type == 'xwzx') {
       var num = that.data.page52
     }

@@ -3,6 +3,7 @@ var that = this
 Page({
   data: {
     userinfo: null,
+    page:'grade',
   },
 
   onLoad: function (options) {
@@ -31,7 +32,6 @@ Page({
           }else if (e.confirm) {
             that.setData({
               userinfo: null
-
             })
             app.appData.req_data = null
             app.appData.userinfo = null
@@ -63,19 +63,58 @@ Page({
         icon: 'loading',
         duration: 2000
       });
+      wx.request({
 
-      app.appData.userinfo = { sid: sid, pwd: pwd }
-      wx.setStorageSync('userinfo', app.appData.userinfo)
+        // url: 'http://127.0.0.1:8000/'+ that.data.page,
+        url: 'https://wx.tomwang.club/' + this.data.page,
+        method: 'post',
+        data: {
+          'sid': sid,
+          'pwd': pwd
+        },
 
-      console.log('userinfo', app.appData.userinfo)
-      console.log('缓存', wx.getStorageSync('userinfo'))
-      
-      if(true){
-        wx.showToast({
-          title: '绑定成功',
-          icon: 'success'
-        })
-      }
+        success: function (req) {
+          console.log('服务器数据', req)
+          wx.hideLoading()
+          var return_data = req.data.data
+          // return_data = that.cleanSpelChar(req.data)
+          var statusCode = req.data.code
+          var info = req.data.info
+          if (info == null) {
+            info = "服务器未响应"
+          }
+          console.log('code', statusCode)
+          if (statusCode != 200) {
+            wx.showModal({
+              title: "出错了！",
+              content: info + "；code:" + statusCode,
+            })
+            return
+          } else {
+            app.appData.userinfo = { sid: sid, pwd: pwd }
+            wx.setStorageSync('userinfo', app.appData.userinfo)
+            console.log('userinfo', app.appData.userinfo)
+            wx.showToast({
+              title: '绑定成功',
+              icon: 'success'
+            })
+          }
+        },
+        fail: function (e) {
+          wx.hideLoading()
+          console.log(e)
+          wx.showModal({
+            title: '抱歉',
+            content: '某些地方出错了,待会再试试吧！',
+          })
+        },
+        complete: function (e) {
+          var that = this
+          that.setData({
+            buthidden: false
+          })
+        }
+      })
     }
   },
 
