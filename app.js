@@ -4,6 +4,7 @@ var code = null
 App({
 
   appData: {
+    start_date: '2019/2/25',
     userinfo: null,
     userInfo: {},
     uid:null,
@@ -59,7 +60,7 @@ App({
       // 新的版本下载失败
     })
 
-    var start_time = new Date('2018/9/3').getTime()
+    var start_time = new Date(this.appData.start_date).getTime()
     var date = new Date().getTime()
     this.appData.weeks =  parseInt(((date - start_time) / 1000 / 3600 / 24 / 7)+1)
 
