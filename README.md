@@ -1,10 +1,11 @@
 
 # MyCIDP 微信小程序 #
 
-* 本小程序的查询功能只适用于 防灾科技学院 在校生使用
-* 微信直接搜索“MyCIDP” 或 扫描小程序码即可使用
+#### 本小程序的查询功能只适用于 防灾科技学院 在校生使用 ####
+#### 微信直接搜索“MyCIDP” 或 扫描小程序码即可使用 ####
 
 <img src="https://github.com/PFISH1998/MyCIDP/blob/master/pic/gh_37e12839e336_1280.jpg" width="200" />
+
 
 * 首页图片及文字来源于Bing
 * 相关问题可联系 perry1998@outlook.com
