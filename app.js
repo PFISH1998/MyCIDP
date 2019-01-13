@@ -71,15 +71,15 @@ App({
 
   back:function(data){
     console.log(data)
-    console.log("data_uid", data.data.openid)
+    console.log("data_uid", data.data)
     var status = data.code
     var uid = data.data
     if (status == 201) {
       wx.setStorage({
         key: 'openid',
-        data: uid.openid,
+        data: uid,
       })
-      this.appData.uid = uid.openid
+      this.appData.uid = uid
       this.appData.userType = data.data.type
     }
     if (status == 202) {
@@ -91,6 +91,13 @@ App({
       wx.setStorageSync("userInfo", " ")
       wx.navigateTo({
         url: '/pages/login/auth/auth?code=' + code,
+      })
+    }
+    if(status == 300){
+        this.appData.uid = uid
+        wx.setStorage({
+            key: 'openid',
+            data: uid
       })
     }
     var userinfo = wx.getStorageSync("userInfo")
@@ -110,7 +117,7 @@ App({
       success(res) {
         if (res.code) {
           code = res.code
-          // console.log(res)
+        //   console.log(res)
           //发起网络请求
           var e = {
             'url': 'circle/uid/',
