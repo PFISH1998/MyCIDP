@@ -34,7 +34,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 15,
+			"current": 14,
 			"list": [
 				{
 					"id": -1,
@@ -132,10 +132,10 @@
 					"scene": "1012"
 				},
 				{
-					"id": -1,
+					"id": 14,
 					"name": "课表带参数2",
-					"pathName": "pages/table/table",
-					"query": "page=share&data=[[{'FullName': '房庆丽', 'LUName': '素描与色彩', 'Campus': '南校', 'Building': '文德楼', 'Classroom': '画室', 'DelymethodName': '讲授', 'Remark': '1-8周 周一  1-4节  房庆丽  文德楼画室', 'time_spend': 400, 'course_index': 0, 'color': 3}, {'FullName': '赵会朋', 'LUName': '马克思主义基本原理概论', 'Campus': '南校', 'Building': '承基楼', 'Classroom': '6#6j23', 'DelymethodName': '讲授', 'Remark': '1-16周周一 5-6节 赵会朋 承基楼6#6j23', 'time_spend': 200, 'course_index': 2, 'color': 2}, {'FullName': '王姗', 'LUName': '新闻写作', 'Campus': '南校', 'Building': '文德楼', 'Classroom': '5#5s16', 'DelymethodName': '讲授', 'Remark': '1-16周 周一  7-8节  周二  5-6节  王姗  文德楼5#5s16', 'time_spend': 200, 'course_index': 3, 'color': 6}, {'FullName': '孔雅萌', 'LUName': '职业生涯与发展规划', 'Campus': '南校', 'Building': '明略楼', 'Classroom': '4#105', 'DelymethodName': '讲授', 'Remark': '1-16周 周一  9-10节  孔雅萌  明略楼4#105', 'time_spend': 200, 'course_index': 4, 'color': 12}], [{'FullName': '王丽娟', 'LUName': '大学英语Ⅲ', 'Campus': '南校', 'Building': '承基楼', 'Classroom': '6#1116', 'DelymethodName': '讲授', 'Remark': '1-15单周  周二  3-4节  王丽娟  承基楼6#1116', 'time_spend': 200, 'course_index': 1, 'color': 8, 'FullName2': '王丽娟', 'LUName2': '大学英语Ⅲ', 'Building2': '明略楼', 'Classroom2': '4#106', 'DelymethodName2': '讲授', 'Remark2': '2-16双周  周二  3-4节  王丽娟  明略楼4#106'}, {'FullName': '王姗', 'LUName': '新闻写作', 'Campus': '南校', 'Building': '文德楼', 'Classroom': '5#5s16', 'DelymethodName': '讲授', 'Remark': '1-16周 周一  7-8节  周二  5-6节  王姗  文德楼5#5s16', 'time_spend': 200, 'course_index': 2, 'color': 6}, {'FullName': '任杰', 'LUName': '美学基础', 'Campus': '南校', 'Building': '文德楼', 'Classroom': '5#5n21', 'DelymethodName': '讲授', 'Remark': '1-16周 周二  9-10节  任杰  文德楼5#5n21', 'time_spend': 200, 'course_index': 4, 'color': 5}], [{'FullName': '孙振军', 'LUName': '电脑图文设计', 'Campus': '南校', 'Building': '文德楼', 'Classroom': '5#5n41', 'DelymethodName': '讲授', 'Remark': '1-16周 周三  1-4节  孙振军  文德楼5#5n41', 'time_spend': 400, 'course_index': 0, 'color': 1}, {'FullName': '李幸', 'LUName': '平面与色彩构成', 'Campus': '南校', 'Building': '文德楼', 'Classroom': '画室2', 'DelymethodName': '讲授', 'Remark': '1-16周 周三  5-6节  李幸  文德楼画室2', 'time_spend': 200, 'course_index': 2, 'color': 6}], [{'FullName': '李幸', 'LUName': '平面与色彩构成', 'Campus': '南校', 'Building': '文德楼', 'Classroom': '画室2', 'DelymethodName': '讲授', 'Remark': '1-16周 周四  3-4节  李幸  文德楼画室2', 'time_spend': 200, 'course_index': 1, 'color': 8}], [{'FullName': '赵会朋', 'LUName': '马克思主义基本原理概论', 'Campus': '南校', 'Building': '文德楼', 'Classroom': '5#5j24', 'DelymethodName': '讲授', 'Remark': '2-16周隔周周五 1-2节 赵会朋 文德楼5#5j24', 'time_spend': 200, 'course_index': 0, 'color': 3}, {'FullName': '李睿恒', 'LUName': '健美操(秋)', 'Campus': None, 'Building': None, 'Classroom': None, 'DelymethodName': '讲授', 'Remark': '1-16周周五 3-4节 李睿恒 ', 'time_spend': 200, 'course_index': 1, 'color': 7}], [], [{'FullName': '李晓玲', 'LUName': '素描与色彩', 'Campus': '南校', 'Building': '文德楼', 'Classroom': '画室', 'DelymethodName': '讲授', 'Remark': '9-16周 周日  5-8节  李晓玲  文德楼画室', 'time_spend': 400, 'course_index': 2, 'color': 12}, {'FullName': None, 'LUName': '书法鉴赏', 'Campus': None, 'Building': None, 'Classroom': None, 'DelymethodName': '讲授', 'Remark': '1-16周周日 9-10节  ', 'time_spend': 200, 'course_index': 4, 'color': 2}]]",
+					"pathName": "pages/grade/grade",
+					"query": "",
 					"scene": "1012"
 				},
 				{
@@ -146,9 +146,9 @@
 					"scene": "1008"
 				},
 				{
-					"id": -1,
-					"name": "pub",
-					"pathName": "pages/user/public/myPublic",
+					"id": 16,
+					"name": "post",
+					"pathName": "pages/circle/post/post",
 					"query": "",
 					"scene": "1007"
 				},

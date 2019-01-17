@@ -67,7 +67,7 @@ Page({
       wx.request({
         
         // url: 'http://127.0.0.1:8000/'+ that.data.page,
-        url: 'https://wx.tomwang.club/' + that.data.page,     
+        url: 'https://wx.pfish.xyz/' + that.data.page,     
         method: 'post',
         data:{
           'sid': sid,

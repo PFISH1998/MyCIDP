@@ -8,15 +8,18 @@
  font-size: 17px;
  padding: 5px
 }
+
 .image{
  width:31%;
  height: 100px;
- padding: 2px
+ /* padding: 2px */
 }
+
 .moment_img{
  width: 98px;
  height: 98px;
 }
+
 .image_content{
  width: 100%;
  display: flex;

@@ -1,9 +1,2 @@
-<view class="page">
-    <view class="page__hd">
-        <view class="page__title">欢迎分享 MyCIDP 小程序给你的朋友</view>
-        <text></text>
-        <view class="page__desc" wx:for="{{notes}}" wx:key="item">{{item}}</view>
-    </view>
-    
-    </view>
-    <image  class="weui-article__img" src="{{QR}}" mode="aspectFit" style="height: 200px" />
+<!--pages/share/share.wxml-->
+<text>pages/share/share.wxml</text>
