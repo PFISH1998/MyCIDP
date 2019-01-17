@@ -21,7 +21,7 @@
 
         <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
         <view class="td">{{item.Name}}</view>
-        <view class="td">{{item.PropertyName}}</view>
+        <view class="td">{{item.index}}</view>
         <view class="td">{{item.maxmark}}/{{item.minmark}}</view>
         <view class="td">{{item.MarkValue}}</view>
         <view class="td">{{item.CP}}</view>
@@ -29,7 +29,7 @@
         
         <view class="tr" wx:else>
         <view class="td">{{item.Name}}</view>
-        <view class="td">{{item.PropertyName}}</view>
+        <view class="td">{{item.index}}</view>
         <view class="td">{{item.maxmark}}/{{item.minmark}}</view>
         <view class="td">{{item.MarkValue}}</view>
         <view class="td">{{item.CP}}</view>

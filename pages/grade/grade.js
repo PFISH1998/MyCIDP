@@ -25,15 +25,19 @@ Page({
       wx.redirectTo({
         url: '../login/login',
       })
+
     }else{
       var sid = app.appData.userinfo.sid
       var pwd = app.appData.userinfo.pwd
     }
+
     console.log('全局', app.appData.req_data)
+    var length = app.appData.req_data.length
     this.setData({
       grade_data: app.appData.req_data,
+      activeIndex: length - 1
     })
-    var year = this.data.grade_data[0].SemesterYear
+    var year = this.data.grade_data[length - 1].SemesterYear
     this.setTerm(year)
 
     var that = this;
@@ -57,18 +61,12 @@ Page({
   },
 
   tabClick: function (e) {
-    // console.log(e)
     var year = e.currentTarget.dataset.set
     this.setTerm(year)
-    // console.log(year)
     this.setData({
       sliderOffset: e.currentTarget.offsetLeft,
       activeIndex: e.currentTarget.id
     });
-  },
-
-  onPullDownRefresh:function(options){
-    
   },
 
   setTerm: function(year){

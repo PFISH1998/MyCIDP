@@ -759,6 +759,7 @@ icon {
 }
 .weui-panel {
   background-color: #FFFFFF;
+  /* background-color: #1296db; */
   margin-top: 10px;
   position: relative;
   overflow: hidden;
@@ -922,7 +923,7 @@ icon {
   z-index: 500;
   top: 0;
   width: 100%;
-  border-bottom: 1rpx solid #CCCCCC;
+  /* border-bottom: 1rpx solid #CCCCCC; */
 }
 .weui-navbar__item {
   position: relative;
@@ -935,7 +936,8 @@ icon {
   font-size: 0;
 }
 .weui-navbar__item.weui-bar__item_on {
-  color: #1AAD19;
+  /* color: #1AAD19; */
+  color: #1296db;
 }
 .weui-navbar__slider {
   position: absolute;
@@ -944,7 +946,7 @@ icon {
   bottom: 0;
   width: 6em;
   height: 3px;
-  background-color: #1AAD19;
+  background-color: #1296db;
   -webkit-transition: -webkit-transform .3s;
   transition: -webkit-transform .3s;
   transition: transform .3s;

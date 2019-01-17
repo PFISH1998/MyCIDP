@@ -22,20 +22,25 @@
           </view>
 
               
-              <view class="weui-tab__panel">
-                  <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+              <view class="weui-tab__panel" >
+                <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+                  <import src="../templates/grade.wxml"/>
+                  <template is="grade" data="{{year_data:year_data}}"/>
+                </view>
+                <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
                     <import src="../templates/grade.wxml"/>
                     <template is="grade" data="{{year_data:year_data}}"/>
-                  </view>
-
-
-                  <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
-                      <import src="../templates/grade.wxml"/>
-                      <template is="grade" data="{{year_data:year_data}}"/>
-                  </view>
-
-              <!-- </view> -->
-          </view>
+                </view>
+                <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+                    <import src="../templates/grade.wxml"/>
+                    <template is="grade" data="{{year_data:year_data}}"/>
+                </view>
+                <view class="weui-tab__content" hidden="{{activeIndex != 3}}">
+                    <import src="../templates/grade.wxml"/>
+                    <template is="grade" data="{{year_data:year_data}}"/>
+                </view>
+              </view>
+          <!-- </view> -->
       </view>
     </view>
 </view>
