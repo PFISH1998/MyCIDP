@@ -7,9 +7,9 @@
   <image class="moment_img" src="{{item}}"></image>
  </view>
  
- <view class='image' style='display:{{hideAdd?"none":"block"}}'>
+ <!-- <view class='image' style='display:{{hideAdd?"none":"block"}}'>
   <image bindtap="chooseimage" class="moment_img" src='../../icon/add.png'></image>
- </view>
+ </view> -->
 
  </view>
   <text class="page__desc">{{content_length}} / 120</text>
