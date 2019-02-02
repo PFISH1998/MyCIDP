@@ -28,6 +28,23 @@ var index_next = require('../data/data_index_next.js')
 // var discovery = require('../data/data_discovery.js')
 // var discovery_next = require('../data/data_discovery_next.js')
 
+
+
+function upLoadFile(e){
+  wx.uploadFile({
+    url: '',
+    filePath: '',
+    name: '',
+    header: {},
+    formData: {},
+    success: function(res) {},
+    fail: function(res) {},
+    complete: function(res) {},
+  })
+}
+
+
+
 function getData(e) {
   var url = e.url
   var data = e.data
