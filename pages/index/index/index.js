@@ -102,9 +102,27 @@ Page({
 
 // 
   longTap: function(e){
+    var that = this
+    console.log(that.data)
     wx.showModal({
-      title: '是否下载',
-      content: '',
+      title: '下载图片',
+      content: '是否下载首页图？',
+      success:function(){
+        wx.downloadFile({
+          url: that.data.daily.pic_url,
+          success: function(res){
+            wx.saveImageToPhotosAlbum({
+              filePath: res.tempFilePath,
+              success(result) {
+                console.log(result)
+              }
+            })
+        wx.showToast({
+          title: '下载成功！',
+        })
+          }  
+        })  
+      }
     })
 
   },
