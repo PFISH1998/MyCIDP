@@ -43,7 +43,26 @@ function upLoadFile(e){
   })
 }
 
-
+// 下载图片
+function downLoadFile(e){
+  console.log(e)
+  wx.downloadFile({
+    url: e.url,
+    header: {},
+    success: function (res) {
+      wx.saveImageToPhotosAlbum({
+        filePath: res.tempFilePath,
+        success() {
+          wx.showToast({ title: '下载成功！', })
+        }
+      })
+    },
+    fail: function (res) {
+      wx.showToast({ title: '下载失败', icon: fail })
+     },
+    complete: function (res) { },
+  })
+}
 
 function getData(e) {
   var url = e.url
@@ -207,7 +226,7 @@ module.exports.getData2 = getData2;
 module.exports.getNext = getNext;
 module.exports.getDiscovery = getDiscovery;
 module.exports.discoveryNext = discoveryNext;
-
+module.exports.downLoadFile = downLoadFile;
 module.exports.request = request
 
 
