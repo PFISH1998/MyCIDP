@@ -108,7 +108,6 @@ Page({
       content: '是否下载首页图？',
       success:function(res){
         var pic_url = that.data.daily.pic_url
-        console.log(pic_url)
         if (res.confirm) {
         var e = {url: pic_url}
         util.downLoadFile(e)
