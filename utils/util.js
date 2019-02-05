@@ -20,49 +20,13 @@ module.exports = {
   formatTime: formatTime
 };
 
-var test_url = "http://127.0.0.1:8000/"
-// var test_url = "https://wx.pfish.xyz/"
+// var test_url = "http://127.0.0.1:8000/"
+var test_url = "https://wx.pfish.xyz/"
 
 var index = require('../data/index_data.js')
 var index_next = require('../data/data_index_next.js') 
 // var discovery = require('../data/data_discovery.js')
 // var discovery_next = require('../data/data_discovery_next.js')
-
-
-
-function upLoadFile(e){
-  wx.uploadFile({
-    url: '',
-    filePath: '',
-    name: '',
-    header: {},
-    formData: {},
-    success: function(res) {},
-    fail: function(res) {},
-    complete: function(res) {},
-  })
-}
-
-// 下载图片
-function downLoadFile(e){
-  console.log(e)
-  wx.downloadFile({
-    url: e.url,
-    header: {},
-    success: function (res) {
-      wx.saveImageToPhotosAlbum({
-        filePath: res.tempFilePath,
-        success() {
-          wx.showToast({ title: '下载成功！', })
-        }
-      })
-    },
-    fail: function (res) {
-      wx.showToast({ title: '下载失败', icon: fail })
-     },
-    complete: function (res) { },
-  })
-}
 
 function getData(e) {
   var url = e.url
@@ -226,7 +190,7 @@ module.exports.getData2 = getData2;
 module.exports.getNext = getNext;
 module.exports.getDiscovery = getDiscovery;
 module.exports.discoveryNext = discoveryNext;
-module.exports.downLoadFile = downLoadFile;
+
 module.exports.request = request
 
 

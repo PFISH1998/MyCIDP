@@ -44,22 +44,20 @@ Page({
     util.request(e)
   },
 
-  // 评论
-
   bindDetialTap: function (e) {
-    console.log('comment')
+    console.log('detail')
     // console.log(e)
-    // wx.showToast({
-    //   title: '评论功能暂未开放',
-    //   icon:'none'
-    // })
-    var circle_id = this.data.circle.id
-    var user = this.data.circle.post_user
-    wx.navigateTo({
-      url: '../post/post?type=comment&circle_id='+ circle_id + '&user='+ user
+    wx.showToast({
+      title: '评论功能暂未开放',
+      icon:'none'
     })
+    // var id = e.currentTarget.dataset.id
+    // var circle_detail = this.data.circle
+    // console.log(this.data.circle[id])
+    // wx.navigateTo({
+    //   url: '../detail/detail?circle_id=' + JSON.stringify(circle_detail[id])
+    // })
   },
-  
   del:function(){
     console.log(this.data.circle)
     var circle = this.data.circle
@@ -106,19 +104,18 @@ Page({
   onLoad: function (options) {
     console.log("onload",JSON.parse(options.circle_id))
     // JSON.stringify(options)
-    var circle = JSON.parse(options.circle_id)
-    // var id = options.circle_id
+    var id = JSON.parse(options.circle_id)
     var uid = app.appData.uid
-    console.log(circle)
+    console.log(uid)
     var userType = app.appData.userType
     console.log(userType)
-    if(uid == circle.uid || userType == 'admin'){
+    if(uid == id.uid || userType == 'admin'){
       this.setData({
         del:false
       })
     }
     this.setData({
-      circle: circle.circle,
+      circle: id,
     })
 
   },

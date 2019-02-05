@@ -34,7 +34,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 14,
 			"list": [
 				{
 					"id": -1,
@@ -51,9 +51,9 @@
 				},
 				{
 					"id": 2,
-					"name": "detail",
-					"pathName": "pages/circle/detail/detail",
-					"query": "circle_id={   \"circle\": {     \"comments_count\": 0,     \"content\": \"最新版本已经发布，成绩查询可以看到最高/最低分，在这里你可以直接发布消息，反馈相关问题\",     \"dis_like_count\": 0,     \"head_pic\": \"https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKX20gJ2YDebCUkqXCb4U2cR4icFeYSMJSYcUjoAKBrvwr4SdOCHVoN9uIVibNUrvESXcomU7MT4ezQ/132\",     \"id\": 164,     \"is_like\": false,     \"like_count\": 19,     \"pass_time\": \"1月前\",     \"post_user\": \"Pengyu\",     \"pub_time\": \"2019-01-02 11:55:43\",     \"type\": \"top\",     \"uid\": \"ojcMk0aZqha49viA5p5fsPh4x71A\"   },   \"detail\": null,   \"uid\": \"\",   \"del\": false,   \"__webviewId__\": 16 }",
+					"name": "newsl",
+					"pathName": "pages/recommend/page/index",
+					"query": "",
 					"scene": "1007"
 				},
 				{

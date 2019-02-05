@@ -9,42 +9,25 @@ Page({
    */
   data: {
     notes: ['1、请遵守相关法律法规，文明交流，违者会被删除或者封号。', '2、评论和发布图片功能暂未开放，感谢理解。'],
-    post_content: '分享动态',
+
     img_url: [],
     content: '',
     content_length: 120,
     userInfo: {},
     hasUserInfo: false,
-    circle_id: null,
     
   },
 
   onLoad: function (options) {
-    var title = '发布'
-    console.log("post",options)
     var userInfo = wx.getStorageSync("userInfo")
-    if (userInfo == '') {
+    if(userInfo == ''){
       wx.redirectTo({
         url: '../../../pages/login/auth/auth',
       })
     }
-
-    var type = options.type
-    if (type == 'comment'){
-      title = '评论'
-      this.setData({
-        circle_id: options.circle_id,
-        post_content: ' 发表评论 @ ' + options.user + ':'
-      })
-    }
-    wx.setNavigationBarTitle({
-      title: title,
-    })
-
     this.setData({
       userInfo: userInfo,
       hasUserInfo: true
-
     })
   },
 
@@ -87,7 +70,6 @@ Page({
       }
     })
   },
-
 
   //发布按钮事件
   send: function () {

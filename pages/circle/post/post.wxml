@@ -1,15 +1,15 @@
 
 
 <view class='page'>
- <textarea class='text' bindinput="input" placeholder="{{ post_content }}" auto-height/>
+ <textarea class='text' bindinput="input" placeholder="分享动态" auto-height/>
  <view class="image_content">
  <view class='image' wx:for="{{img_url}}">
   <image class="moment_img" src="{{item}}"></image>
  </view>
  
- <!-- <view class='image' style='display:{{hideAdd?"none":"block"}}'>
+ <view class='image' style='display:{{hideAdd?"none":"block"}}'>
   <image bindtap="chooseimage" class="moment_img" src='../../icon/add.png'></image>
- </view> -->
+ </view>
 
  </view>
   <text class="page__desc">{{content_length}} / 120</text>
