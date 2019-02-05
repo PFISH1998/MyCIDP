@@ -3,7 +3,6 @@
 <view class="feed-item" >
             <view class="chat-item flex-wrp">
             
-
             <view class="chat-content flex-item" data-id="{{idx}}">
              <view class="avatar flex-item">
                 
@@ -39,4 +38,26 @@
                         </view>
                      </view>
             </view>
+
+
+
+                <block wx:for='{{ comments }}' wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
+        <view class="feed-item">
+            <view class="chat-item flex-wrp">
+            <view class="avatar flex-item">
+              <image src="https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKX20gJ2YDebCUkqXCb4U2cR4icFeYSMJSYcUjoAKBrvwr4SdOCHVoN9uIVibNUrvESXcomU7MT4ezQ/132"></image>
+            </view>
+            <view class="chat-content flex-item"  bindtap="bindDetialTap" data-id="{{idx}}">
+              <view class="chat-source">
+                <text class="chatmate">{{ circle.post_user }}</text>
+                <text class="lasttime">{{ circle.pass_time }}</text>
+              </view>
+              <text class="chat-txt">{{ circle.content }}</text>
+             </view>
+         </view>
+
+        </view>
+    </block>
+
+
     </view>

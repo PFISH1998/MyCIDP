@@ -110,6 +110,7 @@ Page({
     }
     var uid = app.appData.uid
     console.log(uid)
+  
     var postData = {
       "url": "circle/posts",
       "data":{
@@ -120,9 +121,11 @@ Page({
       "method":"POST"
       
     }
+
     wx.showLoading({
       title: '拼命传送中',
     })
+
     util.getData(postData).then((data) => {
       // console.log("data", data)
       wx.hideLoading()

@@ -10,7 +10,8 @@ Page({
     circle: null,
     detail:null,
     uid:'',
-    del:true
+    del:true,
+    comments: 3
 
   },
 
@@ -59,7 +60,7 @@ Page({
       url: '../post/post?type=comment&circle_id='+ circle_id + '&user='+ user
     })
   },
-  
+
   del:function(){
     console.log(this.data.circle)
     var circle = this.data.circle

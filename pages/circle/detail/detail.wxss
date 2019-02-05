@@ -68,6 +68,8 @@
   flex: 1;
 }
 .chat-item .chat-content{
+  margin-right:5px;
+  margin-left:5px;
   flex: 4;
   text-align: left;
 }
@@ -107,6 +109,8 @@
   font-size: 29rpx;
   line-height: 35rpx;
   padding:20rpx 0 10rpx 30rpx;/*更改*/
+  /* margin-right:5px;
+  margin-left:5px; */
 
 }
 
