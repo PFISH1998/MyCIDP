@@ -1,7 +1,7 @@
 
 
 <view class='page'>
- <textarea class='text' bindinput="input" placeholder="分享动态" auto-height/>
+ <textarea class='text' bindinput="input" placeholder="{{ post_content }}" auto-height/>
  <view class="image_content">
  <view class='image' wx:for="{{img_url}}">
   <image class="moment_img" src="{{item}}"></image>
