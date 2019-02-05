@@ -1,5 +1,5 @@
 <view class="body">
-<view class="container bg">
+<view class="container bg" bindlongtap="longTap" bindtouchstart="touchStart" bindtouchend="touchEnd">
   <view class="home-img">
         <image mode="aspectFill" src="{{daily.pic_url}}" alt="" />
   </view>

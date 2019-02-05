@@ -10,7 +10,15 @@ Page({
         id: 'sreach',
         name: '查询',
         open: true,
-        pages: [{ url: '../../table/table', name: '课表' }, { url: '../../login/login?page=grade', name: '成绩' }, { url: '../../calendar/calendar', name: '校历' }]}],
+        pages: [{ url: '../../table/table', name: '课表' }, { url: '../../login/login?page=grade', name: '成绩' }, { url: '../../calendar/calendar', name: '校历' }]}
+    ],
+
+    // 触摸开始时间
+    touchStartTime: 0,
+    // 触摸结束时间
+    touchEndTime: 0,
+    // 最后一次单击事件点击发生时间
+    lastTapTime: 0, 
 
     daily:{}
   },
@@ -90,5 +98,37 @@ Page({
     return {
       title: '用 MyCIDP 查询课表、成绩，你甚至可以交流学习！',
     }
-  }
+  },
+
+// 
+  longTap: function(e){
+    var that = this
+    wx.showModal({
+      title: '保存图片',
+      content: '是否下载首页图？',
+      success:function(res){
+        var pic_url = that.data.daily.pic_url
+        if (res.confirm) {
+        var e = {url: pic_url}
+        util.downLoadFile(e)
+      }
+      if(res.cancel) {
+        return
+      }
+    }
+    })
+
+  },
+
+  /// 按钮触摸开始触发的事件
+  touchStart: function (e) {
+    this.touchStartTime = e.timeStamp
+  },
+
+  /// 按钮触摸结束触发的事件
+  touchEnd: function (e) {
+    this.touchEndTime = e.timeStamp
+  },
+
+
 })
