@@ -43,10 +43,28 @@
     </view>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </view>
+
+
 <block wx:for='{{ comments }}' wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
-        <view class="feed-item">
+        <!-- <view class="feed-item"> -->
             <view class="chat-item flex-wrp">
-            <view class="avatar flex-item-commments">
+            <view class="avatar-commments flex-item-commments">
               <image src="{{ item.head_pic }}"></image>
             </view>
             <view class="chat-content flex-item"  bindtap="bindDetialTap" data-id="{{idx}}">
@@ -58,26 +76,8 @@
              </view>
          </view>
 
-        </view>
+        <!-- </view> -->
     </block>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            </view>
-
-
 
                 
 

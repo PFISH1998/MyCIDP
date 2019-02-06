@@ -95,7 +95,7 @@ page{
 }
 
 .container .feed-item{
-  width: 100%;
+  width: 750rpx;
   padding: 0rpx 0rpx 0rpx;
   margin: 7rpx 0 6rpx 0;
   background: #ffffff;
@@ -105,7 +105,7 @@ page{
 }
 
 .container .feed-item-comment{
-  width: 100%;
+  width: 725rpx;
   padding: 0rpx 0rpx 0rpx;
   margin: 7rpx 0 6rpx 0;
   background: #ffffff;
@@ -127,7 +127,7 @@ page{
 
 
 .container .feed-item .feed-source{
-  width: 100%;
+  width: 725rpx;
   left: 0;
   height: 70rpx;
 

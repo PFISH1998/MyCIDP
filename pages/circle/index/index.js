@@ -53,7 +53,7 @@ Page({
 
   bindDetialTap: function (e) {
     console.log('detail')
-    // console.log(e)
+    console.log(e)
     var id = e.currentTarget.dataset.id
     var circle_detail = this.data.circle
     console.log(this.data.circle[id])

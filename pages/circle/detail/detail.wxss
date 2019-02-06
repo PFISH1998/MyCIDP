@@ -1,10 +1,10 @@
 /**index.wxss**/
 
 .container{
-  height: 1500rpx;
+  /* height: 1500rpx; */
 }
 .container .search{
-  width: 735rpx;
+  width: 100%;
   height: 65rpx;
   padding: 12.5rpx 0 12.5rpx 15rpx;
   background: #2A8CE5;
@@ -54,7 +54,7 @@
 
 
 .chat-item{
-  width: 725rpx;
+  width: 750rpx;
   background: #ffffff;
   padding: 25rpx 25rpx 25rpx 25rpx;
   border-bottom: solid 1px #ebebeb;
@@ -75,12 +75,23 @@
   flex: 1;
 }
 
+.chat-item .avatar-commments{
+  /* flex: 1; */
+  margin-right:5px;
+  margin-left:5px;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 60rpx;
+}
+
+
 .chat-item .chat-content{
   margin-right:5px;
   margin-left:5px;
   flex: 4;
   text-align: left;
 }
+
 .chat-item .chat-content text{
   /*display: block;*/
 }
@@ -107,17 +118,35 @@
   padding: 20rpx 0 0rpx 20rpx;
   /* float: left; */
 }
+
+.chat-item .chat-content .chat-source-comments .chatmate{
+  font-size: 27rpx;
+  color: #000000;
+  text-align: left;
+  padding: 20rpx 0 0rpx 0rpx;
+  /* float: left; */
+}
+
 .chat-item .chat-content .chat-source .lasttime{
   flex: 1;
   font-size: 22rpx;
   float: right;
   vertical-align: text-bottom;
 }
+
+.chat-item .chat-content .chat-source-comments .lasttime{
+  flex: 1;
+  font-size: 22rpx;
+  float: right;
+  vertical-align: text-bottom;
+}
+
 .chat-item .chat-content .chat-txt{
   display: block;
   color: #000000;
   font-size: 29rpx;
   line-height: 35rpx;
+  padding: 2rpx 10rpx 10rpx 15rpx;
 
 }
 .chat-item .chat-content .detail-txt{
@@ -125,9 +154,9 @@
   color: #000000;
   font-size: 29rpx;
   line-height: 35rpx;
-  padding:20rpx 0 10rpx 30rpx;/*更改*/
-  /* margin-right:5px;
-  margin-left:5px; */
+  padding:10rpx 10rpx 10rpx 10rpx;/*更改*/
+  margin-right:5px;
+  margin-left:5px;
 
 }
 

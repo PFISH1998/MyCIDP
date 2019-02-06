@@ -161,6 +161,9 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
+    console.log("pull",this.data.circle)
+    this.getCircle()
+    this.getComments()
 
   },
 
@@ -194,6 +197,24 @@ Page({
       })
     })
 
+  },
+
+  getCircle: function(){
+    var circle_id = this.data.circle.id
+    var uid = app.appData.uid
+    var e = {
+      url: 'circle/posts/' + circle_id ,
+      method: 'GET',
+      data: {
+        uid: uid
+      }
+    }
+    util.getData(e).then((circle) => {
+      this.setData({
+        circle: circle,
+      })
+      wx.stopPullDownRefresh()
+    })
   }
 
 
