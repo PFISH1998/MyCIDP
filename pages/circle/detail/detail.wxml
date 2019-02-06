@@ -37,27 +37,49 @@
                             <a class="num">{{circle.comments_count}}</a>
                         </view>
                      </view>
-            </view>
+                        <view hidden='{{lowhidden}}' class="weui-loadmore" bindchange='loadingChangge'>
+              <view class="weui-loading"></view>
+              <view class="weui-loadmore__tips">正在加载评论...</view>
+    </view>
 
 
-
-                <block wx:for='{{ comments }}' wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
+<block wx:for='{{ comments }}' wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
         <view class="feed-item">
             <view class="chat-item flex-wrp">
-            <view class="avatar flex-item">
-              <image src="https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKX20gJ2YDebCUkqXCb4U2cR4icFeYSMJSYcUjoAKBrvwr4SdOCHVoN9uIVibNUrvESXcomU7MT4ezQ/132"></image>
+            <view class="avatar flex-item-commments">
+              <image src="{{ item.head_pic }}"></image>
             </view>
             <view class="chat-content flex-item"  bindtap="bindDetialTap" data-id="{{idx}}">
-              <view class="chat-source">
-                <text class="chatmate">{{ circle.post_user }}</text>
-                <text class="lasttime">{{ circle.pass_time }}</text>
+              <view class="chat-source-comments">
+                <text class="chatmate">{{ item.post_user }}</text>
+                <text class="lasttime">{{ item.pass_time }}</text>
               </view>
-              <text class="chat-txt">{{ circle.content }}</text>
+              <text class="chat-txt">{{ item.comment_content }}</text>
              </view>
          </view>
 
         </view>
     </block>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </view>
+
+
+
+                
 
 
     </view>

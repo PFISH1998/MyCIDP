@@ -94,6 +94,7 @@ Page({
     var that = this;
     var content = that.data.content
     var userInfo = that.data.userInfo
+    var circle_id = that.data.circle_id
     if(that.data.content_length < 0){
       wx.showToast({
         title: '废话太多！',
@@ -110,16 +111,28 @@ Page({
     }
     var uid = app.appData.uid
     console.log(uid)
-  
-    var postData = {
-      "url": "circle/posts",
-      "data":{
-        "post_user": userInfo.nickName,
-        "uid": uid,
-        "content": content
-         },
-      "method":"POST"
-      
+
+    if (circle_id != null ){
+      var postData = {
+        "url": "circle/comments/" + circle_id +'/',
+        "data": {
+          "circle": circle_id,
+          "comment_content": content,
+          "from_user": uid,
+        },
+        "method": "POST"
+      }
+    }
+    else {
+      var postData = {
+        "url": "circle/posts",
+        "data":{
+          "post_user": userInfo.nickName,
+          "uid": uid,
+          "content": content
+          },
+        "method":"POST"
+        }
     }
 
     wx.showLoading({

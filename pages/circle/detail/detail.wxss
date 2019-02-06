@@ -64,9 +64,17 @@
   height: 80rpx;
   border-radius: 80rpx;
 }
+
+.chat-item-commments  image{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 60rpx;
+}
+
 .chat-item .avatar{
   flex: 1;
 }
+
 .chat-item .chat-content{
   margin-right:5px;
   margin-left:5px;
@@ -83,6 +91,15 @@
   font-size: 27rpx;
   padding: 25rpx 0 65rpx 25rpx;
 }
+.chat-item .chat-content .chat-source-comments{
+  margin-right:5px;
+  margin-left:5px;
+  color: rgb(17, 16, 16);  
+  font-size: 25rpx;
+  padding: 5rpx 10rpx 15rpx 10rpx;
+}
+
+
 .chat-item .chat-content .chat-source .chatmate{
   font-size: 29rpx;
   color: #000000;

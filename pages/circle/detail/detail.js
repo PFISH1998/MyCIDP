@@ -11,7 +11,8 @@ Page({
     detail:null,
     uid:'',
     del:true,
-    comments: 3
+    comments: null,
+    lowhidden: false,
 
   },
 
@@ -119,7 +120,11 @@ Page({
       })
     }
     this.setData({
-      circle: circle.circle,
+      circle: circle,
+    })
+    this.getComments()
+    this.setData({
+      lowhidden: true
     })
 
   },
@@ -171,5 +176,25 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  getComments: function(){
+    var circle_id = this.data.circle.id
+
+    var e = {
+      url:'circle/comments/'+ circle_id + '/',
+      method: 'GET',
+    }
+    console.log(e)
+    util.getData(e).then((comments) => {
+      console.log(comments)
+      this.setData({
+        comments:comments,
+        lowhidden: true
+      })
+    })
+
   }
+
+
 })

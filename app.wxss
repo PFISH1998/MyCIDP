@@ -93,7 +93,18 @@ page{
   font-size: 14rpx;
   color: #000;
 }
+
 .container .feed-item{
+  width: 100%;
+  padding: 0rpx 0rpx 0rpx;
+  margin: 7rpx 0 6rpx 0;
+  background: #ffffff;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 2px 5px #eeeeee;
+}
+
+.container .feed-item-comment{
   width: 100%;
   padding: 0rpx 0rpx 0rpx;
   margin: 7rpx 0 6rpx 0;
