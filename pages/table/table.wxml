@@ -45,7 +45,7 @@
                   <view class="course-wrap" wx:for="{{column}}"wx:for-item="course" style="top: {{courseTop[course.course_index]}}rpx; height:{{course.time_spend}}rpx;" >
                         <!-- <text>{{course.color}}</text> -->
       
-                    <view class="course"  style="background-color:{{palette[course.color]}};"  data-name="{{course.LUName}}"  bindtap="showDetail" data-names=" / {{course.LUName2}}" data-detail=" {{course.Remark}}" data-details="&& {{course.Remark2}}"  data-type="{{course.Remark2}}">
+                    <view class="course"  style="background-color:{{palette[course.color]}};"  data-name="{{course.LUName}}"  bindtap="showDetail" data-names=" / {{course.LUName2}}" data-detail=" {{course.Remark}}" data-details=" {{course.Remark2}}"  data-type="{{course.Remark2}}">
                             
                             <text>{{course.LUName}}</text>
                             <text wx:if="{{course.LUName != course.LUName2}}">{{course.LUName2}}</text>

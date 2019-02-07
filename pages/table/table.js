@@ -156,13 +156,13 @@ Page({
     wx.showModal({
       showCancel: false,
       title: data.name+data.names ,
-      content: data.detail + data.details,
+      content: data.detail + '\r' + data.details,
     })
   },
 
   getWeek: function(){
       var day = Date()
-      console.log(day)
+      // console.log(day)
   }
 
 })
