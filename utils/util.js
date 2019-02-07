@@ -24,7 +24,8 @@ module.exports = {
 var test_url = "https://wx.pfish.xyz/"
 
 var index = require('../data/index_data.js')
-var index_next = require('../data/data_index_next.js') 
+var index_next = require('../data/data_index_next.js')
+
 // var discovery = require('../data/data_discovery.js')
 // var discovery_next = require('../data/data_discovery_next.js')
 
