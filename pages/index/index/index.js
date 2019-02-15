@@ -104,14 +104,15 @@ Page({
   longTap: function(e){
     var that = this
     wx.showActionSheet({
-      itemList: ["分享MyCIDP","下载壁纸","手滑"],
+      itemList: ["分享MyCIDP","下载壁纸"],
       success(res){
         console.log(res)
         var index = res.tapIndex
         if(index == 0){
           console.log("share")
-          wx.showShareMenu({
-            
+          wx.showModal({
+            title: '分享 MyCIDP',
+            content: '你可以点击右上角左边的按钮将小程序转发分享，感谢你的支持！',
           })
         }
         if(index == 1){
