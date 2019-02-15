@@ -12,12 +12,15 @@ page {
 icon {
   vertical-align: middle;
 }
+
 .weui-cells {
   position: relative;
   margin-top: 1.17647059em;
   background-color: #FFFFFF;
-  line-height: 1.41176471;
+  /* line-height: 1.41176471; */
   font-size: 17px;
+  box-shadow: 3px 4px 20px #bebebe;
+  
 }
 .weui-cells:before {
   content: " ";
