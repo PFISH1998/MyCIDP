@@ -30,10 +30,13 @@
         </view>
      </view>
      <view class="foot">
-     <view>图文来自 Bing Search</view>
-     <view>By PFSIH</view>
+      <view>2019 © PFISH</view>
+      <!-- <view>By PFSIH</view> -->
      </view>
-    
-      
+     <view class="index-ad">
+      <ad unit-id="adunit-0830da0ccbdf718a"></ad>
+     </view>
+     
+ 
 
 </view>
