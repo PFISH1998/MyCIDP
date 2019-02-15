@@ -12,6 +12,12 @@ page{
                  Arial;
 }
 
+.index-ad {
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 100%;
+}
+
 .page__hd {
     padding: 40px;
 }
@@ -93,8 +99,19 @@ page{
   font-size: 14rpx;
   color: #000;
 }
+
 .container .feed-item{
-  width: 100%;
+  width: 750rpx;
+  padding: 0rpx 0rpx 0rpx;
+  margin: 7rpx 0 6rpx 0;
+  background: #ffffff;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 2px 5px #eeeeee;
+}
+
+.container .feed-item-comment{
+  width: 725rpx;
   padding: 0rpx 0rpx 0rpx;
   margin: 7rpx 0 6rpx 0;
   background: #ffffff;
@@ -116,7 +133,7 @@ page{
 
 
 .container .feed-item .feed-source{
-  width: 100%;
+  width: 725rpx;
   left: 0;
   height: 70rpx;
 

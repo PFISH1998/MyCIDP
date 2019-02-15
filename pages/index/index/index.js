@@ -103,19 +103,22 @@ Page({
 // 
   longTap: function(e){
     var that = this
-    wx.showModal({
-      title: '保存图片',
-      content: '是否下载首页图？',
-      success:function(res){
-        var pic_url = that.data.daily.pic_url
-        if (res.confirm) {
-        var e = {url: pic_url}
-        util.downLoadFile(e)
+    wx.showActionSheet({
+      itemList: ["分享MyCIDP","下载壁纸"],
+      success(res){
+        console.log(res)
+        var index = res.tapIndex
+        if(index == 0){
+          console.log("share")
+          wx.showModal({
+            title: '分享 MyCIDP',
+            content: '你可以点击右上角左边的按钮将小程序转发分享，感谢你的支持！',
+          })
+        }
+        if(index == 1){
+          that.downLoadPic()
+        }
       }
-      if(res.cancel) {
-        return
-      }
-    }
     })
 
   },
@@ -129,6 +132,13 @@ Page({
   touchEnd: function (e) {
     this.touchEndTime = e.timeStamp
   },
+
+  downLoadPic: function(){
+    var that = this
+    var pic_url = that.data.daily.pic_url
+    var e = {url: pic_url}
+    util.downLoadFile(e)
+  }
 
 
 })

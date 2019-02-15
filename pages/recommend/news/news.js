@@ -9,7 +9,8 @@ Page({
     title:'',
     pub_time:'',
     url:'',
-    pic_list: ''
+    pic_list: '',
+    headhidden: false
   },
 
   /**
@@ -18,7 +19,6 @@ Page({
   onLoad: function (options) {
     var that = this
     console.log("onload")
-    console.log(options)
 
     wx.setNavigationBarTitle({
       title: "详情"
@@ -40,8 +40,13 @@ Page({
         })
       },
       fail: function (req) {
-        
+      },
+      complete: function(){
+        that.setData({
+          headhidden: true
+        })
       }
+
     })
     
   

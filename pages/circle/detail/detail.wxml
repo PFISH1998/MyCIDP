@@ -3,7 +3,6 @@
 <view class="feed-item" >
             <view class="chat-item flex-wrp">
             
-
             <view class="chat-content flex-item" data-id="{{idx}}">
              <view class="avatar flex-item">
                 
@@ -38,5 +37,49 @@
                             <a class="num">{{circle.comments_count}}</a>
                         </view>
                      </view>
+                        <view hidden='{{lowhidden}}' class="weui-loadmore" bindchange='loadingChangge'>
+              <view class="weui-loading"></view>
+              <view class="weui-loadmore__tips">正在加载评论...</view>
+    </view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </view>
+
+
+<block wx:for='{{ comments }}' wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
+        <!-- <view class="feed-item"> -->
+            <view class="chat-item flex-wrp">
+            <view class="avatar-commments flex-item-commments">
+              <image src="{{ item.head_pic }}"></image>
+            </view>
+            <view class="chat-content flex-item"  bindtap="bindDetialTap" data-id="{{idx}}">
+              <view class="chat-source-comments">
+                <text class="chatmate">{{ item.post_user }}</text>
+                <text class="lasttime">{{ item.pass_time }}</text>
+              </view>
+              <text class="chat-txt">{{ item.comment_content }}</text>
+             </view>
+         </view>
+
+        <!-- </view> -->
+    </block>
+
+                
+
+
     </view>

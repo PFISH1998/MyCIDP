@@ -10,7 +10,9 @@ Page({
     circle: null,
     detail:null,
     uid:'',
-    del:true
+    del:true,
+    comments: null,
+    lowhidden: false,
 
   },
 
@@ -59,7 +61,7 @@ Page({
       url: '../post/post?type=comment&circle_id='+ circle_id + '&user='+ user
     })
   },
-  
+
   del:function(){
     console.log(this.data.circle)
     var circle = this.data.circle
@@ -118,7 +120,11 @@ Page({
       })
     }
     this.setData({
-      circle: circle.circle,
+      circle: circle,
+    })
+    this.getComments()
+    this.setData({
+      lowhidden: true
     })
 
   },
@@ -155,6 +161,9 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
+    console.log("pull",this.data.circle)
+    this.getCircle()
+    this.getComments()
 
   },
 
@@ -170,5 +179,43 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  getComments: function(){
+    var circle_id = this.data.circle.id
+
+    var e = {
+      url:'circle/comments/'+ circle_id + '/',
+      method: 'GET',
+    }
+    console.log(e)
+    util.getData(e).then((comments) => {
+      console.log(comments)
+      this.setData({
+        comments:comments,
+        lowhidden: true
+      })
+    })
+
+  },
+
+  getCircle: function(){
+    var circle_id = this.data.circle.id
+    var uid = app.appData.uid
+    var e = {
+      url: 'circle/posts/' + circle_id ,
+      method: 'GET',
+      data: {
+        uid: uid
+      }
+    }
+    util.getData(e).then((circle) => {
+      this.setData({
+        circle: circle,
+      })
+      wx.stopPullDownRefresh()
+    })
   }
+
+
 })

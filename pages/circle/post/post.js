@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    notes: ['1、请遵守相关法律法规，文明交流，违者会被删除或者封号。', '2、评论和发布图片功能暂未开放，感谢理解。'],
+    notes: ['1、请遵守相关法律法规，文明交流，违者会被删除或者封号。'],
     post_content: '分享动态',
     img_url: [],
     content: '',
@@ -94,6 +94,7 @@ Page({
     var that = this;
     var content = that.data.content
     var userInfo = that.data.userInfo
+    var circle_id = that.data.circle_id
     if(that.data.content_length < 0){
       wx.showToast({
         title: '废话太多！',
@@ -110,19 +111,34 @@ Page({
     }
     var uid = app.appData.uid
     console.log(uid)
-    var postData = {
-      "url": "circle/posts",
-      "data":{
-        "post_user": userInfo.nickName,
-        "uid": uid,
-        "content": content
-         },
-      "method":"POST"
-      
+
+    if (circle_id != null ){
+      var postData = {
+        "url": "circle/comments/" + circle_id +'/',
+        "data": {
+          "circle": circle_id,
+          "comment_content": content,
+          "from_user": uid,
+        },
+        "method": "POST"
+      }
     }
+    else {
+      var postData = {
+        "url": "circle/posts",
+        "data":{
+          "post_user": userInfo.nickName,
+          "uid": uid,
+          "content": content
+          },
+        "method":"POST"
+        }
+    }
+
     wx.showLoading({
       title: '拼命传送中',
     })
+
     util.getData(postData).then((data) => {
       // console.log("data", data)
       wx.hideLoading()
