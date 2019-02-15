@@ -12,6 +12,12 @@ page{
                  Arial;
 }
 
+.index-ad {
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 100%;
+}
+
 .page__hd {
     padding: 40px;
 }
