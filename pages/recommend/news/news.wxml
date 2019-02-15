@@ -2,15 +2,19 @@
     
     <view class="page__bd">
 
+    <view hidden='{{headhidden}}' class="weui-loadmore" bindchange='loadingChangge'>
+        <view class="weui-loading"></view>
+        <view class="weui-loadmore__tips">正在加载</view>
+    </view>
 
         <view class="weui-article">
             <view class="weui-article__h1">{{title}}</view>
             
-             <view class="weui-media-box__info">
+              <view class="weui-media-box__info" hidden='{{!headhidden}}'>
                         <view class="weui-media-box__info__meta">www.cidp.edu.cn</view>
                         <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{pub_time}}</view>
                         <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">阅读</view>
-                    </view>
+              </view>
                     
 
             <view class="weui-article__section">
@@ -29,13 +33,15 @@
                         <image class="weui-article__img" src="{{item.pic}}" mode="aspectFit" style="height: 180px" bindtap='imgview' data-src="{{item.pic}}" />
                     </view>
                 </view>
+              </view>
 
-                 </view>
-
-
-
-                
+       
             </view>
         </view>
+    <view class="index-ad">
+      <ad unit-id="adunit-01e31770ee570b97"></ad>
     </view>
+
+    </view>
+    
 </view>
