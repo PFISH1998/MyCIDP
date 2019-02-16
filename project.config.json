@@ -9,7 +9,7 @@
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"autoAudits": true
+		"autoAudits": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.4.3",
@@ -34,7 +34,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 6,
 			"list": [
 				{
 					"id": -1,
@@ -79,7 +79,7 @@
 				{
 					"id": 6,
 					"name": "认证",
-					"pathName": "pages/login/auth/auth",
+					"pathName": "pages/notes/notes",
 					"query": "",
 					"scene": "1008"
 				},
