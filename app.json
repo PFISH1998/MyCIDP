@@ -12,13 +12,9 @@
     "pages/recommend/news/news",
     "pages/recommend/newslist/newslist",
     "pages/share/share",
-    "pages/circle/index/index",
-    "pages/circle/detail/detail",
     "pages/search/search",
-    "pages/circle/post/post",
     "pages/recommend/page/index",
-    "pages/login/auth/auth",
-    "pages/user/public/myPublic"
+    "pages/login/auth/auth"
     
   ],
   "window": {
@@ -40,12 +36,6 @@
     "backgroundColor": "#FBFBFB",
     "borderStyle": "white",
     "list": [
-      {
-        "pagePath": "pages/circle/index/index",
-        "text": "",
-        "iconPath": "images/guide.png",
-        "selectedIconPath": "images/guide_s.png"
-      },
       {
         "pagePath": "pages/index/index/index",
         "text": "",
