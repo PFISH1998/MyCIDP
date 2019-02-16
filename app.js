@@ -64,6 +64,9 @@ App({
     var date = new Date().getTime()
     this.appData.weeks =  parseInt(((date - start_time) / 1000 / 3600 / 24 / 7)+1)
 
+    util.indexImg(date)
+
+    
   },
   
   onShow: function onShow() {},
