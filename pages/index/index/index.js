@@ -28,33 +28,32 @@ Page({
    */
   //加载首页图
   onLoad: function (options) {
-
-    var e = {
-      'url':'home',
-      'method':'get'
+      var index_data = wx.getStorageSync("index_data")
+      console.log("index", index_data)
+    if (index_data == '' || util.is_diff_day(new Date().getTime(), index_data.set_date)){
+      console.log("123")
     }
-    util.request(e).then((data)=>{
-      // console.log("index",data)
+    else{
       this.setData({
-        daily:data.data.data
+        daily: index_data.img_data.data
       })
-    }).catch((fail)=>{
-      this.setData({
-        daily:{
-          'pic_url': '/pages/icon/index.jpg',
-          'content': '网络有点问题...'
-        }
-      })
-    })
+    }
+
+      // this.setData({
+      //   daily:{
+      //     'pic_url': '/pages/icon/index.jpg',
+      //     'content': '网络有点问题...'
+      //   }
+      // })
 
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-    
-  },
+    onReady: function () {
+      
+    },
 
   /**
    * 生命周期函数--监听页面显示
@@ -136,8 +135,8 @@ Page({
   downLoadPic: function(){
     var that = this
     var pic_url = that.data.daily.pic_url
-    var e = {url: pic_url}
-    util.downLoadFile(e)
+    var e = pic_url
+    util.saveIndexImg(e)
   }
 
 

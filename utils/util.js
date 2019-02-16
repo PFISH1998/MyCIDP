@@ -25,6 +25,7 @@ var test_url = "https://wx.pfish.xyz/"
 
 var index = require('../data/index_data.js')
 var index_next = require('../data/data_index_next.js')
+var index_data = ''
 
 // var discovery = require('../data/data_discovery.js')
 // var discovery_next = require('../data/data_discovery_next.js')
@@ -45,17 +46,19 @@ function upLoadFile(e){
 }
 
 // 下载图片
-function downLoadFile(e){
-  console.log(e)
+function downLoadFileTemp(e){
   wx.downloadFile({
-    url: e.url,
+    url: e,
     header: {},
     success: function (res) {
-      wx.saveImageToPhotosAlbum({
-        filePath: res.tempFilePath,
-        success() {
-          wx.showToast({ title: '下载成功！', })
-        }
+      index_data.img_data.data["pic_url"] = res.tempFilePath
+      console.log(index_data)
+      wx.setStorage({
+        key: 'index_data',
+        data: index_data,
+      })
+      wx.redirectTo({
+        url: '../index/index',
       })
     },
     fail: function (res) {
@@ -64,6 +67,69 @@ function downLoadFile(e){
     complete: function (res) { },
   })
 }
+
+
+function downLoadFile(e){
+wx.downloadFile({
+  url: e,
+  header: {},
+  success: function(res) {
+    saveImg(res)
+  },
+  fail: function(res) {
+    return
+  },
+  complete: function(res) {},
+})
+}
+
+
+function saveIndexImg(res){
+  console.log(res)
+  wx.saveImageToPhotosAlbum({
+    filePath: res,
+    success() {
+      wx.showToast({ title: '下载成功！'})
+    }
+
+  })
+}
+
+
+// 首页壁纸下载
+function indexImg(date){
+  var index_img = wx.getStorageSync("index_data")
+  if(is_diff_day(date, index_img.set_date) || index_img == ' '){
+    saveImg()
+  }
+  else{
+    return true
+  }
+
+}
+
+function is_diff_day(date1, date2){
+return (new Date(date1).toDateString() != new Date(date2).toDateString())
+}
+
+
+// 保存图片到缓存
+function saveImg(){
+  var e = {
+    'url': 'home',
+    'method': 'get'
+  }
+  request(e).then((data) => {
+    downLoadFileTemp(data.data.data.pic_url)
+    var img_data = data.data
+    var stor_data = {
+      set_date: new Date().getTime(),
+      img_data: img_data
+    }
+    index_data = stor_data
+  })
+}
+
 
 function getData(e) {
   var url = e.url
@@ -228,6 +294,7 @@ module.exports.getNext = getNext;
 module.exports.getDiscovery = getDiscovery;
 module.exports.discoveryNext = discoveryNext;
 module.exports.downLoadFile = downLoadFile;
-module.exports.request = request
-
-
+module.exports.request = request;
+module.exports.indexImg = indexImg;
+module.exports.saveIndexImg = saveIndexImg;
+module.exports.is_diff_day = is_diff_day
