@@ -2,8 +2,16 @@
     <view class="page__hd">
         <view class="page__title">关于MyCIDP：</view>
         <text></text>
-        <view class="page__desc" wx:for="{{notes}}" wx:key="item">{{item}}</view>
+        <view class="page__desc" wx:for="{{notes}}" wx:key="item">{{index+1}}、{{item}}</view>
     </view>
+
+    <view class="page__hd">
+        <view class="page__desc" wx:for="{{update}}" >{{item.status}}
+        <view wx:for="{{item.info}}">
+        <text>{{index+1}}、{{item}}</text></view>
+        </view>
+    </view>
+
     </view>
 
     
