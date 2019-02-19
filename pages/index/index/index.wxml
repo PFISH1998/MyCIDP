@@ -17,7 +17,7 @@
             <view><image class="jiantou" src="/pages/icon/jiantou3.png"/> </view>
             <block wx:for="{{list}}" wx:key="id">
                 <view class="kind-list__item">
-                  <view class="weui-cells {{item.open ? 'weui-cells_show' : ''}}">
+                  <view class="weui-cells-index">
                       <block wx:for="{{item.pages}}" wx:for-item="page" wx:key="*this">
                           <navigator url="{{page.url}}" class="weui-cell weui-cell_access">
                               <view class="weui-cell__bd">{{page.name}}</view>
@@ -33,10 +33,10 @@
       <view>2019 © PFISH</view>
       <!-- <view>By PFSIH</view> -->
      </view>
-     <view class="index-ad">
+     <!-- <view class="index-ad">
       <ad unit-id="adunit-0830da0ccbdf718a"></ad>
      </view>
-     
+      -->
  
 
 </view>
