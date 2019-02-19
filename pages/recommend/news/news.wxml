@@ -6,11 +6,12 @@
         <view class="weui-loading"></view>
         <view class="weui-loadmore__tips">正在加载</view>
     </view>
+    <view hidden='{{!loadingfail}}' class="loadingfail">加载失败...</view>
 
         <view class="weui-article">
             <view class="weui-article__h1">{{title}}</view>
             
-              <view class="weui-media-box__info" hidden='{{!headhidden}}'>
+              <view class="weui-media-box__info" hidden='{{headhidden}}'>
                         <view class="weui-media-box__info__meta">www.cidp.edu.cn</view>
                         <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{pub_time}}</view>
                         <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">阅读</view>
