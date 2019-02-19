@@ -31,7 +31,6 @@ var index_data = ''
 // var discovery_next = require('../data/data_discovery_next.js')
 
 
-
 function upLoadFile(e){
   wx.uploadFile({
     url: '',
@@ -45,27 +44,29 @@ function upLoadFile(e){
   })
 }
 
+
 // 下载图片
 function downLoadFileTemp(e){
+  return new Promise(function (resolve, reject){
   wx.downloadFile({
     url: e,
     header: {},
     success: function (res) {
       index_data.img_data.data["pic_url"] = res.tempFilePath
       console.log(index_data)
-      wx.setStorage({
-        key: 'index_data',
-        data: index_data,
-      })
-      wx.redirectTo({
-        url: '../index/index',
-      })
+      resolve(
+        wx.setStorage({
+          key: 'index_data',
+          data: index_data,
+        })
+      )
     },
     fail: function (res) {
       wx.showToast({ title: '下载失败', icon: fail })
      },
     complete: function (res) { },
   })
+})
 }
 
 
