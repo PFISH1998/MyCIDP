@@ -20,7 +20,7 @@ App({
 
     updateManager.onCheckForUpdate(function (res) {
       // 请求完新版本信息的回调
-      console.log(res.hasUpdate)
+      // console.log(res.hasUpdate)
     })
     updateManager.onUpdateReady(function () {
       wx.showModal({
@@ -63,8 +63,6 @@ App({
     var start_time = new Date(this.appData.start_date).getTime()
     var date = new Date().getTime()
     this.appData.weeks =  parseInt(((date - start_time) / 1000 / 3600 / 24 / 7)+1)
-
-    util.indexImg(date)
 
     
   },
