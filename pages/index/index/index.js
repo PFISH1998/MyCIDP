@@ -31,7 +31,7 @@ Page({
       var index_data = wx.getStorageSync("index_data")
       console.log("index", index_data)
     if (index_data == '' || util.is_diff_day(new Date().getTime(), index_data.set_date)){
-      console.log("123")
+      
     }
     else{
       this.setData({
