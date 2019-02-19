@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    notes: ['1、请遵守相关法律法规，文明交流，违者会被删除或者封号。'],
+    notes: [''],
     post_content: '分享动态',
     img_url: [],
     content: '',
