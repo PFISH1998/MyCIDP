@@ -38,9 +38,9 @@
        
             </view>
         </view>
-    <view class="index-ad">
+    <!-- <view class="index-ad">
       <ad unit-id="adunit-01e31770ee570b97"></ad>
-    </view>
+    </view> -->
 
     </view>
     
