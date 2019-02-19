@@ -10,7 +10,8 @@ Page({
     pub_time:'',
     url:'',
     pic_list: '',
-    headhidden: false
+    headhidden: false,
+    loadingfail: true
   },
 
   /**
@@ -25,10 +26,9 @@ Page({
     })
     wx.request({
       // url: 'http://127.0.0.1:8000/news/news?content=' + options.url,
-      url: 'https://wx.tomwang.club/news/news?content='+options.url,
+      url: 'https://wx.pfish.xyz/news/news?content='+options.url,
       method: 'get',
       success: function(req) {
-        console.log("back",req)
         var news_data = req.data.news_content
         var pic_list = req.data.pic_list
         that.setData({
@@ -36,15 +36,18 @@ Page({
           title: options.title,
           pub_time: options.pub_time,
           news_content: news_data,
-          pic_list: pic_list
+          pic_list: pic_list,
+          headhidden: true
         })
       },
       fail: function (req) {
-      },
-      complete: function(){
         that.setData({
+          loadingfail: false,
           headhidden: true
         })
+      },
+      complete: function(){
+        
       }
 
     })
