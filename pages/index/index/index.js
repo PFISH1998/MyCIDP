@@ -28,33 +28,33 @@ Page({
    */
   //加载首页图
   onLoad: function (options) {
-
-    var e = {
-      'url':'home',
-      'method':'get'
+    // this.showNotice()
+    var index_data = wx.getStorageSync("index_data")
+    if (index_data == '' || util.is_diff_day(new Date().getTime(), index_data.set_date)){
+      this.indexPic()
+      util.indexImg(new Date().getTime())
     }
-    util.request(e).then((data)=>{
-      // console.log("index",data)
+    else{
       this.setData({
-        daily:data.data.data
+        daily: index_data.img_data.data
       })
-    }).catch((fail)=>{
-      this.setData({
-        daily:{
-          'pic_url': '/pages/icon/index.jpg',
-          'content': '网络有点问题...'
-        }
-      })
-    })
+    }
+
+      // this.setData({
+      //   daily:{
+      //     'pic_url': '/pages/icon/index.jpg',
+      //     'content': '网络有点问题...'
+      //   }
+      // })
 
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-    
-  },
+    onReady: function () {
+      
+    },
 
   /**
    * 生命周期函数--监听页面显示
@@ -106,7 +106,6 @@ Page({
     wx.showActionSheet({
       itemList: ["分享MyCIDP","下载壁纸"],
       success(res){
-        console.log(res)
         var index = res.tapIndex
         if(index == 0){
           console.log("share")
@@ -136,9 +135,36 @@ Page({
   downLoadPic: function(){
     var that = this
     var pic_url = that.data.daily.pic_url
-    var e = {url: pic_url}
-    util.downLoadFile(e)
-  }
+    var e = pic_url
+    util.saveIndexImg(e)
+  },
+
+  indexPic: function(){
+    var e = {
+      'url': 'home',
+      'method': 'get'
+    }
+    util.request(e).then((data) => {
+      this.setData({
+        daily: data.data.data
+      })
+    }).catch((fail) => {
+      this.setData({
+        daily: {
+          'pic_url': '/pages/icon/index.jpg',
+          'content': '网络有点问题...'
+        }
+      })
+    })
+  },
+
+
+// TODO 通知模块
+  // showNotice: function(){
+  //   util.request().then((data) => {
+
+  //   })
+  // }
 
 
 })
