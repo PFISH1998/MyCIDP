@@ -66,6 +66,7 @@ Page({
 
   onLoad: function () {
     console.log('onLoad')
+    wx.reportMonitor('circle', 1)
     var that = this
     that.data.userInfo =  app.appData.userInfo
     that.data.uid = app.appData.uid
