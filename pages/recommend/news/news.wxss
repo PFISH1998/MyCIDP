@@ -12,6 +12,3 @@
   overflow:hidden;
 
 } */
-.loadingfail {
-  text-align: center
-}
