@@ -6,26 +6,31 @@
 </view>
 
 <view class="pagehead"></view>
-
-<scroll-view scroll-top="{{scrollTop}}" style="height: {{windowHeight}}px; width: {{windowWidth}}px;" scroll-y="true" bindscrolltoupper="pullDownRefresh" bindscrolltolower="pullUpLoad" class="weui-panel weui-panel_access" data-id="{{item.id}}">
-
     
   <view class="ctnt0" hidden="{{currentNavtab==0 ? '' : true}}">
+
+    <scroll-view scroll-top="{{scrollTop}}" style="height: {{windowHeight}}px; width: {{windowWidth}}px;" scroll-y="true" bindscrolltolower="pullUpLoad"  class="weui-panel weui-panel_access" data-id="{{item.id}}">
       <import src='../../templates/newslist.wxml'/>
-      <template is='newslist' data='{{news_list:news_list52}}' />          
+      <template is='newslist' data='{{news_list:news_list52}}' />    
+    </scroll-view>
+
   </view>
 
 
   <view class="ctnt1 placehold" hidden="{{currentNavtab==1 ? '' : true}}">
+    <scroll-view  scroll-top="{{scrollTop}}" style="height: {{windowHeight}}px; width: {{windowWidth}}px;" scroll-y="true" bindscrolltolower="pullUpLoad"  class="weui-panel weui-panel_access" data-id="{{item.id}}">
       <import src='../../templates/newslist.wxml'/>
       <template is='newslist' data='{{news_list:news_list321}}' />
+    </scroll-view>
   </view>
   
   <view class="ctnt2 placehold" hidden="{{currentNavtab==2 ? '' : true}}">
-    <import src='../../templates/newslist.wxml'/>
-    <template is='newslist' data='{{news_list:news_list4662}}' />
+    <scroll-view scroll-top="{{scrollTop}}" style="height: {{windowHeight}}px; width: {{windowWidth}}px;"  scroll-y="true" bindscrolltolower="pullUpLoad"  class="weui-panel weui-panel_access" data-id="{{item.id}}">
+      <import src='../../templates/newslist.wxml'/>
+      <template is='newslist' data='{{news_list:news_list4662}}' />
+    </scroll-view>
   </view>
 
-</scroll-view>
+
 
 </view>
