@@ -45,7 +45,7 @@ Page({
   getNewsList: function (page_type, num) {
     var that = this
     // 临时
-    console.log('page_num', num, page_type)
+    // console.log('page_num', num, page_type)
     if (that.data.request_status) {
       console.log('busy')
       return
@@ -100,7 +100,7 @@ Page({
 
 
       fail: function (req) {
-        console.log(req)
+        // console.log(req)
         that.data.fail = true
       },
       complete: function () {
@@ -144,13 +144,12 @@ Page({
     else if (page_type == 'xshd') {
       var num = that.data.page4662
     }
-    console.log("pullup")
-    console.log("page", page_type, "num", num)
+    // console.log("pullup")
     that.getNewsList(page_type, num);
   },
 
   pullDownRefresh: function () {
-    console.log('pulldown')
+    // console.log('pulldown')
     // var that = this;
     // num = 1
     // that.setData({
@@ -161,9 +160,8 @@ Page({
 
 
   switchTab: function (e) {
-    console.log(e)
     var id = e.target.dataset.id
-    console.log('info',id)
+    // console.log('info',id)
     if (id == 'xwzx'){
       var num = this.data.page52
     }
