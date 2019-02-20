@@ -4,8 +4,6 @@ Page({
     navTab: [{"name": "新闻中心", "id":'xwzx'}, {"name": "通知公告", "id":'tzgg' },{"name": "学术活动", "id":'xshd'}],
     currentNavtab: "0",
 
-
-
     page_num: 0,
     list_type: '',
     hidden: true,
@@ -28,7 +26,6 @@ Page({
     var page_type = 'xwzx'
     var name = "xinwen"
     var that = this;
-    console.log(name, page_type)
     wx.getSystemInfo({
       success: function (res) {
         that.setData({
@@ -48,7 +45,7 @@ Page({
   getNewsList: function (page_type, num) {
     var that = this
     // 临时
-    console.log('page_num', num, page_type)
+    // console.log('page_num', num, page_type)
     if (that.data.request_status) {
       console.log('busy')
       return
@@ -62,10 +59,8 @@ Page({
       url: 'https://wx.pfish.xyz/news/list?page_num=' + num + '&type=' + page_type,
       method: 'GET',
       success: function (req) {
-        // console.log('backdata', req.data)
         var next_page = req.data.news_list.next_page
         if(page_type == 'xwzx'){
-          // console.log(page_type)
           var news = req.data.news_list.news_list
           var return_news = that.data.news_list52.concat(news)
           that.setData({
@@ -105,7 +100,7 @@ Page({
 
 
       fail: function (req) {
-        console.log(req)
+        // console.log(req)
         that.data.fail = true
       },
       complete: function () {
@@ -149,13 +144,12 @@ Page({
     else if (page_type == 'xshd') {
       var num = that.data.page4662
     }
-    console.log("pullup")
-    console.log("page", page_type, "num", num)
+    // console.log("pullup")
     that.getNewsList(page_type, num);
   },
 
   pullDownRefresh: function () {
-    console.log('pulldown')
+    // console.log('pulldown')
     // var that = this;
     // num = 1
     // that.setData({
@@ -166,9 +160,8 @@ Page({
 
 
   switchTab: function (e) {
-    console.log(e)
     var id = e.target.dataset.id
-    console.log('info',id)
+    // console.log('info',id)
     if (id == 'xwzx'){
       var num = this.data.page52
     }
