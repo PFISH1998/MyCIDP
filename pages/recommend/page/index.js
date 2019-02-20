@@ -4,8 +4,6 @@ Page({
     navTab: [{"name": "新闻中心", "id":'xwzx'}, {"name": "通知公告", "id":'tzgg' },{"name": "学术活动", "id":'xshd'}],
     currentNavtab: "0",
 
-
-
     page_num: 0,
     list_type: '',
     hidden: true,
@@ -28,7 +26,6 @@ Page({
     var page_type = 'xwzx'
     var name = "xinwen"
     var that = this;
-    console.log(name, page_type)
     wx.getSystemInfo({
       success: function (res) {
         that.setData({
@@ -62,10 +59,8 @@ Page({
       url: 'https://wx.pfish.xyz/news/list?page_num=' + num + '&type=' + page_type,
       method: 'GET',
       success: function (req) {
-        // console.log('backdata', req.data)
         var next_page = req.data.news_list.next_page
         if(page_type == 'xwzx'){
-          // console.log(page_type)
           var news = req.data.news_list.news_list
           var return_news = that.data.news_list52.concat(news)
           that.setData({
