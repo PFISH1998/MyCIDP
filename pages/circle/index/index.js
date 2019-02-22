@@ -9,10 +9,10 @@ Page({
     uid: null,
     lowhidden:false,
     page:1,
-    nomore:"没有啦_(:з)∠)_，发条新的吧！",
+    nomore:"",
     nomorehid:true
   },
-
+  // 没有啦_(: з) ∠)_，发条新的吧！
   postCircle:function(){
       wx.navigateTo({
         url: '../post/post'
