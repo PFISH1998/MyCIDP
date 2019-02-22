@@ -9,17 +9,16 @@ Page({
     pageinfo:[
       {
         "page": "设置", "list": [
-          { "name": "教务账号", "url": "../binduser/binduser" },
           { "name": "课表重置", "url": "../table/bindtable" }
           ]
       },
-      {
-        "page": "cicle", "list": [
-          { "name": "我发布的", "url": "public/myPublic" },
-          // { "name": "circle设置", "url": "" },
-          // { "name": "其他", "url": "" }
-        ]
-      },
+      // {
+      //   "page": "cicle", "list": [
+      //     { "name": "我发布的", "url": "public/myPublic" },
+      //     // { "name": "circle设置", "url": "" },
+      //     // { "name": "其他", "url": "" }
+      //   ]
+      // },
       {
         "page": "", "list": [
           { "name": "关于", "url": "/pages/notes/notes" },
