@@ -22,14 +22,12 @@ Page({
 
 
     console.log(options)
-    // wx.removeStorageSync('table_set')
     wx.setNavigationBarTitle({
       title: '我的课表',
     })
     if (options.page == 'share'){
       // var data = JSON.parse(options.data)
-      var data = options.data
-      
+      var data = JSON.parse(options.table_data)
       console.log(data)
       this.setData({
         weeks: app.appData.weeks,
@@ -44,14 +42,16 @@ Page({
           title: '查询出错，重新试试？',
           icon: 'none'
         })
-      } else {
-      this.setData({
-        weeks: app.appData.weeks,
-        table_set: app.appData.req_data
-      })
-      wx.setStorage({
-        key: 'table_set',
-        data: app.appData.req_data,
+      } else 
+      {
+        var table_data = app.appData.req_data
+        this.setData({
+          weeks: app.appData.weeks,
+          table_set: table_data
+        })
+        wx.setStorage({
+          key: 'table_set',
+          data: table_data,
         })
       }  
     }else{
@@ -77,6 +77,12 @@ Page({
         //   title: wx.getStorageSync('term'),
         //   icon: 'none'
         // })
+        var reg = '/(\s)(#)'
+        for(var i =0; i< table_data.length; i++){
+          for(var j = 0; j<table_data[i].length; j++){
+            table_data[i][j].Remark = table_data[i][j].Remark.replace(/\d#/, '\r\n').replace(/\s/, '\r\n')
+          }
+        }
         this.setData({
           weeks: app.appData.weeks,
           table_set: table_data
@@ -134,12 +140,11 @@ Page({
    */
   onShareAppMessage: function () {
     var that = this
-    
     var data = JSON.stringify(that.data.table_set)
     console.log(data)
     return {
       title: 'MyCIDP 本学期我的课表',
-      path: "pages/table/table?page=share?data=" + data
+      path: "pages/table/table?page=share?table_data=" + data
     }
   },
 
