@@ -34,7 +34,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
@@ -60,7 +60,8 @@
 					"id": 3,
 					"name": "table",
 					"pathName": "pages/table/table",
-					"query": ""
+					"query": "page=share&data=[[{\"LUName\":\"机器学习\",\"color\":11,\"course_index\":1,\"Building\":\"文德楼\",\"Campus\":\"南校\",\"Remark\":\"1-12周周一\\r\\n3-4节 刘海军 文德楼\\r\\n5s11\",\"time_spend\":200,\"DelymethodName\":\"讲授\",\"Classroom\":\"5#5s11\",\"FullName\":\"刘海军\"},{\"LUName\":\"大数据技术与开发\",\"color\":2,\"course_index\":3,\"Building\":\"文德楼\",\"Campus\":\"南校\",\"Remark\":\"1-12周周一\\r\\n7-8节 单维锋 文德楼\\r\\n5n26\",\"time_spend\":200,\"DelymethodName\":\"讲授\",\"Classroom\":\"5#5n26\",\"FullName\":\"单维锋\"}],[{\"LUName\":\"地理信息系统原理与应用\",\"color\":4,\"course_index\":0,\"Building\":\"文德楼\",\"Campus\":\"南校\",\"Remark\":\"1-12周周二\\r\\n1-2节 刘京会 文德楼\\r\\n5n26\",\"time_spend\":200,\"DelymethodName\":\"讲授\",\"Classroom\":\"5#5n26\",\"FullName\":\"刘京会\"},{\"LUName\":\"人工智能概论\",\"color\":4,\"course_index\":1,\"Building\":\"文德楼\",\"Campus\":\"南校\",\"Remark\":\"1-16周\\r\\n周二  3-4节  李忠  文德楼\\r\\n5j24\",\"time_spend\":200,\"DelymethodName\":\"讲授\",\"Classroom\":\"5#5j24\",\"FullName\":\"李忠\"},{\"LUName\":\"大数据技术与开发\",\"color\":9,\"course_index\":2,\"Building\":\"天仪楼\",\"Campus\":\"北校\",\"Remark\":\"1-12周周二\\r\\n5-6节 单维锋 天仪楼南106\",\"time_spend\":200,\"DelymethodName\":\"上机\",\"Classroom\":\"南106\",\"FullName\":\"单维锋\"}],[{\"LUName\":\"地理信息系统原理与应用\",\"color\":2,\"course_index\":0,\"Building\":\"明略楼\",\"Campus\":\"南校\",\"Remark\":\"1-12周周三\\r\\n1-2节 刘京会 明略楼\\r\\n402\",\"time_spend\":200,\"DelymethodName\":\"实验\",\"Classroom\":\"4#402\",\"FullName\":\"刘京会\"},{\"LUName\":\"大学生创业与就业指导\",\"color\":2,\"course_index\":2,\"Building\":\"文德楼\",\"Campus\":\"南校\",\"Remark\":\"1-8周\\r\\n周三  5-6节  纪同娟  文德楼\\r\\n5s16\",\"time_spend\":200,\"DelymethodName\":\"讲授\",\"Classroom\":\"5#5s16\",\"FullName\":\"纪同娟\"}],[{\"LUName\":\"人工智能概论\",\"color\":6,\"course_index\":0,\"Building\":\"承基楼\",\"Campus\":\"南校\",\"Remark\":\"2-16双周\\r\\n 周四  1-2节  李忠  承基楼\\r\\n1003\",\"time_spend\":200,\"DelymethodName\":\"上机\",\"Classroom\":\"6#1003\",\"FullName\":\"李忠\"},{\"LUName\":\"机器学习\",\"color\":6,\"course_index\":1,\"Building\":\"明略楼\",\"Campus\":\"南校\",\"Remark\":\"1-12周周四\\r\\n3-4节 刘海军 明略楼\\r\\n401\",\"time_spend\":200,\"DelymethodName\":\"上机\",\"Classroom\":\"4#401\",\"FullName\":\"刘海军\"}],[],[],[]]",
+					"scene": "1007"
 				},
 				{
 					"id": 4,
