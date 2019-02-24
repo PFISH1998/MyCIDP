@@ -9,7 +9,7 @@ Page({
    */
   data: {
     notes: [''],
-    post_content: '分享动态',
+    post_content: '...',
     img_url: [],
     content: '',
     content_length: 120,
@@ -20,7 +20,7 @@ Page({
   },
 
   onLoad: function (options) {
-    var title = '发布'
+    var title = 'Circle'
     console.log("post",options)
     var userInfo = wx.getStorageSync("userInfo")
     if (userInfo == '') {
