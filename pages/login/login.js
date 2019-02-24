@@ -10,17 +10,17 @@ Page({
   },
 
   onLoad:function(options){
-    console.log('目标页',options.page)
+    // console.log('目标页',options.page)
     
     app.appData.userinfo = wx.getStorageSync('userinfo')
-    console.log('缓存', app.appData.userinfo)
+    // console.log('缓存', app.appData.userinfo)
 
     this.setData({
       userinfo: app.appData.userinfo,
       page: options.page
     })
 
-    console.log(this.data)
+    // console.log(this.data)
     wx.setNavigationBarTitle({
       title: '登录',
     })
@@ -60,8 +60,8 @@ Page({
         app.appData.userinfo = null
         wx.removeStorageSync('userinfo')
       }
-      console.log('userinfo', app.appData.userinfo)
-      console.log('缓存', wx.getStorageSync('userinfo'))
+      // console.log('userinfo', app.appData.userinfo)
+      // console.log('缓存', wx.getStorageSync('userinfo'))
 
 
       wx.request({
@@ -75,7 +75,7 @@ Page({
         },
 
         success: function (req) {
-          console.log('服务器数据', req)
+          // console.log('服务器数据', req)
           wx.hideLoading()
           return_data = req.data.data
           // return_data = that.cleanSpelChar(req.data)
