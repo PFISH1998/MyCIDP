@@ -21,7 +21,7 @@ Page({
 
   //事件处理函数
   bindItemTap: function (e) {
-    console.log('tap', e.currentTarget.dataset.id)
+    // console.log('tap', e.currentTarget.dataset.id)
     var id = e.currentTarget.dataset.id
     var like_circle = this.data.circle
     var uid = this.data.uid
@@ -53,12 +53,12 @@ Page({
 
   bindDetialTap: function (e) {
     console.log('detail')
-    console.log(e)
+    // console.log(e)
     var id = e.currentTarget.dataset.id
     var circle_detail = this.data.circle
-    console.log(this.data.circle[id])
+    // console.log(this.data.circle[id])
     wx.navigateTo({
-      url: '../detail/detail?circle_id='+ JSON.stringify(circle_detail[id])
+      url: '../detail/detail?circle_id='+ circle_detail[id].id
     })
   },
 
