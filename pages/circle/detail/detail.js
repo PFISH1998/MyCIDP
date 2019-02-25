@@ -1,6 +1,7 @@
 // pages/circle/detail/detail.js
 var util = require('../../../utils/util.js')
 var app = getApp()
+var circle_id = null
 Page({
 
   /**
@@ -55,7 +56,6 @@ Page({
     //   title: '评论功能暂未开放',
     //   icon:'none'
     // })
-    var circle_id = this.data.circle.id
     var user = this.data.circle.post_user
     wx.navigateTo({
       url: '../post/post?type=comment&circle_id='+ circle_id + '&user='+ user
@@ -63,10 +63,9 @@ Page({
   },
 
   del:function(){
-    console.log(this.data.circle)
-    var circle = this.data.circle
+
     var uid = app.appData.uid
-    console.log("uid", uid)
+
     wx.showModal({
       title: '确定删除？',
       content: '',
@@ -74,7 +73,7 @@ Page({
       success:function(){
         var e = {
           "method": "DELETE",
-          "url": "circle/posts/" + circle.id + "/",
+          "url": "circle/posts/" + circle_id + "/",
           "data": {
             "uid": uid,
           }
@@ -106,27 +105,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log("onload",JSON.parse(options.circle_id))
+    console.log("onload", options.circle_id)
     // JSON.stringify(options)
-    var circle = JSON.parse(options.circle_id)
+    circle_id = options.circle_id
     // var id = options.circle_id
-    var uid = app.appData.uid
-    console.log(circle)
+      
     var userType = app.appData.userType
-    console.log(userType)
-    if(uid == circle.uid || userType == 'admin'){
-      this.setData({
-        del:false
-      })
-    }
-    this.setData({
-      circle: circle,
-    })
+    this.getCircle()
     this.getComments()
+    var uid = app.appData.uid
     this.setData({
       lowhidden: true
     })
-
   },
 
   /**
@@ -182,7 +172,6 @@ Page({
   },
 
   getComments: function(){
-    var circle_id = this.data.circle.id
 
     var e = {
       url:'circle/comments/'+ circle_id + '/',
@@ -190,32 +179,37 @@ Page({
     }
     console.log(e)
     util.getData(e).then((comments) => {
-      console.log(comments)
+      console.log('comments',comments)
       this.setData({
         comments:comments,
-        lowhidden: true
       })
     })
 
   },
 
-  getCircle: function(){
-    var circle_id = this.data.circle.id
+    getCircle: function (){
     var uid = app.appData.uid
     var e = {
-      url: 'circle/posts/' + circle_id ,
+      url: 'circle/posts/' + circle_id+ '/' ,
       method: 'GET',
       data: {
         uid: uid
       }
     }
     util.getData(e).then((circle) => {
+    //  console.log('detail',circle)
+    wx.stopPullDownRefresh()
       this.setData({
         circle: circle,
       })
-      wx.stopPullDownRefresh()
+     if (uid == circle.uid) {
+        this.setData({
+            del: false
+        })
+    } 
+      
     })
-  }
+  },
 
 
 })
