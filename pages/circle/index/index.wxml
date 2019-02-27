@@ -1,34 +1,34 @@
 <!--pages/circle/index/index.wxml-->
-<scroll-view scroll-top="{{scrollTop}}" style="height: {{windowHeight}}px; width: {{windowWidth}}px;" scroll-y="true" bindscrolltoupper="pullDownRefresh" bindscrolltolower="pullUpLoad"  class="container">
+<scroll-view scroll-top="{{scrollTop}}" style="height: {{windowHeight}}px; width: {{windowWidth}}px;" scroll-y="true"
+    bindscrolltoupper="pullDownRefresh" bindscrolltolower="pullUpLoad" class="container">
 
-  <view bindtap='postCircle' >
-      <image class="add_icon" src="../../../images/yumaobi.png"></image>
-  </view>
-        <block wx:for="{{circle}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}" >
+    <view bindtap='postCircle'>
+        <image class="add_icon" src="../../../images/yumaobi.png"></image>
+    </view>
+    <block wx:for="{{circle}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
         <view class="feed-item-top" wx:if="{{item.type== 'top' }}">
-        <view class="chat-item flex-wrp">
-            <view class="avatar flex-item">
-              <image src="{{item.head_pic}}"></image>
+            <view class="chat-item flex-wrp">
+                <view class="avatar flex-item">
+                    <image src="{{item.head_pic}}"></image>
+                </view>
+                <view class="chat-content flex-item" bindtap="bindDetialTap" data-id="{{idx}}">
+                    <view class="chat-source">
+                        <text class="chatmate-top">{{ item.post_user }}</text>
+                        <text class="lasttime-top">置顶</text>
+                    </view>
+                    <text class="chat-txt-top">{{ item.content }}</text>
+                </view>
             </view>
-            <view class="chat-content flex-item"  bindtap="bindDetialTap" data-id="{{idx}}">
-              <view class="chat-source">
-                <text class="chatmate-top">{{ item.post_user }}</text>
-                <text class="lasttime-top">置顶</text>
-              </view>
-              <text class="chat-txt-top">{{ item.content }}</text>
-             </view>
-         </view>
 
-            <view class="like-comments" >
+            <view class="like-comments">
                 <view class="item" bindtap="bindItemTap" data-id="{{idx}}">
-                    <image class="like" src="{{item.is_like ? '../../icon/circle/hongxin.png' : '../../icon/circle/kongxin.png'}}" ></image>
-                    <!-- <image class="like" src="../../icon/circle/kongxin.png" hidden="{{ item.is_like }}"></image> -->
+                    <image class="like" src="{{item.is_like ? '../../icon/circle/hongxin.png' : '../../icon/circle/kongxin.png'}}"></image>
                     <view class="num">
-                    <a class="num">{{item.like_count}}</a>
-                    </view>    
+                        <a class="num">{{item.like_count}}</a>
+                    </view>
                 </view>
                 <view class="item" bindtap="bindDetialTap" data-id="{{idx}}">
-                <image class="like" src="../../icon/circle/pinglun.png" ></image>
+                    <image class="like" src="../../icon/circle/pinglun.png"></image>
                     <a class="num">{{item.comments_count}}</a>
                 </view>
             </view>
@@ -39,28 +39,28 @@
     <block wx:for="{{circle}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
         <view class="feed-item" wx:if="{{item.type== 'normal' }}">
             <view class="chat-item flex-wrp">
-            <view class="avatar flex-item">
-              <image src="{{item.head_pic}}"></image>
+                <view class="avatar flex-item">
+                    <image src="{{item.head_pic}}"></image>
+                </view>
+                <view class="chat-content flex-item" bindtap="bindDetialTap" data-id="{{idx}}">
+                    <view class="chat-source">
+                        <text class="chatmate">{{ item.post_user }}</text>
+                        <text class="lasttime">{{ item.pass_time }}</text>
+                    </view>
+                    <text class="chat-txt">{{ item.content }}</text>
+                </view>
             </view>
-            <view class="chat-content flex-item"  bindtap="bindDetialTap" data-id="{{idx}}">
-              <view class="chat-source">
-                <text class="chatmate">{{ item.post_user }}</text>
-                <text class="lasttime">{{ item.pass_time }}</text>
-              </view>
-              <text class="chat-txt">{{ item.content }}</text>
-             </view>
-         </view>
 
-            <view class="like-comments" >
+            <view class="like-comments">
                 <view class="item" bindtap="bindItemTap" data-id="{{idx}}">
-                    <image class="like" src="{{item.is_like ? '../../icon/circle/hongxin.png' : '../../icon/circle/kongxin.png'}}" ></image>
+                    <image class="like" src="{{item.is_like ? '../../icon/circle/hongxin.png' : '../../icon/circle/kongxin.png'}}"></image>
                     <!-- <image class="like" src="../../icon/circle/kongxin.png" hidden="{{ item.is_like }}"></image> -->
                     <view class="num">
-                    <a class="num">{{item.like_count}}</a>
-                    </view>    
+                        <a class="num">{{item.like_count}}</a>
+                    </view>
                 </view>
                 <view class="item" bindtap="bindDetialTap" data-id="{{idx}}">
-                <image class="like" src="../../icon/circle/pinglun.png" ></image>
+                    <image class="like" src="../../icon/circle/pinglun.png"></image>
                     <a class="num">{{item.comments_count}}</a>
                 </view>
             </view>
@@ -69,10 +69,10 @@
 
 
     <view hidden='{{lowhidden}}' class="weui-loadmore" bindchange='loadingChangge'>
-              <view class="weui-loading"></view>
-              <view class="weui-loadmore__tips">正在加载</view>
+        <view class="weui-loading"></view>
+        <view class="weui-loadmore__tips">正在加载</view>
     </view>
-    <view hidden='{{nomorehid}}'class="weui-loadmore" bindchange='loadingChangge'>
-            <view class="weui-loadmore__tips">{{ nomore }}</view>
+    <view hidden='{{nomorehid}}' class="weui-loadmore" bindchange='loadingChangge'>
+        <view class="weui-loadmore__tips">{{ nomore }}</view>
     </view>
 </scroll-view>
