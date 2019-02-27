@@ -25,7 +25,7 @@ Page({
     wx.setNavigationBarTitle({
       title: '我的课表',
     })
-    if (options.page == 'share'){
+    if (options.page == 'share') {
       // var data = JSON.parse(options.data)
       var data = JSON.parse(options.table_data)
       console.log(data)
@@ -35,15 +35,14 @@ Page({
       })
       return
     }
-    if (options.page == 'login'){
+    if (options.page == 'login') {
 
-      if (app.appData.req_data.length == 0){
+      if (app.appData.req_data.length == 0) {
         wx.showToast({
           title: '查询出错，重新试试？',
           icon: 'none'
         })
-      } else 
-      {
+      } else {
         var table_data = app.appData.req_data
         this.setData({
           weeks: app.appData.weeks,
@@ -53,8 +52,8 @@ Page({
           key: 'table_set',
           data: table_data,
         })
-      }  
-    }else{
+      }
+    } else {
       table_data = wx.getStorageSync('table_set')
       // console.log('课表缓存：',table_data)
 
@@ -78,8 +77,8 @@ Page({
         //   icon: 'none'
         // })
         var reg = '/(\s)(#)'
-        for(var i =0; i< table_data.length; i++){
-          for(var j = 0; j<table_data[i].length; j++){
+        for (var i = 0; i < table_data.length; i++) {
+          for (var j = 0; j < table_data[i].length; j++) {
             table_data[i][j].Remark = table_data[i][j].Remark.replace(/\d#/, '\r\n').replace(/\s/, '\r\n')
           }
         }
@@ -89,50 +88,49 @@ Page({
         })
       }
     }
-    
-    
-  
+
+
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-  },
+  onReady: function () {},
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+
   },
 
   /**
@@ -149,25 +147,25 @@ Page({
   },
 
 
-  showDetail: function(e){
+  showDetail: function (e) {
     var data = e.currentTarget.dataset
-    if (data.type == null ){
+    if (data.type == null) {
       data.details = ''
       data.names = ''
     }
-    if(data.name == data.names){
+    if (data.name == data.names) {
       data.names = ''
     }
     wx.showModal({
       showCancel: false,
-      title: data.name+data.names ,
+      title: data.name + data.names,
       content: data.detail + '\r' + data.details,
     })
   },
 
-  getWeek: function(){
-      var day = Date()
-      // console.log(day)
+  getWeek: function () {
+    var day = Date()
+    // console.log(day)
   }
 
 })
