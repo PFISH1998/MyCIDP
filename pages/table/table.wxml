@@ -40,27 +40,27 @@
             <!-- 循环 每天 -->
             <view class="column" wx:for="{{table_set}}" wx:for-item="column">
                 <!-- 循环 每节 -->
-                 <!-- <text>{{column}}</text> -->
-                    <!-- 循环 -->
-                  <view class="course-wrap" wx:for="{{column}}"wx:for-item="course" style="top: {{courseTop[course.course_index]}}rpx; height:{{course.time_spend}}rpx;" >
-                        <!-- <text>{{course.color}}</text> -->
-      
-                    <view class="course"  style="background-color:{{palette[course.color]}};"  data-name="{{course.LUName}}"  bindtap="showDetail" data-names=" / {{course.LUName2}}" data-detail=" {{course.Remark}}" data-details=" {{course.Remark2}}"  data-type="{{course.Remark2}}">
-                            
-                            <text>{{course.LUName}}</text>
-                            <text wx:if="{{course.LUName != course.LUName2}}">{{course.LUName2}}</text>
-                           
-                            <text>{{course.Classroom}}</text>
-                            <text>{{course.Classroom2}}</text>
-                            
-                            
-                        </view>
-                      </view>
-                      
+                <!-- <text>{{column}}</text> -->
+                <!-- 循环 -->
+                <view class="course-wrap" wx:for="{{column}}" wx:for-item="course" style="top: {{courseTop[course.course_index]}}rpx; height:{{course.time_spend}}rpx;">
+                    <!-- <text>{{course.color}}</text> -->
+
+                    <view class="course" style="background-color:{{palette[course.color]}};" data-name="{{course.LUName}}"
+                        bindtap="showDetail" data-names=" / {{course.LUName2}}" data-detail=" {{course.Remark}}"
+                        data-details=" {{course.Remark2}}" data-type="{{course.Remark2}}">
+
+                        <text>{{course.LUName}}</text>
+                        <text wx:if="{{course.LUName != course.LUName2}}">{{course.LUName2}}</text>
+
+                        <text>{{course.Classroom}}</text>
+                        <text>{{course.Classroom2}}</text>
+
+
+                    </view>
+                </view>
+
             </view>
-            
+
         </view>
     </view>
 </view>
-
-
