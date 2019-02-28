@@ -1,23 +1,21 @@
 <template name="newslist">
 
-<view class="weui-panel__bd" wx:for="{{news_list}}">
-            <navigator url="../news/news?url={{item.url}}&title={{item.title}}&pub_time={{item.pub_time}}" hover-class="weui-cell_active">
-                <view class="weui-media-box weui-media-box_text">
-                    <view class="weui-media-box__title weui-media-box__title_in-text">{{item.title}}</view>
-                    <view class="weui-media-box__desc">{{item.description}}</view>
-                    <view class="weui-media-box__info">
-                        <view class="weui-media-box__info__meta">来源：www.cidp.edu.cn</view>
-                      
-                        <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{item.pub_time}}</view>
-                        
-                    </view>
+    <view class="weui-panel__bd" wx:for="{{news_list}}">
+        <navigator url="../news/news?url={{item.url}}&title={{item.title}}&pub_time={{item.pub_time}}" hover-class="weui-cell_active">
+            <view class="weui-media-box weui-media-box_text">
+                <view class="weui-media-box__title weui-media-box__title_in-text">{{item.title}}</view>
+                <view class="weui-media-box__desc">{{item.description}}</view>
+                <view class="weui-media-box__info">
+                    <view class="weui-media-box__info__meta">来源：www.cidp.edu.cn</view>
+                    <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{item.pub_time}}</view>
                 </view>
-              </navigator>
-              </view>
-              <view hidden='{{hidden}}' class="weui-loadmore" bindchange='loadingChangge'>
-              <view class="weui-loading"></view>
-              <view class="weui-loadmore__tips">正在加载</view>
-          </view>
+            </view>
+        </navigator>
+    </view>
+    <view hidden='{{hidden}}' class="weui-loadmore" bindchange='loadingChangge'>
+        <view class="weui-loading"></view>
+        <view class="weui-loadmore__tips">正在加载</view>
+    </view>
 
-          
+
 </template>

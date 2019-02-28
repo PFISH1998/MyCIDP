@@ -2,9 +2,9 @@
 .weui-article__p {
   margin: 0 0 .8em;
   text-indent: 20rpx;
-
   text-align: left;
 }
+
 /* .weui-img {
   width: 320px;
   height: 480px;

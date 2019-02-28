@@ -2,11 +2,11 @@
 
 .body {
   font-family: "PingFangSC-Light",
-                 sans-serif,
-                 "Source Sans Pro",
-                 "Helvetica Neue",
-                 Helvetica,
-                 Arial;
+    sans-serif,
+    "Source Sans Pro",
+    "Helvetica Neue",
+    Helvetica,
+    Arial;
   font-size: 28rpx;
   -webkit-font-smoothing: antialiased;
   line-height: 1.42857143;
@@ -20,7 +20,9 @@
   /* margin-top: 95rpx; */
 }
 
-button, button::after, .button-hover {
+button,
+button::after,
+.button-hover {
   margin-left: 0;
   margin-right: 0;
   padding-left: 0;
@@ -47,14 +49,15 @@ button, button::after, .button-hover {
 }
 
 .inline {
-  display: inline-block !important;
+  display: inline-block !important
 }
 
 .none {
   display: none;
 }
 
-.clearfix:before, .clearfix:after {
+.clearfix:before,
+.clearfix:after {
   display: table;
   content: " ";
 }
@@ -202,13 +205,14 @@ button, button::after, .button-hover {
 }
 
 .jiantou {
-width:25px;
-height:24px;
-left: 30px;
-display:inline-block;
-overflow:hidden;
-margin-top: 30rpx;
+  width: 25px;
+  height: 24px;
+  left: 30px;
+  display: inline-block;
+  overflow: hidden;
+  margin-top: 30rpx;
 }
+
 .foot {
   flex-direction: column;
   text-align: center;
@@ -216,6 +220,7 @@ margin-top: 30rpx;
   color: #999999;
   font-size: 13px;
 }
+
 .foot text {
   width: 100%;
   color: #999999;

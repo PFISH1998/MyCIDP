@@ -4,6 +4,4 @@
         <text></text>
         <view class="page__desc" wx:for="{{notes}}" wx:key="item">{{item}}</view>
     </view>
-    </view>
-
-    
+</view>

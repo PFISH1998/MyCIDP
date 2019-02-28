@@ -9,6 +9,7 @@
   /* margin: 20rpx; */
   border-radius: 50%;
 }
+
 .userinfo-name {
   margin: 1rpx 15rpx;
   font-size: 17px;

@@ -9,9 +9,9 @@ Page({
     page: ''
   },
 
-  onLoad:function(options){
+  onLoad: function (options) {
     // console.log('目标页',options.page)
-    
+
     app.appData.userinfo = wx.getStorageSync('userinfo')
     // console.log('缓存', app.appData.userinfo)
 
@@ -26,11 +26,11 @@ Page({
     })
   },
 
-  checkboxchange: function(e){
+  checkboxchange: function (e) {
     var that = this
     that.setData({
-       checkbox: e.detail.value
-     })
+      checkbox: e.detail.value
+    })
   },
 
   submitInfo: function submitInfo(e) {
@@ -38,7 +38,7 @@ Page({
     var return_data = '';
     var sid = e.detail.value.sid;
     var pwd = e.detail.value.pwd;
-    if (sid.length <= 7 || pwd.length == 0 ) {
+    if (sid.length <= 7 || pwd.length == 0) {
       wx.showToast({
         title: '输入有误',
         icon: 'none',
@@ -52,8 +52,11 @@ Page({
         title: '正在登录',
       })
 
-      app.appData.userinfo = {sid:sid, pwd:pwd}
-      
+      app.appData.userinfo = {
+        sid: sid,
+        pwd: pwd
+      }
+
       if (this.data.checkbox) {
         wx.setStorageSync('userinfo', app.appData.userinfo)
       } else {
@@ -65,11 +68,11 @@ Page({
 
 
       wx.request({
-        
+
         // url: 'http://127.0.0.1:8000/'+ that.data.page,
-        url: 'https://wx.pfish.xyz/' + that.data.page,     
+        url: 'https://wx.pfish.xyz/' + that.data.page,
         method: 'post',
-        data:{
+        data: {
           'sid': sid,
           'pwd': pwd
         },
@@ -84,15 +87,15 @@ Page({
           if (info == null) {
             info = "服务器未响应"
           }
-          console.log('code',statusCode)
+          console.log('code', statusCode)
           if (statusCode != 200) {
             wx.showModal({
               title: "出错了！",
-              content: info + "；code:"+statusCode,
+              content: info + "；code:" + statusCode,
             })
             return
-            
-          }else{
+
+          } else {
             console.log(that.data.page)
             app.appData.req_data = return_data
             // wx.setStorageSync('term', term)
@@ -113,8 +116,8 @@ Page({
           that.setData({
             buthidden: false
           })
-           wx.hideLoading()
-       }
+          wx.hideLoading()
+        }
       })
     }
   },

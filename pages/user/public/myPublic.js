@@ -7,8 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    circle:null,
-    lowhidden:false
+    circle: null,
+    lowhidden: false
   },
 
   /**
@@ -27,13 +27,13 @@ Page({
         "uid": uid
       }
     }
-    util.request(e).then((data)=>{
-        console.log("e",data)
-        this.setData({
-          circle: data.data,
-          lowhidden: true
-        })
+    util.request(e).then((data) => {
+      console.log("e", data)
+      this.setData({
+        circle: data.data,
+        lowhidden: true
       })
+    })
 
   },
 

@@ -1,42 +1,44 @@
 <view class="body">
-<view class="container bg" bindlongtap="longTap" bindtouchstart="touchStart" bindtouchend="touchEnd">
-  <view class="home-img">
-        <image mode="aspectFill" src="{{daily.pic_url}}" alt="" />
-  </view>
-  <view class="home-mask">
-    <view class="home-content">
-      <text class="padder block">{{daily.day}}</text>
-      <text class="padder block m-b-sm home-content-title">{{daily.mon}}   {{daily.year}}</text>
-      <text class="padder block m-b-lg home-content-title">{{daily.content}}</text>
+  <view class="container bg" bindlongtap="longTap" bindtouchstart="touchStart" bindtouchend="touchEnd">
+    <view class="home-img">
+      <image mode="aspectFill" src="{{daily.pic_url}}" alt="" />
+    </view>
+    <view class="home-mask">
+      <view class="home-content">
+        <text class="padder block">{{daily.day}}</text>
+        <text class="padder block m-b-sm home-content-title">{{daily.mon}} {{daily.year}}</text>
+        <text class="padder block m-b-lg home-content-title">{{daily.content}}</text>
+      </view>
     </view>
   </view>
+  
+  <view class="page__bd page__bd_spacing">
+    <view class="kind-list">
+      <view>
+        <image class="jiantou" src="/pages/icon/jiantou3.png" />
+      </view>
+      <block wx:for="{{list}}" wx:key="id">
+        <view class="kind-list__item">
+          <view class="weui-cells-index">
+            <block wx:for="{{item.pages}}" wx:for-item="page" wx:key="*this">
+              <navigator url="{{page.url}}" class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">{{page.name}}</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+              </navigator>
+            </block>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="foot">
+    <view>2019 © PFISH</view>
+    <!-- <view>By PFSIH</view> -->
+  </view>
+  <view class="index-ad">
+    <ad unit-id="adunit-0830da0ccbdf718a"></ad>
   </view>
 
-   <view class="page__bd page__bd_spacing">
-        <view class="kind-list">
-            <view><image class="jiantou" src="/pages/icon/jiantou3.png"/> </view>
-            <block wx:for="{{list}}" wx:key="id">
-                <view class="kind-list__item">
-                  <view class="weui-cells-index">
-                      <block wx:for="{{item.pages}}" wx:for-item="page" wx:key="*this">
-                          <navigator url="{{page.url}}" class="weui-cell weui-cell_access">
-                              <view class="weui-cell__bd">{{page.name}}</view>
-                              <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-                          </navigator>
-                      </block>
-                  </view>
-                </view>
-            </block>
-        </view>
-     </view>
-     <view class="foot">
-      <view>2019 © PFISH</view>
-      <!-- <view>By PFSIH</view> -->
-     </view>
-     <view class="index-ad">
-      <ad unit-id="adunit-0830da0ccbdf718a"></ad>
-     </view>
-     
- 
+
 
 </view>

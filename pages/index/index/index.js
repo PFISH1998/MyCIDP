@@ -5,22 +5,30 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list: [
-      {
-        id: 'sreach',
-        name: '查询',
-        open: true,
-        pages: [{ url: '../../table/table', name: '课表' }, { url: '../../login/login?page=grade', name: '成绩' }, { url: '../../calendar/calendar', name: '校历' }]}
-    ],
+    list: [{
+      id: 'sreach',
+      name: '查询',
+      open: true,
+      pages: [{
+        url: '../../table/table',
+        name: '课表'
+      }, {
+        url: '../../login/login?page=grade',
+        name: '成绩'
+      }, {
+        url: '../../calendar/calendar',
+        name: '校历'
+      }]
+    }],
 
     // 触摸开始时间
     touchStartTime: 0,
     // 触摸结束时间
     touchEndTime: 0,
     // 最后一次单击事件点击发生时间
-    lastTapTime: 0, 
+    lastTapTime: 0,
 
-    daily:{}
+    daily: {}
   },
 
   /**
@@ -30,31 +38,30 @@ Page({
   onLoad: function (options) {
     // this.showNotice()
     var index_data = wx.getStorageSync("index_data")
-    if (index_data == '' || util.is_diff_day(new Date().getTime(), index_data.set_date)){
+    if (index_data == '' || util.is_diff_day(new Date().getTime(), index_data.set_date)) {
       this.indexPic()
       util.indexImg(new Date().getTime())
-    }
-    else{
+    } else {
       this.setData({
         daily: index_data.img_data.data
       })
     }
 
-      // this.setData({
-      //   daily:{
-      //     'pic_url': '/pages/icon/index.jpg',
-      //     'content': '网络有点问题...'
-      //   }
-      // })
+    // this.setData({
+    //   daily:{
+    //     'pic_url': '/pages/icon/index.jpg',
+    //     'content': '网络有点问题...'
+    //   }
+    // })
 
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-    onReady: function () {
-      
-    },
+  onReady: function () {
+
+  },
 
   /**
    * 生命周期函数--监听页面显示
@@ -100,21 +107,21 @@ Page({
     }
   },
 
-// 
-  longTap: function(e){
+  // 
+  longTap: function (e) {
     var that = this
     wx.showActionSheet({
-      itemList: ["分享MyCIDP","下载壁纸"],
-      success(res){
+      itemList: ["分享MyCIDP", "下载壁纸"],
+      success(res) {
         var index = res.tapIndex
-        if(index == 0){
+        if (index == 0) {
           console.log("share")
           wx.showModal({
             title: '分享 MyCIDP',
             content: '你可以点击右上角左边的按钮将小程序转发分享，感谢你的支持！',
           })
         }
-        if(index == 1){
+        if (index == 1) {
           that.downLoadPic()
         }
       }
@@ -132,14 +139,14 @@ Page({
     this.touchEndTime = e.timeStamp
   },
 
-  downLoadPic: function(){
+  downLoadPic: function () {
     var that = this
     var pic_url = that.data.daily.pic_url
     var e = pic_url
     util.saveIndexImg(e)
   },
 
-  indexPic: function(){
+  indexPic: function () {
     var e = {
       'url': 'home',
       'method': 'get'
@@ -159,7 +166,7 @@ Page({
   },
 
 
-// TODO 通知模块
+  // TODO 通知模块
   // showNotice: function(){
   //   util.request().then((data) => {
 

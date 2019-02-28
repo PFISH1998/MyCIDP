@@ -1,8 +1,6 @@
-
-
 <view class='page'>
- <textarea class='text' bindinput="input" placeholder="{{ post_content }}" auto-height/>
- <view class="image_content">
+    <textarea class='text' bindinput="input" placeholder="{{ post_content }}" auto-height />
+    <view class="image_content">
  <view class='image' wx:for="{{img_url}}">
   <image class="moment_img" src="{{item}}"></image>
  </view>
@@ -15,7 +13,5 @@
   <text class="page__desc">{{content_length}} / 120</text>
  <button bindtap="send" style='margin-right:5px;margin-left:5px'>发送</button>
 
-
  <view class="page__desc" wx:for="{{notes}}" wx:key="item">{{item}}</view>
 </view>
-
