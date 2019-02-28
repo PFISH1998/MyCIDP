@@ -9,9 +9,9 @@ Page({
    */
   data: {
     circle: null,
-    detail:null,
-    uid:'',
-    del:true,
+    detail: null,
+    uid: '',
+    del: true,
     comments: null,
     lowhidden: false,
 
@@ -58,19 +58,19 @@ Page({
     // })
     var user = this.data.circle.post_user
     wx.navigateTo({
-      url: '../post/post?type=comment&circle_id='+ circle_id + '&user='+ user
+      url: '../post/post?type=comment&circle_id=' + circle_id + '&user=' + user
     })
   },
 
-  del:function(){
+  del: function () {
 
     var uid = app.appData.uid
 
     wx.showModal({
       title: '确定删除？',
       content: '',
-      cancelText:'取消',
-      success:function(){
+      cancelText: '取消',
+      success: function () {
         var e = {
           "method": "DELETE",
           "url": "circle/posts/" + circle_id + "/",
@@ -78,10 +78,10 @@ Page({
             "uid": uid,
           }
         }
-        util.request(e).then((data)=>{
+        util.request(e).then((data) => {
           console.log("del", data)
           var status = data.statusCode
-          if (status != 202){
+          if (status != 202) {
             wx.showToast({
               title: '删除失败',
               icon: 'none'
@@ -93,10 +93,8 @@ Page({
           })
           wx.navigateBack({})
         })
-        
       }
     })
-
   },
 
 
@@ -109,7 +107,6 @@ Page({
     // JSON.stringify(options)
     circle_id = options.circle_id
     // var id = options.circle_id
-      
     var userType = app.appData.userType
     this.getCircle()
     this.getComments()
@@ -151,7 +148,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    console.log("pull",this.data.circle)
+    console.log("pull", this.data.circle)
     this.getCircle()
     this.getComments()
 
@@ -171,43 +168,43 @@ Page({
 
   },
 
-  getComments: function(){
+  getComments: function () {
 
     var e = {
-      url:'circle/comments/'+ circle_id + '/',
+      url: 'circle/comments/' + circle_id + '/',
       method: 'GET',
     }
     console.log(e)
     util.getData(e).then((comments) => {
-      console.log('comments',comments)
+      console.log('comments', comments)
       this.setData({
-        comments:comments,
+        comments: comments,
       })
     })
 
   },
 
-    getCircle: function (){
+  getCircle: function () {
     var uid = app.appData.uid
     var e = {
-      url: 'circle/posts/' + circle_id+ '/' ,
+      url: 'circle/posts/' + circle_id + '/',
       method: 'GET',
       data: {
         uid: uid
       }
     }
     util.getData(e).then((circle) => {
-    //  console.log('detail',circle)
-    wx.stopPullDownRefresh()
+      //  console.log('detail',circle)
+      wx.stopPullDownRefresh()
       this.setData({
         circle: circle,
       })
-     if (uid == circle.uid) {
+      if (uid == circle.uid) {
         this.setData({
-            del: false
+          del: false
         })
-    } 
-      
+      }
+
     })
   },
 
