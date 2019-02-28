@@ -1,15 +1,15 @@
 @import "weui.wxss";
 
-page{
-    background-color: #F8F8F8;
-    font-size: 16px;
-    /* font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif; */
-      font-family: "PingFangSC-Light",
-                 sans-serif,
-                 "Source Sans Pro",
-                 "Helvetica Neue",
-                 Helvetica,
-                 Arial;
+page {
+  background-color: #F8F8F8;
+  font-size: 16px;
+  /* font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif; */
+  font-family: "PingFangSC-Light",
+    sans-serif,
+    "Source Sans Pro",
+    "Helvetica Neue",
+    Helvetica,
+    Arial;
 }
 
 .index-ad {
@@ -19,33 +19,34 @@ page{
 }
 
 .page__hd {
-    padding: 40px;
+  padding: 40px;
 }
 
 .page__bd {
-    padding-bottom: 40px;
-}
-.page__bd_spacing {
-    padding-left: 15px;
-    padding-right: 15px;
+  padding-bottom: 40px;
 }
 
-.page__ft{
-    padding-bottom: 10px;
-    text-align: center;
+.page__bd_spacing {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.page__ft {
+  padding-bottom: 10px;
+  text-align: center;
 }
 
 .page__title {
-    text-align: left;
-    font-size: 20px;
-    font-weight: 400;
+  text-align: left;
+  font-size: 20px;
+  font-weight: 400;
 }
 
 .page__desc {
-    margin-top: 5px;
-    color: #888888;
-    text-align: left;
-    font-size: 14px;
+  margin-top: 5px;
+  color: #888888;
+  text-align: left;
+  font-size: 14px;
 }
 
 /**app.wxss**/
@@ -60,24 +61,27 @@ page{
   background: #F0F4F3;
 }
 
-.container.withtab{
+.container.withtab {
   margin: 105rpx 0 0 0;
   /*top: 105rpx;*/
 }
-.flex-wrp{
+
+.flex-wrp {
   display: flex;
 }
 
-.flex-tab{
+.flex-tab {
   flex-flow: row nowrap;
   justify-content: space-around;
   align-items: stretch;
 }
-.flex-item{
+
+.flex-item {
   flex-grow: 1;
   text-align: center;
 }
-.top-tab{
+
+.top-tab {
   width: 750rpx;
   height: 100rpx;
   background: #1296db;
@@ -90,17 +94,19 @@ page{
   top: 0;
   z-index: 9999;
 }
-.toptab.active{
+
+.toptab.active {
   color: #ffffff;
   border-bottom: solid 2px #ffffff;
 }
-.container{
+
+.container {
   padding: 0;
   font-size: 14rpx;
   color: #000;
 }
 
-.container .feed-item{
+.container .feed-item {
   width: 750rpx;
   padding: 0rpx 0rpx 0rpx;
   margin: 7rpx 0 6rpx 0;
@@ -110,7 +116,7 @@ page{
   box-shadow: 0 2px 5px #eeeeee;
 }
 
-.container .feed-item-comment{
+.container .feed-item-comment {
   width: 725rpx;
   padding: 0rpx 0rpx 0rpx;
   margin: 7rpx 0 6rpx 0;
@@ -121,7 +127,7 @@ page{
 }
 
 /* 置顶样式 */
-.container .feed-item-top{
+.container .feed-item-top {
   width: 100%;
   padding: 0rpx 0rpx 0rpx;
   margin: 7rpx 0 6rpx 0;
@@ -132,7 +138,7 @@ page{
 }
 
 
-.container .feed-item .feed-source{
+.container .feed-item .feed-source {
   width: 725rpx;
   left: 0;
   height: 70rpx;
@@ -144,16 +150,18 @@ page{
   padding: 4rpx 0 8rpx 0;
 
 }
-.container .feed-item .feed-source .avatar{
+
+.container .feed-item .feed-source .avatar {
   position: relative;
   display: inline-block;
 }
-.container .feed-item .feed-source a{
+
+.container .feed-item .feed-source a {
   display: inline-block;
   height: 50rpx;
 }
-.container .feed-i
-tem .feed-source .avatar image{
+
+.container .feed-i tem .feed-source .avatar image {
   /*position: absolute;*/
   display: inline-block;
   width: 45rpx;
@@ -162,7 +170,8 @@ tem .feed-source .avatar image{
   top: 10rpx;
   vertical-align: middle;
 }
-.container .feed-item .feed-source text{
+
+.container .feed-item .feed-source text {
   /*position: absolute;*/
   display: inline-block;
   height: 40rpx;
@@ -172,45 +181,52 @@ tem .feed-source .avatar image{
   color: #a0acac;
   font-size: 30rpx;
 }
-.container .feed-item .feed-source .item-more{
+
+.container .feed-item .feed-source .item-more {
   display: inline-block;
   width: 40rpx;
   height: 45rpx;
   float: right;
 }
-.container .feed-item .feed-content{
+
+.container .feed-item .feed-content {
   padding: 10rpx 0 0 0;
 }
-.container .feed-item .feed-content .question text{
+
+.container .feed-item .feed-content .question text {
   font-size: 28rpx;
   font-weight: 600px;
   line-height: 40rpx;
   text-space: 5rpx;
 }
-.container .feed-item .feed-content .answer-body{
+
+.container .feed-item .feed-content .answer-body {
   padding: 10rpx 0 0 0;
   /*height: 10rpx;*/
   font-size: 24rpx;
   line-height: 28rpx;
   color: #5b5b5b;
 }
-.container .feed-item .feed-content .answer-actions{
+
+.container .feed-item .feed-content .answer-actions {
   width: 690rpx;
-  padding: 10rpx 0  0;
+  padding: 10rpx 0 0;
   color: #a0acac;
 }
-.container .feed-item .feed-content .answer-actions view{
+
+.container .feed-item .feed-content .answer-actions view {
   display: inline-block;
   vertical-align: text-bottom;
   padding: 0 10rpx 0 0;
   font-size: 24rpx;
 }
-.container .feed-item .feed-content .answer-actions .dot ::after{
+
+.container .feed-item .feed-content .answer-actions .dot ::after {
   content: "•";
 }
 
-.like-comments{
-  
+.like-comments {
+
   /* padding: 20rpx 30rpx 0rpx; */
   display: flex;
   /* justify-content: center; */
@@ -218,57 +234,57 @@ tem .feed-source .avatar image{
 
   /* margin: 7rpx 0 6rpx 0; */
   background: #ffffff;
-  border-top:#5b5b5b;
+  border-top: #5b5b5b;
   /* border-bottom: 1px solid #eee; */
   /* box-shadow: 0 2px 5px #eeeeee; */
-  
+
 }
 
-.like-comments .item{
+.like-comments .item {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 13px;
   padding: 20rpx 20rpx 15rpx;
   width: 345rpx;
-  border-top:#5b5b5b;
+  border-top: #5b5b5b;
   /* border:1px solid slategrey; */
   /* border-left-radius: 1px */
-  
+
 }
 
 .like-comments .like-item {
-  border:1px solid slategrey;
+  border: 1px solid slategrey;
   border-width: 6px;
   /* border-style: dashed; */
   /* content: "•"; */
 }
 
 .like {
-  width:18px;
-  height:18px;
+  width: 18px;
+  height: 18px;
 
 
 }
 
 .num {
-   padding: 0rpx 10rpx 0rpx;
+  padding: 0rpx 10rpx 0rpx;
 }
 
 .container .feed-item .feed-source .pass_time {
-   /* padding: 0rpx 100rpx 0rpx; */
-   font-size: 12px;
-   left: 800rpx;
-   /* height: 50rpx; */
-   /* width: 80rpx; */
-   /* position:absolute; */
-   justify-content: right;
-   align-items: initial;
-   margin:10rpx 0 0 350rpx;
+  /* padding: 0rpx 100rpx 0rpx; */
+  font-size: 12px;
+  left: 800rpx;
+  /* height: 50rpx; */
+  /* width: 80rpx; */
+  /* position:absolute; */
+  justify-content: right;
+  align-items: initial;
+  margin: 10rpx 0 0 350rpx;
 
 }
 
-.lasttime{
+.lasttime {
   color: #818A8F;
   /* font-size: 28rpx; */
   padding: 4rpx 70rpx 8rpx 0;
@@ -278,7 +294,7 @@ tem .feed-source .avatar image{
   vertical-align: text-bottom;
 }
 
-.lasttime-top{
+.lasttime-top {
   color: #E64340;
   /* font-size: 28rpx; */
   padding: 4rpx 70rpx 8rpx 0;
@@ -288,7 +304,7 @@ tem .feed-source .avatar image{
   vertical-align: text-bottom;
 }
 
-.delete{
+.delete {
   color: #E64340;
   /* font-size: 28rpx; */
   padding: 4rpx 70rpx 8rpx 0;

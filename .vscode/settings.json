@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.html": "html",
+        "*.py": "python",
+        "*.wxss": "wxml-pug",
+        "*.wxml": "wxml"
+    }
+}

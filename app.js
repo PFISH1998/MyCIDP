@@ -7,10 +7,10 @@ App({
     start_date: '2019/2/25',
     userinfo: null,
     userInfo: {},
-    uid:null,
+    uid: null,
     req_data: null,
     weeks: null,
-    cicle_detail:null,
+    cicle_detail: null,
     userType: null,
   },
   onLaunch: function onLaunch() {
@@ -40,9 +40,9 @@ App({
     console.log("wx.login")
     var uid = wx.getStorageSync("openid")
     // console.log('uid', uid)
-    if(uid == ''){
+    if (uid == '') {
       this.login()
-    }else{
+    } else {
       this.appData.uid = uid
     }
     var userinfo = wx.getStorageSync("userInfo")
@@ -62,14 +62,14 @@ App({
 
     var start_time = new Date(this.appData.start_date).getTime()
     var date = new Date().getTime()
-    this.appData.weeks =  parseInt(((date - start_time) / 1000 / 3600 / 24 / 7)+1)
+    this.appData.weeks = parseInt(((date - start_time) / 1000 / 3600 / 24 / 7) + 1)
 
   },
-  
+
   onShow: function onShow() {},
   onHide: function onHide() {},
 
-  back:function(data){
+  back: function (data) {
     console.log(data)
     console.log("data_uid", data.data)
     var status = data.code
@@ -93,11 +93,11 @@ App({
         url: '/pages/login/auth/auth?code=' + code,
       })
     }
-    if(status == 300){
-        this.appData.uid = uid
-        wx.setStorage({
-            key: 'openid',
-            data: uid
+    if (status == 300) {
+      this.appData.uid = uid
+      wx.setStorage({
+        key: 'openid',
+        data: uid
       })
     }
     var userinfo = wx.getStorageSync("userInfo")
@@ -112,12 +112,12 @@ App({
   },
 
   login: function () {
-  var that = this
+    var that = this
     wx.login({
       success(res) {
         if (res.code) {
           code = res.code
-        //   console.log(res)
+          //   console.log(res)
           //发起网络请求
           var e = {
             'url': 'circle/uid/',
