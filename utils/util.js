@@ -31,71 +31,66 @@ var index_data = ''
 // var discovery_next = require('../data/data_discovery_next.js')
 
 
-function upLoadFile(e) {
+function upLoadFile(e){
   wx.uploadFile({
     url: '',
     filePath: '',
     name: '',
     header: {},
     formData: {},
-    success: function (res) {},
-    fail: function (res) {},
-    complete: function (res) {},
+    success: function(res) {},
+    fail: function(res) {},
+    complete: function(res) {},
   })
 }
 
 
 // 下载图片
-function downLoadFileTemp(e) {
-  return new Promise(function (resolve, reject) {
-    wx.downloadFile({
-      url: e,
-      header: {},
-      success: function (res) {
-        index_data.img_data.data["pic_url"] = res.tempFilePath
-        console.log(index_data)
-        resolve(
-          wx.setStorage({
-            key: 'index_data',
-            data: index_data,
-          })
-        )
-      },
-      fail: function (res) {
-        wx.showToast({
-          title: '下载失败',
-          icon: fail
-        })
-      },
-      complete: function (res) {},
-    })
-  })
-}
-
-
-function downLoadFile(e) {
+function downLoadFileTemp(e){
+  return new Promise(function (resolve, reject){
   wx.downloadFile({
     url: e,
     header: {},
     success: function (res) {
-      saveImg(res)
+      index_data.img_data.data["pic_url"] = res.tempFilePath
+      console.log(index_data)
+      resolve(
+        wx.setStorage({
+          key: 'index_data',
+          data: index_data,
+        })
+      )
     },
     fail: function (res) {
-      return
-    },
-    complete: function (res) {},
+      wx.showToast({ title: '下载失败', icon: fail })
+     },
+    complete: function (res) { },
   })
+})
 }
 
 
-function saveIndexImg(res) {
+function downLoadFile(e){
+wx.downloadFile({
+  url: e,
+  header: {},
+  success: function(res) {
+    saveImg(res)
+  },
+  fail: function(res) {
+    return
+  },
+  complete: function(res) {},
+})
+}
+
+
+function saveIndexImg(res){
   console.log(res)
   wx.saveImageToPhotosAlbum({
     filePath: res,
     success() {
-      wx.showToast({
-        title: '下载成功！'
-      })
+      wx.showToast({ title: '下载成功！'})
     }
 
   })
@@ -103,23 +98,24 @@ function saveIndexImg(res) {
 
 
 // 首页壁纸下载
-function indexImg(date) {
+function indexImg(date){
   var index_img = wx.getStorageSync("index_data")
-  if (is_diff_day(date, index_img.set_date) || index_img == ' ') {
+  if(is_diff_day(date, index_img.set_date) || index_img == ' '){
     saveImg()
-  } else {
+  }
+  else{
     return true
   }
 
 }
 
-function is_diff_day(date1, date2) {
-  return (new Date(date1).toDateString() != new Date(date2).toDateString())
+function is_diff_day(date1, date2){
+return (new Date(date1).toDateString() != new Date(date2).toDateString())
 }
 
 
 // 保存图片到缓存
-function saveImg() {
+function saveImg(){
   var e = {
     'url': 'home',
     'method': 'get'
@@ -143,7 +139,7 @@ function getData(e) {
   console.log("request", e)
   return new Promise(function (resolve, reject) {
     wx.request({
-      url: test_url + url,
+      url: test_url+url,
       data: data,
       method: method,
       header: {
@@ -162,28 +158,27 @@ function getData(e) {
 }
 
 
-function request(e) {
-  console.log("request", e)
+function request(e){
+  console.log("request",e)
   var url = test_url + e.url
   var data = e.data
   var method = e.method
-  return new Promise(function (resolve, reject) {
-    wx.request({
-      url: url,
-      data: data,
-      method: method,
-      header: {
-        'Content-Type': 'application/json'
-      },
-      success: function (req) {
-        console.log("back", req)
-        resolve(req)
-      },
-      fail: function (res) {
-        reject(res)
-        console.log("failed")
-      }
-    })
+  return new Promise(function (resolve, reject) {wx.request({
+    url: url,
+    data: data,
+    method: method,
+    header:{
+      'Content-Type': 'application/json'
+    },
+    success: function(req){
+      console.log("back",req)
+      resolve(req)
+    },
+    fail: function (res) {
+      reject(res)
+      console.log("failed")
+    }
+  })
   })
 
 }
@@ -191,22 +186,22 @@ function request(e) {
 
 
 function getData2(e) {
-  var user = e.user
-  console.log("user", user)
-  var url = test_url
-  var req_data = {
-    "url": url + "post/",
-    "method": "GET"
-    // "data":e.
-  }
+var user = e.user
+console.log("user", user)
+var url = test_url
+var req_data = {
+  "url": url+"post/",
+  "method": "GET"
+  // "data":e.
+}
 
-  getData(req_data).then((data) => {
-    // console.log("data", data)
-    if (data.statusCode == 500) {
-      return
-    }
-    return getTime(data)
-  })
+getData(req_data).then((data) =>{
+  // console.log("data", data)
+  if (data.statusCode == 500){
+    return
+  }
+  return getTime(data)
+})
 
 }
 
@@ -224,51 +219,55 @@ function discoveryNext() {
 }
 
 
-function getTime(e) {
+function getTime(e){
   // console.log('gettime', e)
   var data = e.data
-
+  
   var now = new Date()
-  var minute = 1000 * 60;
-  var hour = minute * 60;
-  var day = hour * 24;
-  var halfmonth = day * 15;
-  var month = day * 30;
+  var minute = 1000*60;
+  var hour = minute*60;
+  var day = hour*24;
+  var halfmonth = day*15;
+  var month = day*30;
 
-  for (var i = 0; i < data.length; i++) {
+  for (var i=0; i<data.length; i++){
     var result;
     var pub_time = strToDate(data[i].pub_time) // 解决 iOS 时间兼容问题
     var diffValue = now - pub_time
-    if (diffValue < 0) {
+    if(diffValue < 0){
       return
     }
-    var monthC = diffValue / month
-    var hourC = diffValue / hour
-    var dayC = diffValue / day
-    var weekC = diffValue / (7 * day)
-    var minC = diffValue / minute
-    if (monthC >= 1) {
-      if (monthC <= 12) {
+    var monthC = diffValue/month
+    var hourC = diffValue/hour
+    var dayC = diffValue/day
+    var weekC = diffValue/(7*day)
+    var minC = diffValue/minute
+    if (monthC >= 1){
+      if (monthC <= 12){
         result = "" + parseInt(monthC) + "月前"
-      } else {
-        result = "" + parseInt(monthC / 12) + "年前"
+      }else{
+        result = "" + parseInt(monthC / 12) +"年前"
       }
-    } else if (weekC >= 1) {
+    }
+    else if (weekC >= 1){
       result = "" + parseInt(weekC) + "周前"
-    } else if (dayC >= 1) {
+    }
+    else if (dayC >= 1){
       result = "" + parseInt(dayC) + "天前"
-    } else if (hourC >= 1) {
+    }
+    else if (hourC >= 1){
       result = "" + parseInt(hourC) + "小时前"
-    } else if (minC >= 1) {
+    }
+    else if (minC >= 1){
       result = "" + parseInt(minC) + "分钟前"
-    } else {
+    }else{
       result = "刚刚"
     }
     data[i].pass_time = result
 
 
     // console.log(result)
-
+    
     // console.log(data[i])
 
 
@@ -282,7 +281,7 @@ function getTime(e) {
 
 }
 
-function strToDate(dateObj) {
+function strToDate(dateObj){
   dateObj = dateObj.replace(/T/g, ' ').replace(/\.[\d]{3}Z/, '').replace(/(-)/g, '/')
   dateObj = dateObj.slice(0, dateObj.indexOf("."))
   return new Date(dateObj)

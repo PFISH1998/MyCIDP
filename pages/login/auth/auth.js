@@ -18,13 +18,13 @@ Page({
     var userInfo = e.detail.userInfo
     // JSON.stringify(userInfo)
     console.log("e", userInfo)
-    console.log("storage", wx.getStorageSync("userInfo"))
+    console.log("storage",wx.getStorageSync("userInfo"))
     var openid = app.appData.uid
     console.log(openid)
     app.appData.userInfo = userInfo
     var req = {
-      "url": "circle/user/",
-      "method": "POST",
+      "url":"circle/user/",
+      "method":"POST",
       "data": {
         "uid": openid,
         "nick_name": userInfo.nickName,

@@ -23,18 +23,17 @@
 }
 
 .page__info {
-  margin-top: 5px;
-  text-align: left;
+  margin-top:5px;
+  text-align:left;
   display: block;
   padding: 4rpx 70rpx 8rpx 60rpx;
   /* width: 20rpx; */
 }
-
 .page__info .info_main {
-  font-size: 17px;
+  font-size:17px;  
 }
 
-.page__info .info_item {
-  font-size: 14px;
-  color: #888888;
+.page__info .info_item{
+  font-size:14px;  
+  color:#888888;
 }

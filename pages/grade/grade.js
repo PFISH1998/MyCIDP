@@ -3,7 +3,7 @@ var sliderWidth = 96;
 var app = getApp()
 
 Page({
-  data: {
+  data:{
     year_data: '',
     grade_data: '',
 
@@ -12,7 +12,7 @@ Page({
     sliderLeft: 0,
     hidden: true,
 
-
+    
   },
 
   onLoad: function () {
@@ -26,7 +26,7 @@ Page({
         url: '../login/login',
       })
 
-    } else {
+    }else{
       var sid = app.appData.userinfo.sid
       var pwd = app.appData.userinfo.pwd
     }
@@ -51,15 +51,13 @@ Page({
     });
   },
 
-  showData: function (req) {
-
+  showData: function(req){
+    
   },
 
   bindChange: function (e) {
     var that = this;
-    that.setData({
-      currentTab: e.detail.current
-    });
+    that.setData({ currentTab: e.detail.current });
   },
 
   tabClick: function (e) {
@@ -71,10 +69,10 @@ Page({
     });
   },
 
-  setTerm: function (year) {
+  setTerm: function(year){
     var data = this.data.grade_data
-    for (var i = 0, j = data.length; i < j; i++) {
-      if (data[i].SemesterYear == year) {
+    for(var i = 0, j = data.length; i < j; i ++){
+      if (data[i].SemesterYear == year){
         this.setData({
           year_data: data[i]
         })

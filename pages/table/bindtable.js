@@ -27,30 +27,52 @@ Page({
       title: '我的课表',
     })
 
-    // } else {
-    table_data = wx.getStorageSync('table_set')
-    console.log('课表缓存：', table_data)
+    // if (options.page == 'login') {
 
-    if (table_data == null) {
-      wx.showModal({
-        title: '空空如也',
-        content: '你还没有导入课表，是否现在登录教务处绑定？',
-        success: function (e) {
-          if (e.cancel) {
-            // console.log(e)
-          } else if (e.confirm) {
-            wx.redirectTo({
-              url: '../login/login?page=table',
-            })
+    //   if (app.appData.req_data.data.length == 0) {
+    //     wx.showToast({
+    //       title: '查询出错，重新试试？',
+    //       icon: 'none'
+    //     })
+    //   } else {
+    //     this.setData({
+    //       weeks: app.appData.weeks,
+    //       table_set: app.appData.req_data.data
+    //     })
+        // wx.setStorage({
+        //   key: 'table_set',
+        //   data: app.appData.req_data.data,
+        // })
+      // }
+
+    // } else {
+      table_data = wx.getStorageSync('table_set')
+      console.log('课表缓存：', table_data)
+
+      if (table_data == null) {
+        wx.showModal({
+          title: '空空如也',
+          content: '你还没有导入课表，是否现在登录教务处绑定？',
+          success: function (e) {
+            if (e.cancel) {
+              // console.log(e)
+            } else if (e.confirm) {
+              wx.redirectTo({
+                url: '../login/login?page=table',
+              })
+            }
           }
-        }
-      })
-    } else {
-      that.setData({
-        weeks: app.appData.weeks,
-        table_set: table_data
-      })
-    }
+        })
+      } else {
+        // wx.showToast({
+        //   title: wx.getStorageSync('term'),
+        //   icon: 'none'
+        // })
+        that.setData({
+          weeks: app.appData.weeks,
+          table_set: table_data
+        })
+      }
     // }
     wx.showModal({
       title: '删除课表',
@@ -61,7 +83,7 @@ Page({
       confirmText: '删除',
       confirmColor: '#3cc51f',
       success: function (e) {
-        if (e.confirm) {
+        if(e.confirm){
           wx.removeStorageSync('table_set')
           that.setData({
             table_set: '1234567'
@@ -72,11 +94,15 @@ Page({
             duration: 1000
           })
         }
-        if (e.cancel) {
+        if(e.cancel){
           return
         }
       }
+     
+
     })
+
+
   },
 
   /**

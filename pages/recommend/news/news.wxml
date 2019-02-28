@@ -1,43 +1,47 @@
 <view class="page">
+    
     <view class="page__bd">
-        <view hidden='{{headhidden}}' class="weui-loadmore" bindchange='loadingChangge'>
-            <view class="weui-loading"></view>
-            <view class="weui-loadmore__tips">正在加载</view>
-        </view>
+
+    <view hidden='{{headhidden}}' class="weui-loadmore" bindchange='loadingChangge'>
+        <view class="weui-loading"></view>
+        <view class="weui-loadmore__tips">正在加载</view>
+    </view>
 
         <view class="weui-article">
             <view class="weui-article__h1">{{title}}</view>
-
-            <view class="weui-media-box__info" hidden='{{!headhidden}}'>
-                <view class="weui-media-box__info__meta">www.cidp.edu.cn</view>
-                <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{pub_time}}</view>
-                <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">阅读</view>
-            </view>
-
+            
+              <view class="weui-media-box__info" hidden='{{!headhidden}}'>
+                        <view class="weui-media-box__info__meta">www.cidp.edu.cn</view>
+                        <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{pub_time}}</view>
+                        <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">阅读</view>
+              </view>
+                    
 
             <view class="weui-article__section">
                 <view class="weui-article__title"> </view>
                 <view class="weui-article__section">
                     <view class="weui-article__h3"> </view>
                     <view wx:for="{{ news_content }}">
-                        <view class="weui-article__p" wx:if="{{item.content}}">
-                            {{ item.content }}
+                    <view class="weui-article__p" wx:if="{{item.content}}">
+                         {{ item.content }}
+                    </view>
+                    <view wx:if="{{item.img}}">
+                        <image class="weui-article__img" src="{{item.img}}" mode="aspectFit" style="height: 740px" bindtap='imgview' data-src="{{item.pic}}" />
                         </view>
-                        <view wx:if="{{item.img}}">
-                            <image class="weui-article__img" src="{{item.img}}" mode="aspectFit" style="height: 740px"
-                                bindtap='imgview' data-src="{{item.pic}}" />
-                        </view>
-
-                        <view class="weui-article__p" wx:if="{{item.pic}}">
-                            <image class="weui-article__img" src="{{item.pic}}" mode="aspectFit" style="height: 180px"
-                                bindtap='imgview' data-src="{{item.pic}}" />
-                        </view>
+                
+                    <view class="weui-article__p" wx:if="{{item.pic}}">
+                        <image class="weui-article__img" src="{{item.pic}}" mode="aspectFit" style="height: 180px" bindtap='imgview' data-src="{{item.pic}}" />
                     </view>
                 </view>
+              </view>
+
+       
             </view>
         </view>
-        <view class="index-ad">
-            <ad unit-id="adunit-01e31770ee570b97"></ad>
-        </view>
+    <view class="index-ad">
+      <ad unit-id="adunit-01e31770ee570b97"></ad>
     </view>
+
+    </view>
+    
 </view>

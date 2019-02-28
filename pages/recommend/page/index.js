@@ -1,16 +1,7 @@
 var util = require('../../../utils/util.js')
 Page({
   data: {
-    navTab: [{
-      "name": "新闻中心",
-      "id": 'xwzx'
-    }, {
-      "name": "通知公告",
-      "id": 'tzgg'
-    }, {
-      "name": "学术活动",
-      "id": 'xshd'
-    }],
+    navTab: [{"name": "新闻中心", "id":'xwzx'}, {"name": "通知公告", "id":'tzgg' },{"name": "学术活动", "id":'xshd'}],
     currentNavtab: "0",
 
     page_num: 0,
@@ -69,7 +60,7 @@ Page({
       method: 'GET',
       success: function (req) {
         var next_page = req.data.news_list.next_page
-        if (page_type == 'xwzx') {
+        if(page_type == 'xwzx'){
           var news = req.data.news_list.news_list
           var return_news = that.data.news_list52.concat(news)
           that.setData({
@@ -90,7 +81,7 @@ Page({
             news_list321: return_news
           })
         }
-        if (page_type == 'xshd') {
+        if (page_type == 'xshd'){
           var news = req.data.news_list.news_list
           var return_news = that.data.news_list4662.concat(news)
           that.setData({
@@ -99,11 +90,12 @@ Page({
             hidden: true,
             news_list4662: return_news
           })
-        } else {
+        }
+        else{
           return
         }
 
-
+        
       },
 
 
@@ -145,9 +137,11 @@ Page({
     // console.log("page", page_type)
     if (page_type == 'xwzx') {
       var num = that.data.page52
-    } else if (page_type == 'tzgg') {
+    }
+    else if (page_type == 'tzgg') {
       var num = that.data.page321
-    } else if (page_type == 'xshd') {
+    }
+    else if (page_type == 'xshd') {
       var num = that.data.page4662
     }
     // console.log("pullup")
@@ -168,7 +162,7 @@ Page({
   switchTab: function (e) {
     var id = e.target.dataset.id
     // console.log('info',id)
-    if (id == 'xwzx') {
+    if (id == 'xwzx'){
       var num = this.data.page52
     }
     if (id == 'tzgg') {
@@ -182,7 +176,7 @@ Page({
       currentNavtab: e.currentTarget.dataset.idx
     });
 
-    if (num == 0) {
+    if(num == 0){
       this.getNewsList(id, num)
     }
 

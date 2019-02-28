@@ -30,12 +30,13 @@ Page({
       success: function(req) {
         console.log("back",req)
         var news_data = req.data.news_content
-        that.data.pic_list = req.data.pic_list
+        var pic_list = req.data.pic_list
         that.setData({
           url: options.url,
           title: options.title,
           pub_time: options.pub_time,
-          news_content: news_data
+          news_content: news_data,
+          pic_list: pic_list
         })
       },
       fail: function (req) {
