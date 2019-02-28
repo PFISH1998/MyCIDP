@@ -1,4 +1,4 @@
-.box1 .dateBox{
+.box1 .dateBox {
   width: 100%;
   height: 50px;
   line-height: 50px;
@@ -7,25 +7,26 @@
   font-size: 40rpx;
 }
 
-.box1{
+.box1 {
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
 }
 
-.box1>view{
+.box1>view {
   height: 30px;
   line-height: 30px;
   text-align: center;
   font-size: 30rpx;
 }
 
-.dateOn{
+.dateOn {
   border-radius: 50%;
   background-color: #0BB20C;
   color: #fff;
 }
-.dateOn2{
+
+.dateOn2 {
   border-radius: 50%;
   background-color: #1296db;
   color: #fff;

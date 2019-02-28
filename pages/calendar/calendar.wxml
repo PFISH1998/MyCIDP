@@ -1,33 +1,32 @@
 <view>
-			<view class="top-handle fs28 box box-lr box-align-center box-pack-center">
-				<view class="prev box box-rl" bindtap="choosePrevMonth" data-year="{{year}}" data-month="{{month}}">
-					<view class="prev-handle box box-lr box-align-center box-pack-center">《</view>
-				</view>
-				<view class="date-area box box-lr box-align-center box-pack-center">{{ year }} 年 {{ month}} 月</view>
-				<view class="next box box-lr" bindtap="chooseNextMonth" data-year="{{year}}" data-month="{{month}}">
-					<view class="next-handle box box-lr box-align-center box-pack-center">》</view>
-				</view>
-			</view>
+  <view class="top-handle fs28 box box-lr box-align-center box-pack-center">
+    <view class="prev box box-rl" bindtap="choosePrevMonth" data-year="{{year}}" data-month="{{month}}">
+      <view class="prev-handle box box-lr box-align-center box-pack-center">《</view>
+    </view>
+    <view class="date-area box box-lr box-align-center box-pack-center">{{ year }} 年 {{ month}} 月</view>
+    <view class="next box box-lr" bindtap="chooseNextMonth" data-year="{{year}}" data-month="{{month}}">
+      <view class="next-handle box box-lr box-align-center box-pack-center">》</view>
+    </view>
+  </view>
 
-
-<view class='box1' style='width: {{ sysW * 7 }}px'>
-  <block wx:for='{{ weekArr }}'>
-    <view style='width: {{ sysW }}px; height: {{ sysW }}px; line-height: {{ sysW }}px;' class = '{{ index % 6 == 0 ? "dateOn2" : " " }}'>{{ item }}</view>
-  </block>
-  <block wx:for='{{ arr }}'>
-  <view style='{{ index == 0 ? "margin-left:" + sysW * marLet + "px;" : "" }}width: {{ sysW }}px; height: {{ sysW }}px; line-height: {{ sysW }}px;' class = '{{item.display ? "dateOn" : " " }}'>{{ item.d }}</view>
-  </block>
-</view>
+  <view class='box1' style='width: {{ sysW * 7 }}px'>
+    <block wx:for='{{ weekArr }}'>
+      <view style='width: {{ sysW }}px; height: {{ sysW }}px; line-height: {{ sysW }}px;' class='{{ index % 6 == 0 ? "dateOn2" : " " }}'>{{
+        item }}</view>
+    </block>
+    <block wx:for='{{ arr }}'>
+      <view style='{{ index == 0 ? "margin-left:" + sysW * marLet + "px;" : "" }}width: {{ sysW }}px; height: {{ sysW }}px; line-height: {{ sysW }}px;'
+        class='{{item.display ? "dateOn" : " " }}'>{{ item.d }}</view>
+    </block>
+  </view>
   <view class="page">
     <view class="page__hd">
-        <text></text>
-        <view class="page__desc" wx:for="{{notes}}" wx:key="item">
-          <view wx:if="{{month == item.month}}">
-          <view wx:for='{{item.content}}'>{{item}}</view>  
-          </view>
-        
-          </view>
+      <text></text>
+      <view class="page__desc" wx:for="{{notes}}" wx:key="item">
+        <view wx:if="{{month == item.month}}">
+          <view wx:for='{{item.content}}'>{{item}}</view>
+        </view>
+      </view>
     </view>
-    </view>
-
+  </view>
 </view>
