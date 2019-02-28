@@ -16,12 +16,12 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     circle_id: null,
-    
+
   },
 
   onLoad: function (options) {
     var title = 'Circle'
-    console.log("post",options)
+    console.log("post", options)
     var userInfo = wx.getStorageSync("userInfo")
     if (userInfo == '') {
       wx.redirectTo({
@@ -30,7 +30,7 @@ Page({
     }
 
     var type = options.type
-    if (type == 'comment'){
+    if (type == 'comment') {
       title = '评论'
       this.setData({
         circle_id: options.circle_id,
@@ -52,11 +52,11 @@ Page({
     console.log(e)
     this.setData({
       content: e.detail.value,
-      content_length: 120-e.detail.cursor
+      content_length: 120 - e.detail.cursor
     })
   },
 
-  
+
   chooseimage: function () {
     var that = this;
     wx.chooseImage({
@@ -95,10 +95,10 @@ Page({
     var content = that.data.content
     var userInfo = that.data.userInfo
     var circle_id = that.data.circle_id
-    if(that.data.content_length < 0){
+    if (that.data.content_length < 0) {
       wx.showToast({
         title: '废话太多！',
-        icon:'none'
+        icon: 'none'
       })
       return
     }
@@ -112,9 +112,9 @@ Page({
     var uid = app.appData.uid
     console.log(uid)
 
-    if (circle_id != null ){
+    if (circle_id != null) {
       var postData = {
-        "url": "circle/comments/" + circle_id +'/',
+        "url": "circle/comments/" + circle_id + '/',
         "data": {
           "circle": circle_id,
           "comment_content": content,
@@ -122,17 +122,16 @@ Page({
         },
         "method": "POST"
       }
-    }
-    else {
+    } else {
       var postData = {
         "url": "circle/posts",
-        "data":{
+        "data": {
           "post_user": userInfo.nickName,
           "uid": uid,
           "content": content
-          },
-        "method":"POST"
-        }
+        },
+        "method": "POST"
+      }
     }
 
     wx.showLoading({
