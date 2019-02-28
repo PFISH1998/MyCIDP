@@ -3,7 +3,7 @@ var that = this
 Page({
   data: {
     userinfo: null,
-    page:'grade',
+    page: 'grade',
   },
 
   onLoad: function (options) {
@@ -16,20 +16,20 @@ Page({
   cancel: function (e) {
     var that = this
     console.log(e)
-    
-    if(app.appData.userinfo == null){
+
+    if (app.appData.userinfo == null) {
       wx.showToast({
         title: '暂未绑定账号',
         icon: 'none'
       })
-    }else{
+    } else {
       wx.showModal({
         title: '确定取消',
         content: '取消绑定将删除小程序上教务账号记录，包括课表等信息，你可以重新登录获取',
-        success: function (e){
-          if(e.cancel){
+        success: function (e) {
+          if (e.cancel) {
 
-          }else if (e.confirm) {
+          } else if (e.confirm) {
             that.setData({
               userinfo: null
             })
@@ -43,7 +43,7 @@ Page({
           }
         }
       })
-      
+
     }
   },
 
@@ -91,7 +91,10 @@ Page({
             })
             return
           } else {
-            app.appData.userinfo = { sid: sid, pwd: pwd }
+            app.appData.userinfo = {
+              sid: sid,
+              pwd: pwd
+            }
             wx.setStorageSync('userinfo', app.appData.userinfo)
             console.log('userinfo', app.appData.userinfo)
             wx.showToast({
