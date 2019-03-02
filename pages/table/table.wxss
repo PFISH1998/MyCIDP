@@ -71,10 +71,6 @@
     height: 200rpx;
 }
 
-.sidebar view:last-child {
-    height: 100rpx;
-}
-
 .sidebar view:nth-child(1),
 .sidebar view:nth-child(3) {
     margin-bottom: 10rpx;
