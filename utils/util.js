@@ -23,8 +23,6 @@ module.exports = {
 // var test_url = "http://127.0.0.1:8000/"
 var test_url = "https://wx.pfish.xyz/"
 
-var index = require('../data/index_data.js')
-var index_next = require('../data/data_index_next.js')
 var index_data = ''
 
 // var discovery = require('../data/data_discovery.js')
