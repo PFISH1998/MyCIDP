@@ -33,6 +33,7 @@ Page({
 
     console.log('全局', app.appData.req_data)
     var length = app.appData.req_data.length
+
     this.setData({
       grade_data: app.appData.req_data,
       activeIndex: length - 1
