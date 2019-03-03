@@ -75,7 +75,7 @@ Page({
         },
 
         success: function (req) {
-          // console.log('服务器数据', req)
+          console.log('服务器数据', req)
           wx.hideLoading()
           return_data = req.data.data
           // return_data = that.cleanSpelChar(req.data)
