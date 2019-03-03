@@ -1,6 +1,7 @@
 // pages/table/table.js
 var app = getApp()
 var table_data = ''
+
 Page({
 
   /**
@@ -76,9 +77,12 @@ Page({
         //   title: wx.getStorageSync('term'),
         //   icon: 'none'
         // })
-        var reg = '/(\s)(#)'
+
+        // console.log(table_data)
+        // table_data = d
         for (var i = 0; i < table_data.length; i++) {
           for (var j = 0; j < table_data[i].length; j++) {
+            //   console.log(table_data[i][j])
             table_data[i][j].Remark = table_data[i][j].Remark.replace(/\d#/, '\r\n').replace(/\s/, '\r\n')
           }
         }
