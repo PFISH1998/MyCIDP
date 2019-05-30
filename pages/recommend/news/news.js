@@ -1,4 +1,5 @@
 // pages/ recommend/news/news.js
+var util = require('../../../utils/util.js')
 Page({
 
   /**
@@ -25,7 +26,7 @@ Page({
     })
     wx.request({
       // url: 'http://127.0.0.1:8000/news/news?content=' + options.url,
-      url: 'https://wx.tomwang.club/news/news?content='+options.url,
+      url: util.url + 'news/news?content='+options.url,
       method: 'get',
       success: function(req) {
         console.log("back",req)
