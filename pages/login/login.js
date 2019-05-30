@@ -1,6 +1,6 @@
 'use strict';
 var app = getApp()
-
+var util = require('../../utils/util.js')
 Page({
   data: {
     buthidden: false,
@@ -67,7 +67,7 @@ Page({
       wx.request({
         
         // url: 'http://127.0.0.1:8000/'+ that.data.page,
-        url: 'https://wx.pfish.xyz/' + that.data.page,     
+        url: util.url + that.data.page,     
         method: 'post',
         data:{
           'sid': sid,
