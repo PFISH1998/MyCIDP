@@ -20,8 +20,8 @@ module.exports = {
   formatTime: formatTime
 };
 
-// var test_url = "http://127.0.0.1:8000/"
-var test_url = "https://wx.pfish.xyz/"
+var test_url = "http://127.0.0.1:8000/"
+var normal_url = "https://wx.pfish.xyz/"
 
 var index_data = ''
 
@@ -137,7 +137,7 @@ function getData(e) {
   console.log("request", e)
   return new Promise(function (resolve, reject) {
     wx.request({
-      url: test_url+url,
+      url: normal_url+url,
       data: data,
       method: method,
       header: {
@@ -158,7 +158,7 @@ function getData(e) {
 
 function request(e){
   console.log("request",e)
-  var url = test_url + e.url
+  var url = normal_url + e.url
   var data = e.data
   var method = e.method
   return new Promise(function (resolve, reject) {wx.request({
@@ -186,7 +186,7 @@ function request(e){
 function getData2(e) {
 var user = e.user
 console.log("user", user)
-var url = test_url
+var url = normal_url
 var req_data = {
   "url": url+"post/",
   "method": "GET"
@@ -297,3 +297,4 @@ module.exports.request = request;
 module.exports.indexImg = indexImg;
 module.exports.saveIndexImg = saveIndexImg;
 module.exports.is_diff_day = is_diff_day
+module.exports.url = normal_url
