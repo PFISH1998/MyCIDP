@@ -16,7 +16,6 @@
     "pages/recommend/page/index",
     "pages/login/auth/auth",
     "pages/user/public/myPublic"
-
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -36,7 +35,8 @@
     "selectedColor": "#2A8CE5",
     "backgroundColor": "#FBFBFB",
     "borderStyle": "white",
-    "list": [{
+    "list": [
+      {
         "pagePath": "pages/circle/index/index",
         "text": "",
         "iconPath": "images/guide.png",
@@ -61,5 +61,6 @@
         "selectedIconPath": "images/g_my_on_s.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

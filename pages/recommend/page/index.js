@@ -56,7 +56,7 @@ Page({
     })
     wx.request({
       // url: 'http://127.0.0.1:8000/news/list?page_num=' + num + '&type=' + page_type,
-      url: 'https://wx.pfish.xyz/news/list?page_num=' + num + '&type=' + page_type,
+      url: util.url + 'news/list?page_num=' + num + '&type=' + page_type,
       method: 'GET',
       success: function (req) {
         var next_page = req.data.news_list.next_page
