@@ -9,7 +9,7 @@
     </view>
   </view>
 
-  <view class='box1' style='width: {{ sysW * 7 }}px'>
+  <view class='box1'>
     <block wx:for='{{ weekArr }}'>
       <view style='width: {{ sysW }}px; height: {{ sysW }}px; line-height: {{ sysW }}px;' class='{{ index % 6 == 0 ? "dateOn2" : " " }}'>{{
         item }}</view>
